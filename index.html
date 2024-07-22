@@ -3,15 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blueh</title>
+    <title>apu funspace</title>
+    <link rel="icon" type="image/x-icon" href="https://ih1.redbubble.net/image.589096658.2920/pp,840x830-pad,1000x1000,f8f8f8.jpg">
 </head>
 <style>
 p {
-    color: goldenrod;
+    color: darkblue;
     font-size:150%;
     }
+body {
+    background-image: url("https://i.pinimg.com/originals/7f/c1/9a/7fc19a9c44fb27ecdd37a9259d7bff55.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+table,th,td{
+    border: 2px blue;
+    border-radius:10px; 
+}
+th,td{
+    text-align:center;
+}
+tr:nth-child(even){
+    background-color:rgb(238, 210, 167);
+}
+tr:nth-child(odd){
+    background-color:antiquewhite;
+}
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(219, 96, 153, 0.4);
+}
+td:hover {background-color: #784747;}
+ul{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: rgb(110, 82, 124);
+}
+li {
+    float:left;
+}
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding:10px;
+    text-decoration: honeydew;
+}
+li a:hover{
+    background-color: rgb(56, 39, 72);
+}
 </style>
 <body>
+    <ul>
+        <li><a href="#poem">Poem</a></li>
+        <li><a href="#vid">Video</a></li>
+        <li><a href="#dog">Dogs info</a></li>
+    </ul>
     <h1 title="Oguess is" style = "background-color: lightpink;font-size: 100px; color:palevioletred">KAWAII</h1>
     <hr>
     <h2 style="border: 2px solid hotpink; padding: 20px;">Welcome to honkai Starrail</h2>
@@ -19,8 +65,7 @@ p {
     <a href="https://i.guim.co.uk/img/media/c26ced2bb6cbf1e770623712c0b02e1a5b024edd/0_0_4728_2837/master/4728.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=697e097424a84242cb3fc787a77d38b5">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYCG0nML0gAjeNUVHcebvl04AHVdwuHOPNg&s" style="width:42px;height:42px;">
     </a>
-    <p><a href="#vid">Jump to VIDEO</a></p>
-    <pre style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/c/c8/Left_femur_of_extinct_elephant%2C_Alaska%2C_Ice_Age_Wellcome_L0057714.jpg);sans-serif; font-size:20pt;text-align:center; color: blanchedalmond;"><em>
+    <pre id="poem" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/c/c8/Left_femur_of_extinct_elephant%2C_Alaska%2C_Ice_Age_Wellcome_L0057714.jpg);sans-serif; font-size:20pt;text-align:center; color: blanchedalmond;"><em>
         My <mark>Bonnie</mark> lies over the ocean.
      
         My <sub>Bonnie</sub> lies over the <sup>sea.</sup>
@@ -64,16 +109,16 @@ p {
             margin: auto;
         }
     </style>
-    <p id="vid">There's no video here :p</p>
 </body>
 <body>
+    <h2 id="vid" style="color:rgb(59, 59, 125);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Clips</h2>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <iframe width="1392" height="783" src="https://www.youtube-nocookie.com/embed/yy6IuuT9zG4?si=f7AHs-YTZ7nlqO1b&amp;controls=0&amp;start=66&end=76" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <p><img src="https://i.pinimg.com/564x/60/b3/b8/60b3b888914534cfa940f458c2143798.jpg" style ="float:right; width:50px; height:50px">A cute rabbit stuff</p>
 </body>
 <body>
     <hr>
-    <p>Click the dog images below to know more info about each of them.</p>
+    <p id="dog">Click the dog images below to know more info about each of them.</p>
     <img src="https://worldanimalfoundation.org/wp-content/uploads/2023/07/Most-Popular-Dog-Breeds-1-1.jpg" style = "width:600px;height:300px" usemap ="#workmap">
     <map name="workmap">
         <area shape ="rect" coords = "0,0,200,200" href="https://en.wikipedia.org/wiki/Husky">
@@ -81,7 +126,33 @@ p {
         <area shape ="rect" coords = "400,0,600,200" href="https://en.wikipedia.org/wiki/Dobermann">
     </map>
     <hr>
-    
+    <picture>
+        <source media="(min-width:850px)" srcset="https://cdn.vox-cdn.com/thumbor/YSQ_m6CiX7vVJpg2adGpgBRwh-w=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72217401/StarRail_Image_1681923682.0.png">
+        <source media ="(min-width:450px)" srcset="https://oyster.ignimgs.com/mediawiki/apis.ign.com/honkai-star-rail/6/64/Honkai_Star_Rail_Header.jpg">
+    </picture>
+    <table style="width:100%">
+        <tr>
+            <th colspan="3">Experience in APU</th>
+        </tr>
+        <tr>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Comments</th>
+        </tr>
+        <tr>
+            <td>food</td>
+            <td>expensive</td>
+            <td>oh well that's life</td>
+        </tr>
+        <tr>
+            <td>lecturer</td>
+            <td>abit like gambling</td>
+        </tr>
+    </table>
+    <ul style="list-style-type:circle;">
+        <li>teh o limau</li>
+        <li> maggi goreng sirap bandung</li>
+    </ul>
 </body>
 
 </html>
