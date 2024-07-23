@@ -8,7 +8,6 @@
 </head>
 <style>
 p {
-    color: darkblue;
     font-size:150%;
     }
 body {
@@ -51,6 +50,20 @@ li a{
 li a:hover{
     background-color: rgb(56, 39, 72);
 }
+div{
+    width:300px;
+    margin:auto;
+}
+
+div.meaningBehindSymbol div{
+    width:30%;
+    display:inline-block;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
 <body>
     <ul>
@@ -61,7 +74,7 @@ li a:hover{
     <h1 title="Oguess is" style = "background-color: lightpink;font-size: 100px; color:palevioletred">KAWAII</h1>
     <hr>
     <h2 style="border: 2px solid hotpink; padding: 20px;">Welcome to honkai Starrail</h2>
-    <p>Try to click on the smile icon.</p>
+    <p style="text-align: center;">Try to click on the smile icon.</p>
     <a href="https://i.guim.co.uk/img/media/c26ced2bb6cbf1e770623712c0b02e1a5b024edd/0_0_4728_2837/master/4728.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=697e097424a84242cb3fc787a77d38b5">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYCG0nML0gAjeNUVHcebvl04AHVdwuHOPNg&s" style="width:42px;height:42px;">
     </a>
@@ -75,10 +88,11 @@ li a:hover{
         Oh, bring <del>back my</del> Bonnie to me.
     </em></pre>
     <script>
-        for (x = 0; x < 1; x++) {
-            document.write("<img src = 'https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif' width = '10%' height = '10%'>");
+        for (x = 0; x < 13; x++) {
+            document.write("<img src = 'https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif' style='width:100px; height:100px; float:left;'>");
         }
     </script>
+    <hr>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/oVvDdSE_lTU?si=0jMAbeRR0FLOYsrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <p><cite>Some random video from youtube that Oguess likes</cite></p>
 </body>
@@ -117,6 +131,10 @@ li a:hover{
 <p><img src="https://i.pinimg.com/564x/60/b3/b8/60b3b888914534cfa940f458c2143798.jpg" style ="float:right; width:50px; height:50px">A cute rabbit stuff</p>
 </body>
 <body>
+    <picture>
+        <source media="(min-width: 650px)" srcset="https://fashionjournal.com.au/wp-content/uploads/2022/05/fashion-journal-buying-new-clothes-mob.jpg">
+        <source media="(min-width: 465px)" srcset="https://media.vogue.co.uk/photos/6384d7e061c7075f073b1e10/2:3/w_2560%2Cc_limit/191022_Shot_13_148_v3_QC_F300.jpg">
+    </picture>
     <hr>
     <p id="dog">Click the dog images below to know more info about each of them.</p>
     <img src="https://worldanimalfoundation.org/wp-content/uploads/2023/07/Most-Popular-Dog-Breeds-1-1.jpg" style = "width:600px;height:300px" usemap ="#workmap">
@@ -151,8 +169,27 @@ li a:hover{
     </table>
     <ul style="list-style-type:circle;">
         <li>teh o limau</li>
-        <li> maggi goreng sirap bandung</li>
+        <li>maggi goreng sirap bandung</li>
     </ul>
+    <div style="background-image:url(https://garden.spoonflower.com/c/11055611/p/f/m/zB_feCFF3wzcl69_f9FfmJjyPysNRi2H1v6iJ2JlCUjwo1wJ-LwIjt0/Sandy%20Smiley.jpg); color:rgb(74, 40, 40)">
+        <h2 style="text-align: center;">FuN FaCt oF thE DaY</h2>
+        <p style="color:rgb(74, 36, 36);font-size: 20px;text-align: center;">Identical twins don't have the same fingerprints.</p>
+    </div>
+
+    <div class="meaningBehindSymbol" >
+        <div style="background-color: rgb(255, 229, 229);color:rgb(51, 34, 34);">
+            <h2 style="text-align: center;">Harmony</h2>
+            <img src="https://static.wikia.nocookie.net/honkai-star-rail-fanon/images/7/7e/Path_Harmony.png/revision/latest?cb=20230819084327" style="width:100px;height:100px;align"></a>
+        </div>
+        <div style="background-color: rgb(255, 250, 229);color:rgb(51, 34, 34)">
+            <h2 style="text-align: center;">Nihility</h2>
+            <img src="https://static.wikia.nocookie.net/honkai-star-rail-fanon/images/4/45/Path_Nihility.png/revision/latest?cb=20230528035414" style="width:100px;height:100px"></a>
+        </div>
+        <div style="background-color: rgb(229, 255, 231);color:rgb(51, 34, 34)">
+            <h2 style="text-align: center;">Erudition</h2>
+            <img src="https://static.wikia.nocookie.net/honkai-star-rail-fanon/images/5/53/Path_Erudition.png/revision/latest/thumbnail/width/360/height/360?cb=20240117235839" style="width:100px;height:100px"></a>
+        </div>
+    </div>
 </body>
 
 </html>
