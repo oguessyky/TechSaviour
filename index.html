@@ -64,6 +64,30 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+button.wuwa{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: skyblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+button.wuwa:hover{
+    object-position: 10%;
+    background-color:#ADD8E6;
+}
+button.wuwa:active{
+    background-color: aquamarine;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 </style>
 <body>
     <ul>
@@ -75,7 +99,7 @@ img {
     <hr>
     <h2 style="border: 2px solid hotpink; padding: 20px;">Welcome to honkai Starrail</h2>
     <p style="text-align: center;">Try to click on the smile icon.</p>
-    <a href="https://i.guim.co.uk/img/media/c26ced2bb6cbf1e770623712c0b02e1a5b024edd/0_0_4728_2837/master/4728.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=697e097424a84242cb3fc787a77d38b5">
+    <a href="https://i.guim.co.uk/img/media/c26ced2bb6cbf1e770623712c0b02e1a5b024edd/0_0_4728_2837/master/4728.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=697e097424a84242cb3fc787a77d38b5" target = "_blank">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYCG0nML0gAjeNUVHcebvl04AHVdwuHOPNg&s" style="width:42px;height:42px;">
     </a>
     <marquee>
@@ -106,7 +130,7 @@ using a horizontal line.</p>
     <section>
         <div class="container">
             <div class="item song">
-                    <audio autoplay controls loop preload="auto">
+                    <audio controls loop preload="auto">
                         <source src="Emberfire.mp3">
                         This thing broke
                     </audio>
@@ -117,8 +141,8 @@ using a horizontal line.</p>
             </div>
             <div class="item word">
                 song going through
-                <button>
-                    This broke
+                <button class = "wuwa" target = "_blank" onclick="window.location.href= 'https://cdn.oneesports.gg/cdn-data/2024/02/Gaming_WutheringWaves_Keyvisual.jpg'">
+                    Welcome to wuthering Waves
                 </button>
             </div>
         </div>
