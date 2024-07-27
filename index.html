@@ -80,7 +80,7 @@ button.wuwa{
     box-shadow: 0 9px #999;
 }
 button.wuwa:hover{
-    object-position: 10%;
+    object-position: 50%;
     background-color:#ADD8E6;
 }
 button.wuwa:active{
@@ -88,6 +88,18 @@ button.wuwa:active{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+#audioPlayer {
+    width: 80%;
+    background: #0b355a;
+    padding: 20px;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 9px #3a5471;
+}
+#audio {
+    width: 80%;
+}
+
 </style>
 <body>
     <ul>
@@ -153,6 +165,14 @@ using a horizontal line.</p>
             margin: auto;
         }
     </style>
+</body>
+<body>
+    <br>
+    <div id="audioPlayer">
+        <audio controls id="audio" src="Emberfire.mp3"></audio>
+        <canvas id="visualizer"></canvas>
+    </div>
+    <script src="visualizer.js"></script>
 </body>
 <body>
     <h2 id="vid" style="color:rgb(59, 59, 125);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Clips</h2>
