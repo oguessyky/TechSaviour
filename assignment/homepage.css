@@ -7,9 +7,9 @@ body{
     max-height: fit-content;
 }
 img.logo{
-    height: 17%;
-    width: 17%;
-    position: relative;
-    bottom: 14px;
-    left: 83%;
+    min-width: 192px;
+    max-width: 108px;
+    position: absolute;
+    top: 0%;
+    right: 1%;
 }
