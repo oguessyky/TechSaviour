@@ -1,0 +1,15 @@
+body{
+    background-image: url("image/general bg.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    max-width:fit-content;
+    max-height: fit-content;
+}
+img.logo{
+    height: 17%;
+    width: 17%;
+    position: relative;
+    bottom: 14px;
+    left: 83%;
+}
