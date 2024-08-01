@@ -3,7 +3,7 @@ const canvas = document.getElementById('visualizer');
 const ctx = canvas.getContext('2d');
 
 // Set canvas size (adjust as needed)
-canvas.width = window.innerWidth;
+canvas.width = window.innerWidth/2;
 canvas.height = 500;
 
 // Analyze audio data
