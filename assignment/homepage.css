@@ -1,5 +1,5 @@
 body{
-    background-image: url("image/general bg.png");
+    background-image: url("image/test.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -7,8 +7,9 @@ body{
     max-height: fit-content;
 }
 img.logo{
-    max-width: 384px;
-    max-height: 216px;
+    max-width: 160px;
+    max-height: 90px;
+
     position: absolute;
     top: 0%;
     right: 1%;
