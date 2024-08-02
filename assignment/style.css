@@ -1,0 +1,40 @@
+body{
+    background-image: url("image/general bg.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+}
+img, h1{
+    /* Disable user selection */
+    user-select: none;
+    -webkit-user-select: none;
+    
+    /* Disable user drag */
+    -webkit-user-drag: none;
+}
+img.logo{
+    /* Max logo size */
+    max-width: 160px;
+    max-height: 90px;
+
+    position: absolute;
+    right: 20px;
+    top: 0px;
+}
+img.section1{
+    position: relative;
+    transform: scale(0.4,0.4);
+    top: 25em;
+    right: 20em;
+}
+h1.heading{
+    font-size: 450%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-top: 30%;
+    transform: translate(-50%, -50%);
+
+}
