@@ -7,8 +7,8 @@ body{
     max-height: fit-content;
 }
 img.logo{
-    min-width: 192px;
-    max-width: 108px;
+    max-width: 384px;
+    max-height: 216px;
     position: absolute;
     top: 0%;
     right: 1%;
