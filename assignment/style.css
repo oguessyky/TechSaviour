@@ -39,7 +39,7 @@ h1.heading{
     position: absolute;
     top: 50%;
     left: 50%;
-    padding-top: 30%;
+    padding-top: 33vw;
     transform: translate(-50%, -50%);
 
 }
