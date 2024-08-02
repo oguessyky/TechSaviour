@@ -60,6 +60,7 @@ h2.section1{
     font-size: 7vw;
     right: 12vw;
     top: 49vw;
+    padding-right: 2vw;
 }
 
 p.section1{
@@ -87,6 +88,7 @@ h2.section2{
     font-size: 7vw;
     left: 1vw;
     top: 92vw;
+    padding-left: 2vw;
 }
 
 p.section2{
@@ -97,4 +99,5 @@ p.section2{
     font-size: 3vw;
     right: 40vw;
     top: 103vw;
+    padding-left: 2vw;
 }
