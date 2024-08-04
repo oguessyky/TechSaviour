@@ -26,7 +26,8 @@ img.logo{
     top: 0px;
 }
 
-h1.heading{
+/* About US-> start */
+h1.aboutUs{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 10vw;
     color: white;
@@ -65,6 +66,12 @@ h2.section1{
     right: 5vw;
     top: 48vw;
     padding-right: 2vw;
+
+    /* make the gradient color on text */
+    background: -webkit-linear-gradient(#198ebc, #333333);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 p.section1{
@@ -93,6 +100,12 @@ h2.section2{
     left: 1vw;
     top: 92vw;
     padding-left: 2vw;
+
+    /* make the gradient color on text */
+    background: -webkit-linear-gradient(#198ebc, #333333);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 p.section2{
@@ -105,3 +118,41 @@ p.section2{
     top: 106vw;
     padding-left: 2vw;
 }
+/* About Us-> End */
+
+/* homepage-> Start */
+h1.homepage, p.homepage{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h1.homepage{
+    font-size: 5vw;
+
+    /* Prevent text wraping */
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* Put to center */
+    position: absolute;
+    padding-top: 33vw;
+
+}
+
+p.homepage{
+    position: absolute;
+    font-size: 3vw;
+    padding-top: 57vw;
+}
+
+/* img.click_me{
+    position: absolute;
+    display: block;
+    width: 2vw;
+    height: 2vw;
+    bottom: 0vw;
+    height: fit-content;
+
+} */
