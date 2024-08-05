@@ -5,7 +5,7 @@ body{
     text-align: center;
     position: relative;
 }
-img, h1{
+img, h1,p{
     /* Disable user selection */
     user-select: none;
     -webkit-user-select: none;
@@ -147,12 +147,11 @@ p.homepage{
     padding-top: 57vw;
 }
 
-/* img.click_me{
-    position: absolute;
-    display: block;
-    width: 2vw;
-    height: 2vw;
-    bottom: 0vw;
-    height: fit-content;
+img.click_me{
+    height: 50vw;
 
-} */
+    position: absolute;
+    right: -1vw;
+    top: 100vw;
+
+}
