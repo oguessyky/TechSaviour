@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add New Profile</title>
+    </head>
+    <h2>
+        My Address Book
+    </h2>
+    <h3>
+        Add New Profile
+    </h3>
+    
+    <form action="">
+        <table>
+            <tr>
+                <th class="heading">Name:</th>
+                <td><input type="text" name="name" required="required"></td>
+            </tr>
+            <tr>
+                <th class="heading">Phone Number:</th>
+                <td><input type="tel", name="phone_num" required="required"></td>
+            </tr>
+            <tr>
+                <th class="heading">Email Address:</th>
+                <td><input type="email", name="email_address" required="required"></td>
+            </tr>
+            <tr>
+                <th class="heading">Home Address:</th>
+                <td><textarea name="home_address" required="required"></textarea></td>
+            </tr>
+            <tr>
+                <th class="heading">Gender:</th>
+                <td>
+                    <input type="radio" name="gender" value="Male" required="required">Male
+                    <input type="radio" name="gender" value="Female" required="required">Female
+                </td>
+            </tr>
+            <tr>
+                <th class="heading">Relationship:</th>
+                <td><select name="relationship" required="required">
+                    <option value="">Please select</option>
+                    <option value="Family">Family</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Colleague">Colleague</option>
+                    <option value="Other">Other</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th class="heading">Date of Birth:</th>
+                <td><input type="date" name="dob"></td>
+            </tr>
+            <tr>
+                <td class="final">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+<style>
+    th.heading{
+        text-align: left;
+    }
+    td.final{
+        align-items: center;
+    }
+</style>
+
+</html>
