@@ -10,7 +10,9 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #222;
+    /* background: #222; */
+    background-image: url(image/Login/login\ bg.png);
+    
 }
 @property --a{
     syntax: '<angle>';
@@ -105,7 +107,7 @@ form h2{
     padding: 8px 14px;
     background-color: transparent;
     color: #fff;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 .input input::placeholder{
@@ -134,6 +136,9 @@ form h2{
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.75em;
+    margin-right: auto;
+    margin-left: auto;
+    
 }
 .group a:hover{
     color: #01dbc2;
