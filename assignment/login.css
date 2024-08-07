@@ -6,12 +6,19 @@
 }
 
 body{
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background: #222; */
+    
+    /* background*/
     background-image: url(image/Login/login\ bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     
 }
 @property --a{
@@ -119,7 +126,7 @@ form h2{
     cursor: pointer;
     box-shadow: 0 0 0 4px #01dbc2;
     width: 100%;
-    font-weight: 500;
+    font-weight: 600;
     color: #292929;
     filter: drop-shadow(0 0 15px #01dbc2);
 }
