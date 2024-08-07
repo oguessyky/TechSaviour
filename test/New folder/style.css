@@ -1,5 +1,5 @@
 body{
-    background-image: url("image/general bg.png");
+    background-image: url(image/general\ bg.png);
     background-size:cover;
     background-repeat: no-repeat;
     text-align: center;

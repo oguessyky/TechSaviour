@@ -1,7 +1,79 @@
+*{
+    /* box-sizing: border-box;
+    margin: 0;
+    padding: 0; */
+
+    /* Disable user selection */
+    user-select: none;
+    -webkit-user-select: none;
+    
+    /* Disable user drag */
+    -webkit-user-drag: none;
+}
 body{
     background-image: url("image/general bg.png");
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
-    text-align: center;
     position: relative;
+}
+
+.icon img{
+    display: block;
+    position: absolute;
+    height: 12vw;
+    right: 0px;
+    top: -9vw;
+}
+
+h1.heading{
+    text-align: center;
+    color: white;
+    font-size: 12vw;
+    text-transform: uppercase;
+    padding-top: 13vw;
+}
+
+.section1, .section2{
+    display: flex;
+    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    flex-grow: 0;
+}
+.section1{
+    padding-top: 10vw;
+}
+.section2{
+    padding-top: 5vw;
+}
+@media screen and (max-width: 700px){
+    .section1, .section2{
+        flex-wrap: wrap;
+    }
+}
+
+.section1 img, .section2 img{
+    max-width: 50vw;
+    max-height: 50vw;
+}
+.section1 table, .section2 table{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.section1 th, .section2 th{
+    font-size: 7vw;
+    text-transform: capitalize;
+    text-align: center;
+
+    /* make the gradient color on text */
+    background: -webkit-linear-gradient(#198ebc, #333333);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.section1 td, .section2 td{
+    font-size: 3vw;
+    text-align: justify;
+    text-justify: inter-word;
 }
