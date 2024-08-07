@@ -60,3 +60,7 @@ p.section1{
     text-align: left;
     font-size: 3vw;
 }
+table{
+    position: absolute;
+    top: 1vh;
+}
