@@ -103,9 +103,10 @@ h1.heading{
     -webkit-text-fill-color: transparent;
 }
 .section1 table, .section2 table{
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 .section1 td, .section2 td{
-    font-size: 3vw;
+    font-size: 2.5vw;
+    padding-top: 40px;
 }
