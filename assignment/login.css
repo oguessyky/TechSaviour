@@ -62,9 +62,12 @@ body{
     content: '';
     position: absolute;
     inset: 2px;
-    border: 20px solid #222;
+    border: 5px solid #ffffff;
     border-radius: 10%;
-    background: #303030;
+    /* background: -webkit-linear-gradient(#4b4b6e,#366b80); */
+    /* background: -webkit-radial-gradient(#4b4b6e,#366b80); */
+    background: -webkit-repeating-linear-gradient(#81a2c0,#365180);
+    transform: rotate(90deg);
 }
 form{
     position: relative;
