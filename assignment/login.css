@@ -3,6 +3,14 @@
     margin: 0;
     padding: 0;
     
+    /* Disable user selection */
+    user-select: none;
+    -webkit-user-select: none;
+    
+    /* Disable user drag */
+    -webkit-user-drag: none;
+
+    -webkit-
 }
 
 body{
@@ -120,10 +128,18 @@ form h2{
     height: 100%;
     padding: 8px 14px;
     background-color: transparent;
-    color: #fff;
+    color: #162d8a;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
+.input input:focus{
+    filter: drop-shadow(0 0 5px #01dbc2);
+}
+
+/* .input input:hover{
+    border:2px solid #01dbc2;
+    filter: drop-shadow(0 0 5px #01dbc2);
+} */
 .input input::placeholder{
     color: #2e2eb9;
     opacity: 0.5;
@@ -135,6 +151,9 @@ form h2{
     width: 100%;
     font-weight: 600;
     color: #56597a;
+    filter: drop-shadow(0 0 5px #cbfff9);
+}
+.input input[type= "submit"]:hover{
     filter: drop-shadow(0 0 15px #cbfff9);
 }
 .group{
