@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 :root{
-    --color-1: #0f1016;
+    --color-1: #0f101655;
     --text-color:#f0f0f0;
     --accecnt-color:#006aff;
 
@@ -29,8 +29,8 @@ body{
     position: relative;
 }
 nav{
-    height: 100px;
-    background-color: var(--color-1);
+    height: 12vw;
+    /* background-color: var(--color-1); */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -39,7 +39,7 @@ nav{
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
 }
 nav a{
@@ -50,18 +50,18 @@ nav a{
     text-decoration: none;
     color: var(--text-color);
 }
-nav a.navIcon:hover{
+/* nav a.navIcon:hover{
     background-color: var(--accecnt-color);
-}
+} */
 nav .icon{
     margin-left: auto;
 }
-.icon img{
+img.logo{
     /* display: block; */
     /* position: absolute; */
     min-height: 68px;
     height: 12vw;
-    max-height: 160px;
+    max-height: 200px;
     /* right: 0px; */
     /* top: -9vw; */
 }
@@ -82,7 +82,8 @@ h1.aboutUS{
     color: var(--pageHeading);
     font-size: 12vw;
     text-transform: uppercase;
-    padding-top: 0;
+    /* padding-top: 13vw; */
+    padding: 6vw;
 }
 .section1, .section2{
     display: flex;
@@ -93,7 +94,7 @@ h1.aboutUS{
     flex-grow: 0;
 }
 .section1{
-    padding-top: 10vw;
+    padding-top: 15vw;
 }
 .section2{
     padding-top: 5vw;
@@ -120,7 +121,7 @@ h1.aboutUS{
         text-align: center;
     }
     .links-container{
-        flex-direction: column; /*want change this to colum-reverse*/
+        flex-direction: column;
         align-items: flex-start;
 
         position: fixed;
@@ -141,9 +142,13 @@ h1.aboutUS{
         justify-content: flex-start;
     }
     .open-sidebar-button, .close-sidebar-button{
+
         padding: 20px;
         display: block;
     }
+    /* .icon2 img{
+        margin-left: auto;
+    } */
     #sidebar-active:checked ~ .links-container{
         left: 0;
     }
@@ -154,7 +159,6 @@ h1.aboutUS{
         top: 0;
         right: 0;
         z-index: 999;
-
     }
 }
 
@@ -174,6 +178,9 @@ h1.aboutUS{
     .section1 td, .section2 td{
         text-align: justify;
         text-justify: inter-word;
+    }
+    .icon2{
+        display: none;
     }
 }
 
