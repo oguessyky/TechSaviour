@@ -28,7 +28,7 @@ body{
     background-repeat: no-repeat;
     position: relative;
 }
-nav{
+nav, .out-container{
     height: 12vw;
     /* background-color: var(--color-1); */
     display: flex;
@@ -53,10 +53,10 @@ nav a{
 /* nav a.navIcon:hover{
     background-color: var(--accecnt-color);
 } */
-nav .icon{
+nav .icon, div.icon2{
     margin-left: auto;
 }
-img.logo{
+img.logo, .icon2 img{
     /* display: block; */
     /* position: absolute; */
     min-height: 68px;
@@ -146,9 +146,6 @@ h1.aboutUS{
         padding: 20px;
         display: block;
     }
-    /* .icon2 img{
-        margin-left: auto;
-    } */
     #sidebar-active:checked ~ .links-container{
         left: 0;
     }
@@ -159,6 +156,13 @@ h1.aboutUS{
         top: 0;
         right: 0;
         z-index: 999;
+    }
+    .out-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 }
 
