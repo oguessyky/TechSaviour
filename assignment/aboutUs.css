@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+:root{
+    --color-1: #0f1016;
+    --text-color:#f0f0f0;
+    --accecnt-color:#006aff;
+
+    --pageHeading:white;
+    --sectionHeading:-webkit-linear-gradient(#198ebc, #333333);
+}
 *{
-    /* box-sizing: border-box;
+    /* box-sizing: border-box; */
     margin: 0;
-    padding: 0; */
+    padding: 0;
 
     /* Disable user selection */
     user-select: none;
@@ -10,28 +19,71 @@
     /* Disable user drag */
     -webkit-user-drag: none;
 }
+html{
+    font-size: 12pt;
+    font-family:"Mochiy Pop One", sans-serif;
+}
 body{
     background-image: url("image/general bg.png");
     background-repeat: no-repeat;
     position: relative;
 }
-
-.icon img{
-    display: block;
-    position: absolute;
-    height: 12vw;
-    right: 0px;
-    top: -9vw;
+nav{
+    height: 100px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
-
-h1.heading{
+.links-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+nav a.navIcon:hover{
+    background-color: var(--accecnt-color);
+}
+nav .icon{
+    margin-left: auto;
+}
+.icon img{
+    /* display: block; */
+    /* position: absolute; */
+    min-height: 68px;
+    height: 12vw;
+    max-height: 160px;
+    /* right: 0px; */
+    /* top: -9vw; */
+}
+nav a.icon:hover{
+    background-color: none;
+}
+nav svg{
+    fill: var(--text-color);
+}
+#sidebar-active{
+    display: none;
+}
+.open-sidebar-button, .close-sidebar-button{
+    display: none;
+}
+h1.aboutUS{
     text-align: center;
-    color: white;
+    color: var(--pageHeading);
     font-size: 12vw;
     text-transform: uppercase;
-    padding-top: 13vw;
+    padding-top: 0;
 }
-
 .section1, .section2{
     display: flex;
     row-gap: 10px;
@@ -67,9 +119,46 @@ h1.heading{
     .section1 td, .section2 td{
         text-align: center;
     }
+    .links-container{
+        flex-direction: column; /*want change this to colum-reverse*/
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 1000;
+        width: 200px;
+
+        background-color: var(--color-1);
+        box-shadow: 5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+    nav a{
+        box-sizing:border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+        padding: 20px;
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container{
+        left: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 999;
+
+    }
 }
 
-@media screen and (min-width: 701px){
+@media screen and (min-width: 700px){
     body{
         background-size:cover;
     }
@@ -97,7 +186,7 @@ h1.heading{
     text-transform: capitalize;
 
     /* make the gradient color on text */
-    background: -webkit-linear-gradient(#198ebc, #333333);
+    background: var(--sectionHeading);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
