@@ -2,7 +2,7 @@
 :root{
     --color-1: #0f101655;
     --text-color:#f0f0f0;
-    --accecnt-color:#006aff;
+    --accecnt-color:#b933da81;
 
     --pageHeading:white;
     --sectionHeading:-webkit-linear-gradient(#198ebc, #333333);
@@ -50,9 +50,9 @@ nav a{
     text-decoration: none;
     color: var(--text-color);
 }
-/* nav a.navIcon:hover{
+nav a.navIcon:hover{
     background-color: var(--accecnt-color);
-} */
+}
 nav .icon, div.icon2{
     margin-left: auto;
 }
