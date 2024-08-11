@@ -91,7 +91,7 @@ nav svg{
 .open-sidebar-button, .close-sidebar-button{
     display: none;
 }
-h1.aboutUS{
+h1.aboutUs{
     text-align: center;
     color: var(--pageHeading);
     font-size: 12vw;
@@ -293,7 +293,24 @@ body.homepage{
     position: relative;
     background-size: cover;
 }
-
+div.homepage_H{
+    text-align: center;
+    color: var(--pageHeading);
+}
+h1.homepage{
+    font-size: 5vw;
+    text-transform: uppercase;
+    /* padding-top: 13vw; */
+    padding: 3vw;
+    width: 90%;
+    margin: auto;
+}
+p.homepage_P{
+    font-size: 2vw;
+    text-transform: capitalize;
+    width: 70%;
+    margin: auto;
+}
 
 /* Below are respond design */
 @media screen and (max-width: 700px){
