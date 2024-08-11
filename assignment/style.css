@@ -32,12 +32,101 @@
     opacity: 1;
 }
 
+@media screen and (max-width: 700px){
+    body.aboutUs, body.homepage{
+        background-size:contain;
+    }
+    .section1, .section2{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section1{
+        flex-wrap: wrap;
+    }
+    .section2{
+        flex-wrap:wrap-reverse;
+    }
+    .section1 th, .section2 th{
+        text-align: center;
+    }
+    .section1 td, .section2 td{
+        text-align: center;
+    }
+    .links-container{
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 1000;
+        width: 200px;
+
+        background-color: var(--color-1);
+        box-shadow: 5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+    nav a{
+        box-sizing:border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+
+        padding: 20px;
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container{
+        left: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 999;
+    }
+    .out-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 700px){
+    body.aboutUs, body.homepage{
+        background-size:cover;
+    }
+    .section1, .section2{
+        flex-wrap: nowrap;
+    }
+    .section1 th{
+        text-align: left;
+    }
+    .section2 th{
+        text-align: right;
+    }
+    .section1 td, .section2 td{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    .icon2{
+        display: none;
+    }
+}
+
 /* Below are About Us Page */
 html.aboutUs{
     font-size: 2vw;
     font-family:"Mochiy Pop One", sans-serif;
 }
-body.aboutUs{
+body.aboutUs, body.homepage{
     background-image: url("image/general bg.png");
     background-repeat: no-repeat;
     position: relative;
@@ -113,95 +202,6 @@ h1.aboutUS{
 .section2{
     padding-top: 5vw;
 }
-@media screen and (max-width: 700px){
-    body.aboutUs{
-        background-size:contain;
-    }
-    .section1, .section2{
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .section1{
-        flex-wrap: wrap;
-    }
-    .section2{
-        flex-wrap:wrap-reverse;
-    }
-    .section1 th, .section2 th{
-        text-align: center;
-    }
-    .section1 td, .section2 td{
-        text-align: center;
-    }
-    .links-container{
-        flex-direction: column;
-        align-items: flex-start;
-
-        position: fixed;
-        top: 0;
-        left: -100%;
-        z-index: 1000;
-        width: 200px;
-
-        background-color: var(--color-1);
-        box-shadow: 5px 0 5px rgba(0, 0, 0, 0.25);
-        transition: 0.75s ease-out;
-    }
-    nav a{
-        box-sizing:border-box;
-        height: auto;
-        width: 100%;
-        padding: 20px 30px;
-        justify-content: flex-start;
-    }
-    .open-sidebar-button, .close-sidebar-button{
-
-        padding: 20px;
-        display: block;
-    }
-    #sidebar-active:checked ~ .links-container{
-        left: 0;
-    }
-    #sidebar-active:checked ~ #overlay{
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 999;
-    }
-    .out-container{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-}
-
-@media screen and (min-width: 700px){
-    body.aboutUs{
-        background-size:cover;
-    }
-    .section1, .section2{
-        flex-wrap: nowrap;
-    }
-    .section1 th{
-        text-align: left;
-    }
-    .section2 th{
-        text-align: right;
-    }
-    .section1 td, .section2 td{
-        text-align: justify;
-        text-justify: inter-word;
-    }
-    .icon2{
-        display: none;
-    }
-}
-
 .section1 img, .section2 img{
     max-width: 35vw;
     max-height: 35vw;
