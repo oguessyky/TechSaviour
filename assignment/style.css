@@ -19,11 +19,13 @@
     /* Disable user drag */
     -webkit-user-drag: none;
 }
-html{
+
+/* Below are About Us Page */
+html.aboutUs{
     font-size: 12pt;
     font-family:"Mochiy Pop One", sans-serif;
 }
-body{
+body.aboutUs{
     background-image: url("image/general bg.png");
     background-repeat: no-repeat;
     position: relative;
@@ -100,7 +102,7 @@ h1.aboutUS{
     padding-top: 5vw;
 }
 @media screen and (max-width: 700px){
-    body{
+    body.aboutUs{
         background-size:contain;
     }
     .section1, .section2{
@@ -167,7 +169,7 @@ h1.aboutUS{
 }
 
 @media screen and (min-width: 700px){
-    body{
+    body.aboutUs{
         background-size:cover;
     }
     .section1, .section2{
@@ -209,4 +211,153 @@ h1.aboutUS{
 .section1 td, .section2 td{
     font-size: 2.5vw;
     padding-top: 40px;
+}
+
+
+/* *****Below are Login Page***** */
+body.loginPage{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    /* background*/
+    background-image: url(image/Login/login\ bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.login{
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: repeating-conic-gradient(from var(--a),#01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        --a: 0deg
+    }
+    100%{
+        --a: 360deg
+    }
+}
+.login::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a),#01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.login::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 20px solid #222;
+    background: #303030;
+}
+form{
+    position: relative;
+    z-index: 1000;
+}
+form h2{
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-top: 60px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.input{
+    position: relative;
+    margin-bottom: 40px;
+    width: 240px;
+}
+.input span{
+    position: absolute;
+    inset: -2px;
+    z-index: 1;
+}
+.input span::before{
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: repeating-conic-gradient(from var(--a),#01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    box-shadow: 0 0 0 2px #000;
+}
+.input:nth-child(2) span::before{
+    animation-delay: -1.5s;
+}
+.input span::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #292929;
+}
+
+.input input{
+    position: relative;
+    z-index: 100000;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 8px 14px;
+    background-color: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.input input::placeholder{
+    color: #fff;
+    opacity: 0.5;
+}
+.input input[type="submit"]{
+    background: #01dbc2;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #01dbc2;
+    width: 100%;
+    font-weight: 600;
+    color: #292929;
+    filter: drop-shadow(0 0 15px #01dbc2);
+}
+.group{
+    position: relative;
+    top: -10px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.group a{
+    text-decoration: none;
+    color: #fff8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75em;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+.group a:hover{
+    color: #01dbc2;
+    filter: drop-shadow(0 0 5px #01dbc2);
 }
