@@ -41,7 +41,7 @@
 
     
     <h1 class="aboutUS">about us</h1>
-    <div class="section1 fadeIn">
+    <div class="section1">
         <div>
            <img src="image/AboutUs/section 1.png" alt="Section 1"> 
         </div>
@@ -54,7 +54,7 @@
             </tr>
         </table>
     </div>
-    <div class="section2 fadeIn">
+    <div class="section2">
         <table>
             <tr>
                 <th>our mission</th>
@@ -67,26 +67,6 @@
             <img src="image/AboutUs/section 2.png" alt="Section 2"> 
          </div>
     </div>
-    <script>
-        window.addEventListener("scroll", fadeIn);
-
-        function fadeIn(){
-            var fadeIn = document.querySelectorAll(".fadeIn");
-
-            for(var i = 0; i<fadeIn.length; i++){
-                var windowheight = window.innerHeight;
-                var fadeInTop = fadeIn[i].getBoundingClientRect().top;
-                var fadeInPoint = 150;
-
-                if(fadeInTop < windowheight - fadeInPoint){
-                    fadeIn[i].classList.add("active");
-                }
-                else{
-                    fadeIn[i].classList.remove("active");
-                }
-            }
-        }
-    </script>
 </body>
 
 </html>

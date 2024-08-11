@@ -20,6 +20,7 @@
     -webkit-user-drag: none;
 }
 
+<<<<<<< HEAD
 .fadeIn{
     position: relative;
     transform: translateY(200px);
@@ -121,9 +122,11 @@
     }
 }
 
+=======
+>>>>>>> parent of 0ab0384 (added fade in and out for text)
 /* Below are About Us Page */
 html.aboutUs{
-    font-size: 2vw;
+    font-size: 12pt;
     font-family:"Mochiy Pop One", sans-serif;
 }
 body.aboutUs, body.homepage{
