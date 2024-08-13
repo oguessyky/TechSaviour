@@ -319,6 +319,23 @@ p.homepage_P{
     width: 70%;
     margin: auto;
 }
+@keyframes robotImage {
+    0%{
+        background-image: url(image/Homepage/robot\ 2.png);
+    }
+    5%{
+        background-image: url(image/Homepage/robot\ 1.png);
+    }
+    100%{
+        background-image: url(image/Homepage/robot\ 2.png);
+        background-image: image-set(url);
+    }
+}
+span.robot{
+    display: block;
+    z-index: 20;
+    animation: robotImage 2s infinite step-end;
+}
 
 /* Below are respond design */
 @media screen and (max-width: 700px){
