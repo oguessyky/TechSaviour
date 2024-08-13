@@ -70,6 +70,9 @@ nav a.navIcon:hover{
 nav .icon, div.icon2{
     margin-left: auto;
 }
+nav .sidebar-h{
+    display: flex;
+}
 img.logo, .icon2 img{
     /* display: block; */
     /* position: absolute; */
@@ -357,6 +360,9 @@ p.homepage_P{
         width: 100%;
         padding: 20px 30px;
         justify-content: flex-start;
+    }
+    nav .sidebar-h{
+        flex-direction: column-reverse;
     }
     .open-sidebar-button, .close-sidebar-button{
 
