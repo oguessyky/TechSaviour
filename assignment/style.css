@@ -32,15 +32,9 @@
     opacity: 1;
 }
 
-/* Below are About Us Page */
+/* Below are Navigation Bar */
 .Navigation-bar, body.aboutUs{
     font-family:"Mochiy Pop One", sans-serif;
-}
-body.aboutUs{
-    background-image: url("image/general bg.png");
-    background-repeat: no-repeat;
-    position: relative;
-    font-size: 2vw;
 }
 nav, .out-container{
     height: 12vw;
@@ -95,6 +89,15 @@ nav svg{
 }
 .open-sidebar-button, .close-sidebar-button{
     display: none;
+}
+
+
+/* Below are About Us Page */
+body.aboutUs{
+    background-image: url("image/general bg.png");
+    background-repeat: no-repeat;
+    position: relative;
+    font-size: 2vw;
 }
 h1.aboutUs{
     text-align: center;
