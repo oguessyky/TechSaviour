@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="icon" type="image/x-icon" href="image/thumbnail.png">
+    <script src="fadeIn.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,8 +35,8 @@
                 <div class="sidebar-h">
                     <a href="homepage.html" class="navIcon" target="_self">Home</a>
                     <a href="aboutUs.html" class="navIcon" target="_self">About Us</a>
-                    <a href="login.html" class="navIcon" target="_blank">Login</a>
                 </div>
+                <a href="login.html" class="navIcon" target="_blank">Login</a>
                 
             </div>
         </nav>
@@ -71,26 +72,6 @@
          </div>
     </div>
 
-    <script>
-        window.addEventListener("scroll", fadeIn);
-
-        function fadeIn(){
-            var fadeIn = document.querySelectorAll(".fadeIn");
-
-            for(var i = 0; i<fadeIn.length; i++){
-                var windowheight = window.innerHeight;
-                var fadeInTop = fadeIn[i].getBoundingClientRect().top;
-                var fadeInPoint = 150;
-
-                if(fadeInTop < windowheight - fadeInPoint){
-                    fadeIn[i].classList.add("active");
-                }
-                else{
-                    fadeIn[i].classList.remove("active");
-                }
-            }
-        }
-    </script>
 </body>
 
 </html>
