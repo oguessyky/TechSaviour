@@ -32,10 +32,46 @@
     opacity: 1;
 }
 
-/* Below are Navigation Bar */
+/* Below are background */
 .Navigation-bar, body.aboutUs{
     font-family:"Mochiy Pop One", sans-serif;
 }
+body.aboutUs{
+    background-image: url("image/general bg.png");
+    background-repeat: no-repeat;
+    position: relative;
+    font-size: 2vw;
+}
+body.loginPage{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    /* background*/
+    background-image: url(image/Login/login\ bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+body.homepage{
+    background-image: url("image/general bg.png");
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+}
+body.adminPage{
+    background-image: url(image/admin/admin/bg.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+/* Below are Navigation Bar */
+
 nav, .out-container{
     height: 12vw;
     /* background-color: var(--color-1); */
@@ -101,12 +137,6 @@ nav svg{
 
 
 /* Below are About Us Page */
-body.aboutUs{
-    background-image: url("image/general bg.png");
-    background-repeat: no-repeat;
-    position: relative;
-    font-size: 2vw;
-}
 h1.aboutUs{
     text-align: center;
     color: var(--pageHeading);
@@ -155,22 +185,6 @@ h1.aboutUs{
 
 
 /* *****Below are Login Page***** */
-body.loginPage{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    
-    /* background*/
-    background-image: url(image/Login/login\ bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    
-}
 @property --a{
     syntax: '<angle>';
     inherits: false;
@@ -324,12 +338,6 @@ form h2{
 }
 
 /* Below are Homepage */
-body.homepage{
-    background-image: url("image/general bg.png");
-    background-repeat: no-repeat;
-    position: relative;
-    background-size: cover;
-}
 div.homepage_H{
     text-align: center;
     color: var(--pageHeading);
@@ -397,19 +405,19 @@ span.robot{
         
         position: fixed;
         top: 0;
-        left: -100%;
+        left: -150%;
         z-index: 1000;
-        width: 400px;
+        width: 25em;
 
         background-image: url(image/sidebar_bg.png);
         /* background-color: var(--color-1); */
         box-shadow: 5px 0 5px rgba(0, 0, 0, 0.25);
-        transition: 0.75s ease-out;
+        transition: 0.75s ease;
     }
     .links-container{
         background-position: 100%;
         background-size: cover;
-        border-radius:10% 0;
+        border-radius:0 10% 10% 0;
     }
     nav a{
         box-sizing:border-box;
