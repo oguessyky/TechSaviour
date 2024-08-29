@@ -53,5 +53,5 @@ create table Laptop (
     Storage int foreign key references Storage(ID) not null,
     ScreenResolution nvarchar not null,
     ScreenRefreshRate nvarchar not null,
-    Add-on nvarchar
+    Add_on nvarchar
 );
