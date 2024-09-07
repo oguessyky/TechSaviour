@@ -404,36 +404,64 @@ img.adminTitle{
     height: 25vw;
     width: auto;
     margin: auto;
-    padding-bottom: 60px;
+    padding-bottom: 6vw;
 }
 div.adminButton{
     display: inline-block;
     /* padding: 80px 25px 30px 0; */
     font-size: 24px;
     text-align: center;
-    padding-bottom: 15px;
+    /* padding-bottom: 3px; */
 
     width: 100%;
     height: 100%;
-    /* background-color: #01dbc2; */
+    /* background-color: #0473aa; */
 
 }
 .adminButton button{
-    display: inline-block;
+    /* display: inline-block; */
+    float: left;
     /* padding: 15px 25px; */
+    padding: 20px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #0473aa;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;   
-    height: 10vw;
-    width: 49.65%;
+    background-color: #43a2d2;
+    border: 2px solid #1a5d7e;
+    /* border-radius: 15px; */
+    /* box-shadow: 0 9px #999;    */
+    height: 15vw;
+    width: 50vw;
+    transition: all 0.5s;
 }
+.adminButton button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+     transition: 0.5s;
+}
+.adminButton button span::after{
+    content: "\2b9b";
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    transition: 0.5s;
+}
+.adminButton button:hover{
+    background-color: #2787b8;
+}
+.adminButton button:hover span{
+    padding-bottom: 25px;
+}
+.adminButton button:hover span::after{
+    opacity: 1;
+}
+
 
 /* Below are respond design */
 @media screen and (max-width: 700px){
