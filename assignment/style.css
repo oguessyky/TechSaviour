@@ -237,11 +237,11 @@ h1.aboutUs{
     transform: rotate(90deg);
     border-radius: 10%;
 }
-form{
+.login form{
     position: relative;
     z-index: 1000;
 }
-form h2{
+.login form h2{
     color: #fff;
     font-weight: 500;
     margin-bottom: 20px;
@@ -251,17 +251,17 @@ form h2{
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
-.input{
+.login .input{
     position: relative;
     margin-bottom: 40px;
     width: 240px;
 }
-.input span{
+.login .input span{
     position: absolute;
     inset: -2px;
     z-index: 1;
 }
-.input span::before{
+.login .input span::before{
     content: "";
     position: absolute;
     inset: -2px;
@@ -270,10 +270,10 @@ form h2{
     box-shadow: 0 0 0 2px #365180;
     border-radius: 20px;
 }
-.input:nth-child(2) span::before{
+.login .input:nth-child(2) span::before{
     animation-delay: -1.5s;
 }
-.input span::after{
+.login .input span::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -282,7 +282,7 @@ form h2{
     border-radius: 20px;
 }
 
-.input input{
+.login input{
     position: relative;
     z-index: 100000;
     outline: none;
@@ -296,15 +296,15 @@ form h2{
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-.input input:focus{
+.login input:focus{
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
-.input input::placeholder{
+.login input::placeholder{
     /* color: #fff; */
     color: #2e2eb9;
     opacity: 0.5;
 }
-.input input[type="submit"]{
+.login .input input[type="submit"]{
     /* background: #01dbc2; */
     background: #cfe4ff;
     cursor: pointer;
@@ -317,17 +317,17 @@ form h2{
     color: #56597a;
     filter: drop-shadow(0 0 5px #cbfff9);
 }
-.input input[type= "submit"]:hover{
+.login .input input[type= "submit"]:hover{
     filter: drop-shadow(0 0 15px #cbfff9);
 }
-.group{
+.login .group{
     position: relative;
     top: -10px;
     padding-bottom: 60px;
     display: flex;
     justify-content: space-between;
 }
-.group a{
+.login .group a{
     text-decoration: none;
     color: #fff8;
     text-transform: uppercase;
@@ -337,7 +337,7 @@ form h2{
     margin-left: auto;
     
 }
-.group a:hover{
+.login .group a:hover{
     color: #01dbc2;
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
