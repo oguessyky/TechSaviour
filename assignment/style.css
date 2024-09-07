@@ -383,6 +383,21 @@ h1.aboutUs{
     transform: rotate(90deg);
     border-radius: 10%;
 }
+.register form{
+    position: relative;
+    z-index: 1000;
+}
+.register form h2{
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-top: 60px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
 
 /* Below are Homepage */
 div.homepage_H{
