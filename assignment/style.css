@@ -362,27 +362,14 @@ p.homepage_P{
     width: 70%;
     margin: auto;
 }
-@keyframes robotImage {
-    0%{
-        background-image: url(image/Homepage/robot\ 2.png);
-    }
-    5%{
-        background-image: url(image/Homepage/robot\ 1.png);
-    }
-    100%{
-        background-image: url(image/Homepage/robot\ 2.png);
-        /* background-image: image-set(url); */
-    }
-}
-/* img.robot{
-    height: 60vw;
-} */
-span.robot{
-    display: block;
-    z-index: 20;
-    animation: robotImage 2s infinite step-end;
-}
+.robot img{
+    position: absolute;
+    right: 5vw;
+    top: 29vw;
+    height: 45vw;
+    width: auto;
 
+}
 
 /* Below are admin page */
 .updateProfile{
