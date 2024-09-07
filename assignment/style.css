@@ -6,6 +6,8 @@
 
     --pageHeading:white;
     --sectionHeading:-webkit-linear-gradient(#198ebc, #333333);
+
+    --gradienRepeat: #01dbc2;
 }
 *{
     /* box-sizing: border-box; */
@@ -42,9 +44,7 @@ body.aboutUs{
     position: relative;
     font-size: 2vw;
 }
-body.loginPage{
-    margin: 0;
-    padding: 0;
+body.loginPage,body.registerPage{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +56,6 @@ body.loginPage{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    
 }
 body.homepage{
     background-image: url("image/general bg.png");
@@ -223,7 +222,7 @@ h1.aboutUs{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: repeating-conic-gradient(from var(--a),#01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+    background: repeating-conic-gradient(from var(--a),var(--gradienRepeat) 0%, var(--gradienRepeat) 10%, transparent 10%, transparent 50%);
     animation: animate 6s linear infinite;
     animation-delay: -1.5s;
     border-radius: 10%;
@@ -266,7 +265,7 @@ form h2{
     content: "";
     position: absolute;
     inset: -2px;
-    background: repeating-conic-gradient(from var(--a),#01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+    background: repeating-conic-gradient(from var(--a),var(--gradienRepeat) 0%, var(--gradienRepeat) 10%, transparent 10%, transparent 50%);
     animation: animate 6s linear infinite;
     box-shadow: 0 0 0 2px #365180;
     border-radius: 20px;
@@ -298,7 +297,7 @@ form h2{
     letter-spacing: 0.1em;
 }
 .input input:focus{
-    filter: drop-shadow(0 0 5px #01dbc2);
+    filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
 .input input::placeholder{
     /* color: #fff; */
@@ -340,7 +339,49 @@ form h2{
 }
 .group a:hover{
     color: #01dbc2;
-    filter: drop-shadow(0 0 5px #01dbc2);
+    filter: drop-shadow(0 0 5px var(--gradienRepeat));
+}
+
+/* Below are register page */
+.register{
+    position: relative;
+    width: 80vw;
+    height: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: repeating-conic-gradient(from var(--a),#01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    border-radius: 10%;
+}
+
+@keyframes animate{
+    0%{
+        --a: 0deg
+    }
+    100%{
+        --a: 360deg
+    }
+}
+.register::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a),var(--gradienRepeat) 0%, var(--gradienRepeat) 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+    border-radius: 10%;
+}
+.register::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    /* border: 20px solid #222; */
+    border: 5px solid #deebeb;
+    background: -webkit-repeating-linear-gradient(#81a2c0,#365180);
+    transform: rotate(90deg);
+    border-radius: 10%;
 }
 
 /* Below are Homepage */
