@@ -207,14 +207,14 @@ h1.aboutUs{
 }
 
 
-/* *****Below are Login Page***** */
+/* *****Below are Login Page and Register***** */
 @property --a{
     syntax: '<angle>';
     inherits: false;
     initial-value: 0deg;
 }
 
-.login{
+.login, .register{
     position: relative;
     width: 400px;
     min-height: 400px;
@@ -226,7 +226,6 @@ h1.aboutUs{
     animation: animate 6s linear infinite;
     border-radius: 10%;
 }
-
 @keyframes animate{
     0%{
         --a: 0deg
@@ -235,7 +234,7 @@ h1.aboutUs{
         --a: 360deg
     }
 }
-.login::before{
+.login::before, .register::before{
     content: '';
     position: absolute;
     width: 100%;
@@ -245,21 +244,21 @@ h1.aboutUs{
     animation-delay: -1.5s;
     border-radius: 10%;
 }
-.login::after{
+.login::after, .register::after{
     content: '';
     position: absolute;
     inset: 2px;
     /* border: 20px solid #222; */
     border: 5px solid #deebeb;
     background: -webkit-repeating-linear-gradient(#81a2c0,#365180);
-    transform: rotate(90deg);
+    transform: rotate(180deg);
     border-radius: 10%;
 }
-.login form{
+.login form, .register form{
     position: relative;
     z-index: 1000;
 }
-.login form h2{
+.login form h2, .register form h2{
     color: #fff;
     font-weight: 500;
     margin-bottom: 20px;
@@ -269,17 +268,17 @@ h1.aboutUs{
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
-.login .input{
+.login .input, .register .input{
     position: relative;
     margin-bottom: 40px;
     width: 240px;
 }
-.login .input span{
+.login .input span, .register .input span{
     position: absolute;
     inset: -2px;
     z-index: 1;
 }
-.login .input span::before{
+.login .input span::before, .register .input span::before{
     content: "";
     position: absolute;
     inset: -2px;
@@ -288,10 +287,16 @@ h1.aboutUs{
     box-shadow: 0 0 0 2px #365180;
     border-radius: 20px;
 }
-.login .input:nth-child(2) span::before{
+.login .input:nth-child(2) span::before, .register .input:nth-child(2) span::before{
     animation-delay: -1.5s;
 }
-.login .input span::after{
+.register .input:nth-child(3) span::before{
+    animation-delay: -1s;
+}
+.register .input:nth-child(4) span::before{
+    animation-delay: -2s;
+}
+.login .input span::after, .register .input span::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -300,7 +305,7 @@ h1.aboutUs{
     border-radius: 20px;
 }
 
-.login input{
+.login input, .register input{
     position: relative;
     z-index: 100000;
     outline: none;
@@ -314,15 +319,15 @@ h1.aboutUs{
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-.login input:focus{
+.login input:focus, .register input:focus{
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
-.login input::placeholder{
+.login input::placeholder, .register input::placeholder{
     /* color: #fff; */
     color: #2e2eb9;
     opacity: 0.5;
 }
-.login .input input[type="submit"]{
+.login .input input[type="submit"], .register .input input[type="submit"]{
     /* background: #01dbc2; */
     background: #cfe4ff;
     cursor: pointer;
@@ -335,17 +340,17 @@ h1.aboutUs{
     color: #56597a;
     filter: drop-shadow(0 0 5px #cbfff9);
 }
-.login .input input[type= "submit"]:hover{
+.login .input input[type= "submit"]:hover, .register .input input[type= "submit"]:hover{
     filter: drop-shadow(0 0 15px #cbfff9);
 }
-.login .group{
+.login .group, .register .group{
     position: relative;
     top: -10px;
     padding-bottom: 60px;
     display: flex;
     justify-content: space-between;
 }
-.login .group a{
+.login .group a, .register .group a{
     text-decoration: none;
     color: #fff8;
     text-transform: uppercase;
@@ -355,12 +360,10 @@ h1.aboutUs{
     margin-left: auto;
     
 }
-.login .group a:hover{
+.login .group a:hover, .register .group a:hover{
     color: #01dbc2;
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
-
-/* Below are register page */
 
 
 
