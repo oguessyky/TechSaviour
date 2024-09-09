@@ -76,7 +76,7 @@ div.adminPage{
 /* Below are Navigation Bar */
 
 nav, .out-container{
-    height: 12vw;
+    height: 9vw;
     width: auto;
     /* background-color: var(--color-1); */
     display: flex;
@@ -385,9 +385,9 @@ p.homepage_P{
 }
 .robot img{
     position: absolute;
-    right: 5vw;
-    top: 29vw;
-    height: 45vw;
+    right: 0vw;
+    top: 28vw;
+    height: 35vw;
     width: auto;
 
 }
