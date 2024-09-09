@@ -449,12 +449,12 @@ img.adminTitle{
     height: 25vw;
     width: auto;
     margin: auto;
-    padding-bottom: 6vw;
+    padding-bottom: 5px;
 }
 div.adminButton{
     display: inline-block;
     /* padding: 80px 25px 30px 0; */
-    font-size: 24px;
+    /* font-size: 24px; */
     text-align: center;
     /* padding-bottom: 3px; */
 
@@ -467,8 +467,8 @@ div.adminButton{
     /* display: inline-block; */
     float: left;
     /* padding: 15px 25px; */
-    padding: 20px;
-    font-size: 24px;
+    padding: 2vw;
+    font-size: 2.5vw;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -479,7 +479,7 @@ div.adminButton{
     /* border-radius: 15px; */
     /* box-shadow: 0 9px #999;    */
     height: 15vw;
-    width: 50vw;
+    width: 50%;
     transition: all 0.5s;
 }
 .adminButton button span{
@@ -494,14 +494,14 @@ div.adminButton{
     opacity: 0;
     left: 0;
     right: 0;
-    bottom: -20px;
+    bottom: -2vw;
     transition: 0.5s;
 }
 .adminButton button:hover{
     background-color: #2787b8;
 }
 .adminButton button:hover span{
-    padding-bottom: 25px;
+    padding-bottom: 2.5vw;
 }
 .adminButton button:hover span::after{
     opacity: 1;
