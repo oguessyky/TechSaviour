@@ -541,7 +541,7 @@ div.adminButton{
         top: 0;
         left: -150%;
         z-index: 1000;
-        width: 25em;
+        width: 60%;
 
         background-image: url(image/sidebar_bg.png);
         /* background-color: var(--color-1); */
