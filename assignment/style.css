@@ -27,6 +27,16 @@
     transform: translateY(200px);
     opacity: 0;
     transition: all 1s ease-out;
+
+    
+    -webkit-transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
 }
 
 .fadeIn.active{
@@ -44,7 +54,7 @@ body.aboutUs{
     position: relative;
     font-size: 2vw;
 }
-body.loginPage,body.registerPage{
+body.loginPage, body.registerPage{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,19 +112,37 @@ nav a{
 nav a.navIcon::after{
     content: "";
     position: absolute;
-    width: 100%;
     height: 3px;
     background: white;
     border-radius: 20px;
-    left: 0;
     bottom: 15px;
     transform: scaleX(0);
     transform-origin: left;
     transition: 1s;
+
+    
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
 }
 nav a.navIcon:hover::after{
     transform-origin: right;
     transform: scaleX(1);
+
+
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
 }
 /* nav a.navIcon:hover{
     background-color: var(--accecnt-color);
@@ -213,6 +241,13 @@ h1.aboutUs{
     inherits: false;
     initial-value: 0deg;
 }
+.loginPage body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
 .login, .register{
     position: relative;
@@ -225,6 +260,12 @@ h1.aboutUs{
     background: repeating-conic-gradient(from var(--a),#01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
     animation: animate 6s linear infinite;
     border-radius: 10%;
+
+
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
 @keyframes animate{
     0%{
@@ -242,17 +283,33 @@ h1.aboutUs{
     background: repeating-conic-gradient(from var(--a),var(--gradienRepeat) 0%, var(--gradienRepeat) 10%, transparent 10%, transparent 50%);
     animation: animate 6s linear infinite;
     animation-delay: -1.5s;
+
+
     border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
 .login::after, .register::after{
     content: '';
     position: absolute;
     inset: 2px;
-    /* border: 20px solid #222; */
-    border: 5px solid #deebeb;
+    /*border: 20px solid #222;
+    */border: 5px solid #deebeb;
     background: -webkit-repeating-linear-gradient(#81a2c0,#365180);
     transform: rotate(180deg);
     border-radius: 10%;
+
+
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
 }
 .login form, .register form{
     position: relative;
@@ -566,6 +623,11 @@ div.adminButton{
     nav .sidebar-h{
         flex-direction: column;
     }
+    nav a.navIcon::after{
+        width: 50%;
+        left: 25%;
+        right: 25%;
+    }
     .open-sidebar-button, .close-sidebar-button{
 
         padding: 20px;
@@ -594,6 +656,11 @@ div.adminButton{
 @media screen and (min-width: 650px){
     .Navigation-bar{
         font-size: 2vw;
+    }
+    nav a.navIcon::after{
+        width: 70%;
+        left: 15%;
+        right: 15%;
     }
     body.aboutUs{
         background-size:cover;
