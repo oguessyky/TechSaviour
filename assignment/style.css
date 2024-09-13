@@ -45,7 +45,7 @@
 }
 
 /* Below are background */
-.Navigation-bar, body.aboutUs{
+.Navigation-bar, body.aboutUs, .contactUs h1{
     font-family:"Mochiy Pop One", sans-serif;
 }
 body.aboutUs{
@@ -54,7 +54,7 @@ body.aboutUs{
     position: relative;
     font-size: 2vw;
 }
-body.loginPage, body.registerPage{
+.loginPage body, .registerPage body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@ body.loginPage, body.registerPage{
     background-attachment: fixed;
     background-position: center;
 }
-body.homepage{
+body.homepage, body.contactUs{
     background-image: url("image/general bg.png");
     background-repeat: no-repeat;
     position: relative;
@@ -129,6 +129,22 @@ nav a.navIcon::after{
     -moz-transition: 1s;
     -ms-transition: 1s;
     -o-transition: 1s;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+}
+nav a.navIcon.active::after {
+    transform: scaleX(1);
+
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+}
+nav a.navIcon.inactive::after {
+    transform: scaleX(0);
+    
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
     -ms-transform: scaleX(0);
@@ -241,14 +257,6 @@ h1.aboutUs{
     inherits: false;
     initial-value: 0deg;
 }
-.loginPage body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
 .login, .register{
     position: relative;
     width: 400px;
@@ -565,6 +573,16 @@ div.adminButton{
 }
 .adminButton button:hover span::after{
     opacity: 1;
+}
+
+/* Below are Contact US page */
+h1.contactUs{
+    text-align: center;
+    color: var(--pageHeading);
+    font-size: 9vw;
+    text-transform: uppercase;
+    /* padding-top: 13vw; */
+    padding: 8vw;
 }
 
 
