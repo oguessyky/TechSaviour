@@ -71,7 +71,14 @@ body.homepage, body.contactUs{
     background-image: url("image/general bg.png");
     background-repeat: no-repeat;
     position: relative;
+}
+body.homepage{
     background-size: cover;
+}
+body.contactUs{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:top;
 }
 div.adminPage{
     background-image: url(image/admin/admin/bg.png);
@@ -584,6 +591,37 @@ h1.contactUs{
     /* padding-top: 13vw; */
     padding: 8vw;
 }
+div.main{
+    display: flex;
+    margin-top: 20vw;
+    margin-bottom: 10vw;
+    margin-left: 5vw;
+    /* flex-direction: row; */
+}
+ion-icon{
+    font-size: 12vw;
+    color: #ffffff;
+}
+.contact-social, .contact-email, .contact-phone, .contact-map{
+    display: flex;
+
+    place-items: center;
+    justify-content: center;
+    width: 16vw;
+    height: 16vw;
+    background-color: #65c1e6;
+    /* text-align: center; */
+    border-radius: 30px;
+
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.contact-email, .contact-phone, .contact-map{
+    margin-top: 10vw;
+}
+
 
 
 /* Below are respond design */
