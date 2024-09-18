@@ -99,6 +99,7 @@ nav, .out-container{
     display: flex;
     flex-direction: row;
     align-items: center;
+    overflow: auto;
 }
 nav a{
     position: relative;
@@ -587,7 +588,7 @@ h1.contactUs{
 
 
 /* Below are respond design */
-@media screen and (max-width: 700px){
+@media screen and (max-width: 750px){
     .Navigation-bar{
         font-size: 3vw;
     }
@@ -671,9 +672,9 @@ h1.contactUs{
     }
 }
 
-@media screen and (min-width: 650px){
+@media screen and (min-width: 750px){
     .Navigation-bar{
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
     nav a.navIcon::after{
         width: 70%;
