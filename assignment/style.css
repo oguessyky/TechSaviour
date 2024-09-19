@@ -45,7 +45,7 @@
 }
 
 /* Below are background */
-.Navigation-bar, body.aboutUs, .contactUs h1{
+.Navigation-bar, body.aboutUs, .contactUs h1, .category_H{
     font-family:"Mochiy Pop One", sans-serif;
 }
 body.aboutUs{
@@ -66,6 +66,12 @@ body.aboutUs{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+}
+body.gaming{
+    background-image: url(image/category/category/gaming.png);
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: 100% auto;
 }
 body.homepage, body.contactUs{
     background-image: url("image/general bg.png");
@@ -106,13 +112,12 @@ nav, .out-container{
     display: flex;
     flex-direction: row;
     align-items: center;
-    overflow: auto;
 }
 nav a{
     position: relative;
     height: 100%;
-    padding: 0 20px;
     display: flex;
+    padding: 0 20px;
     align-items: center;
     text-decoration: none;
     color: var(--text-color);
@@ -168,9 +173,6 @@ nav a.navIcon:hover::after{
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);
 }
-/* nav a.navIcon:hover{
-    background-color: var(--accecnt-color);
-} */
 div.icon{
     margin: auto;
 }
@@ -188,14 +190,10 @@ nav .sidebar-h{
     height: 100%;
 }
 img.logo, .icon2 img{
-    /* display: block; */
-    /* position: absolute; */
     min-height: 68px;
     height: 12vw;
     width: auto;
     max-height: 200px;
-    /* right: 0px; */
-    /* top: -9vw; */
 }
 nav a.icon:hover{
     background-color: none;
@@ -209,6 +207,7 @@ nav svg{
 .open-sidebar-button, .close-sidebar-button{
     display: none;
 }
+
 
 
 /* Below are About Us Page */
@@ -592,12 +591,18 @@ h1.contactUs{
     /* padding-top: 13vw; */
     padding: 8vw;
 }
-div.main{
+div.main {
     display: flex;
     margin-top: 20vw;
     margin-bottom: 10vw;
     margin-left: 5vw;
     /* flex-direction: row; */
+}
+.main > *:nth-child(1){
+    flex: 1 1 30%;
+}
+.main > *:nth-child(2){
+    flex: 1 1 70%;
 }
 ion-icon{
     font-size: 12vw;
@@ -621,6 +626,17 @@ ion-icon{
 }
 .contact-email, .contact-phone, .contact-map{
     margin-top: 10vw;
+}
+
+
+/* category-gaming */
+.category_H{
+
+    color: #fff;
+    text-align: center;
+
+    font-size: 6vw;
+    margin-top: 4vw;
 }
 
 
@@ -669,6 +685,7 @@ ion-icon{
         background-position: 100%;
         background-size: cover;
         border-radius:0 10% 10% 0;
+        overflow: auto;
     }
     nav a{
         box-sizing:border-box;
