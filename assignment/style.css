@@ -501,6 +501,17 @@ p.homepage_P{
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
 }
+.pc-category:nth-child(2)::before{
+    animation-delay: 1s;
+}
+.pc-category:nth-child(2)::before{
+    animation-delay: 1.5s;
+}
+.pc-category:nth-child(4)::before{
+    animation-delay: 2s;
+}
+
+
 @keyframes animate {
     0% {
         --a: 360deg;
