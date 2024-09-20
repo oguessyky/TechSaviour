@@ -527,7 +527,7 @@ p.homepage_P{
 .updateProfile{
     display: block;
     text-align: right;
-    padding: 30px 20px;
+    padding: 4vw 3vw;
 }
 .updateProfile a{
     text-decoration: none;
@@ -617,7 +617,7 @@ div.adminButton{
     cursor: pointer;
     display: inline-block;
     position: relative;
-     transition: 0.5s;
+    transition: 0.5s;
 }
 .adminButton button span::after{
     content: "\2b9b";
@@ -638,18 +638,37 @@ div.adminButton{
     opacity: 1;
 }
 .search-bar {
-    display: none; /* Hide the search bar initially */
+    display: none;
     margin-top: 20px;
     text-align: center;
+    position: relative;
 }
 .search-bar input {
     width: 80%;
-    padding: 10px;
+    padding: 10px 40px 10px 20px;
     font-size: 1rem;
     border: 2px solid #1a5d7e;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
 }
+.search-bar .search-icon {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar .search-icon img {
+    width: 20px;
+    height: 20px;
+}
+
 
 /* Below are Contact US page */
 h1.contactUs{
