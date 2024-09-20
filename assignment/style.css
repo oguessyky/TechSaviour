@@ -466,6 +466,51 @@ p.homepage_P{
     width: auto;
 
 }
+.pc-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    
+    margin-top: 30vw;
+}
+.pc-category {
+    display: block;
+    text-align: center;
+    position: relative;
+}
+.pc-category img {
+    height: 20vw;
+    width: auto;
+    position: relative;
+    z-index: 1;
+}
+.pc-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), #01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    border-radius: 100%;
+    z-index: 0;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+@keyframes animate {
+    0% {
+        --a: 360deg;
+    }
+    100% {
+        --a: 0deg;
+    }
+}
+
+
 
 /* Below are admin page */
 .updateProfile{
@@ -636,8 +681,36 @@ ion-icon{
     text-align: center;
 
     font-size: 6vw;
-    margin-top: 4vw;
+    /* margin-top: 1vw; */
 }
+
+
+/* pc-placement */
+.placement {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15vw;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.all-content {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+    max-width: fit-content;
+}
+.component-img img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 
 
 
