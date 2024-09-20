@@ -67,7 +67,7 @@ body.aboutUs{
     background-attachment: fixed;
     background-position: center;
 }
-body.gaming, body.business, body.art{
+body.gaming, body.business, body.art, body.advancedSearch{
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% auto;
@@ -80,6 +80,9 @@ body.business{
 }
 body.art{
     background-image: url(image/category/category/art.png);
+}
+body.advancedSearch{
+    background-image: url("image/general bg.png");
 }
 body.homepage, body.contactUs{
     background-image: url("image/general bg.png");
@@ -722,6 +725,21 @@ ion-icon{
 }
 .contact-email, .contact-phone, .contact-map{
     margin-top: 10vw;
+}
+
+
+/* Below are advance search */
+div.advancedSearch_H{
+    text-align: center;
+    width: 80%;
+}
+h1.advancedSearch{
+    text-align: center;
+    color: var(--pageHeading);
+    font-size: 7vw;
+    text-transform: uppercase;
+    padding: 6vw;
+
 }
 
 
