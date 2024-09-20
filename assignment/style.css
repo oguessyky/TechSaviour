@@ -67,7 +67,7 @@ body.aboutUs{
     background-attachment: fixed;
     background-position: center;
 }
-body.gaming, body.business{
+body.gaming, body.business, body.art{
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% auto;
@@ -77,6 +77,9 @@ body.gaming{
 }
 body.business{
     background-image: url(image/category/category/business.png);
+}
+body.art{
+    background-image: url(image/category/category/art.png);
 }
 body.homepage, body.contactUs{
     background-image: url("image/general bg.png");
