@@ -67,11 +67,16 @@ body.aboutUs{
     background-attachment: fixed;
     background-position: center;
 }
-body.gaming{
-    background-image: url(image/category/category/gaming.png);
+body.gaming, body.business{
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% auto;
+}
+body.gaming{
+    background-image: url(image/category/category/gaming.png);
+}
+body.business{
+    background-image: url(image/category/category/business.png);
 }
 body.homepage, body.contactUs{
     background-image: url("image/general bg.png");
@@ -717,14 +722,19 @@ ion-icon{
 }
 
 
-/* category-gaming */
+/* category*/
 .category_H{
-
     color: #fff;
     text-align: center;
 
     font-size: 6vw;
     /* margin-top: 1vw; */
+}
+.category_H h1{
+    text-transform: capitalize;
+}
+.category_H p{
+    text-transform: none;
 }
 
 
