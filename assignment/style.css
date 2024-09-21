@@ -45,7 +45,7 @@
 }
 
 /* Below are background */
-.Navigation-bar, body.aboutUs, .contactUs h1, .category_H{
+.Navigation-bar, body.aboutUs, .contactUs h1, .category_H, .advancedSearch_H{
     font-family:"Mochiy Pop One", sans-serif;
 }
 body.aboutUs{
@@ -789,16 +789,53 @@ ion-icon{
 /* Below are advance search */
 div.advancedSearch_H{
     text-align: center;
-    width: 80%;
+    width: 90%;
 }
 h1.advancedSearch{
     text-align: center;
     color: var(--pageHeading);
     font-size: 7vw;
     text-transform: uppercase;
-    padding: 6vw;
+    padding: 4vw;
 
 }
+.fixed-nav {
+    position:sticky;
+    margin-top: 20vw;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #92bae2;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    -ms-border-radius: 150px;
+    -o-border-radius: 150px;
+}
+
+.progress-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* category*/
