@@ -535,14 +535,13 @@ p.homepage_P{
     }
 }
 .homepage footer {
-    position: relative;
+    margin-top: 15vw;
     width: 100%;
     height: auto;
 }
 .homepage footer img {
-    position: absolute;
     width: 100%;
-    height: auto;
+    height: 45vw;
     /* clip-path: inset(0 0 20% 0); */
     z-index: -1;
 }
