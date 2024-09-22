@@ -80,6 +80,7 @@
             document.querySelector('.list-social').style.display = 'block';
             document.querySelector('.list-email').style.display = 'none';
             document.querySelector('.list-phone').style.display = 'none';
+            document.querySelector('.list-map').style.display = 'none';
         });
     
         document.querySelector('.contact-email').addEventListener('click', function(event) {
@@ -87,6 +88,7 @@
             document.querySelector('.list-social').style.display = 'none';
             document.querySelector('.list-email').style.display = 'block';
             document.querySelector('.list-phone').style.display = 'none';
+            document.querySelector('.list-map').style.display = 'none';
         });
 
         document.querySelector('.contact-phone').addEventListener('click', function(event) {
@@ -94,12 +96,22 @@
             document.querySelector('.list-social').style.display = 'none';
             document.querySelector('.list-email').style.display = 'none';
             document.querySelector('.list-phone').style.display = 'block';
+            document.querySelector('.list-map').style.display = 'none';
+        });
+
+        document.querySelector('.contact-map').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.list-social').style.display = 'none';
+            document.querySelector('.list-email').style.display = 'none';
+            document.querySelector('.list-phone').style.display = 'none';
+            document.querySelector('.list-map').style.display = 'block';
         });
     
         // Initially hide both lists
         document.querySelector('.list-social').style.display = 'none';
         document.querySelector('.list-email').style.display = 'none';
         document.querySelector('.list-phone').style.display = 'none';
+        document.querySelector('.list-map').style.display = 'none';
     </script>
 </body>
 </html>
