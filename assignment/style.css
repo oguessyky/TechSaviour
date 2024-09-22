@@ -765,26 +765,47 @@ ion-icon{
     font-size: 12vw;
     color: #ffffff;
 }
-.contact-social, .contact-email, .contact-phone, .contact-map{
+.contact-list{
     display: flex;
-
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 5vw;
+}
+.contact-social, .contact-email, .contact-phone, .contact-map {
+    display: flex;
     place-items: center;
     justify-content: center;
     width: 16vw;
     height: 16vw;
     background-color: #65c1e6;
-    /* text-align: center; */
     border-radius: 30px;
+
+    /* 3D effect */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 
+                -4px -4px 10px rgba(255, 255, 255, 0.5), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, #65c1e6, #a3e4f9);
+    border: 2px solid #000;
 
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
+
+    transition: all 0.2s ease-in-out;
 }
-.contact-email, .contact-phone, .contact-map{
-    margin-top: 10vw;
+.contact-social:hover, .contact-email:hover, .contact-phone:hover, .contact-map:hover{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 
+                -2px -2px 5px rgba(255, 255, 255, 0.5), 
+                inset 4px 4px 10px rgba(0, 0, 0, 0.3), 
+                inset -4px -4px 10px rgba(255, 255, 255, 0.3);
+    transform: translateY(2px);
 }
-textarea{
+.list-email h1{
+    font-size: 5vw;
+}
+textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -795,14 +816,61 @@ textarea{
 
     overflow: auto;
     color: #1a5d7e;
+    margin-top: 20px;
+
+    width: 70%;
+    height: 30vw;
+
+    border: 2px solid #000;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 
+                -4px -4px 10px rgba(255, 255, 255, 0.5), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    border-radius: 10px;
 }
-textarea:focus{
-    /*border-color: #92a2e1;*/
+textarea:focus {
     border: 3px inset #92a2e1;
     outline: 0px;
     background-color: #92a2e13b;
+    color: #2649d4;
 
+    box-shadow: 4px 4px 10px rgba(146, 162, 225, 0.5), 
+                -4px -4px 10px rgba(255, 255, 255, 0.5), 
+                inset 2px 2px 5px rgba(146, 162, 225, 0.3), 
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #fff;
+    background-color: #65c1e6;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    /* 3D effect */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 
+                -4px -4px 10px rgba(255, 255, 255, 0.5), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, #65c1e6, #a3e4f9);
+}
+input[type="submit"]:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 
+                -2px -2px 5px rgba(255, 255, 255, 0.5), 
+                inset 4px 4px 10px rgba(0, 0, 0, 0.3), 
+                inset -4px -4px 10px rgba(255, 255, 255, 0.3);
+    transform: translateY(2px);
+}
+input[type="submit"]:active {
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5), 
+                inset -4px -4px 10px rgba(255, 255, 255, 0.5);
+    transform: translateY(4px);
+}
+
 
 
 

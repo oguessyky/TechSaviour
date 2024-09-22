@@ -47,25 +47,43 @@
 
     <div class="main">
         <div class="contact-list">
-            <span class="contact-social"><ion-icon name="chatbubbles-outline"></ion-icon></span>
-            <div class="contact-social-list">
+            <a href="#"><span class="contact-social"><ion-icon name="chatbubbles-outline"></ion-icon></span></a>
+            <a href="#"><span class="contact-email"><ion-icon name="mail-outline"></ion-icon></span></a>
+            <a href="#"><span class="contact-phone"><ion-icon name="call-outline"></ion-icon></span></a>
+            <a href="#"><span class="contact-map"><ion-icon name="location-outline"></ion-icon></span></a>
+        </div>
+
+        <div class="list">
+            <div class="list-social">
                 <span class="social-instagram"></span>
                 <span class="social-facebook"></span>
                 <span class="social-twitter"></span>
             </div>
-            <span class="contact-email"><ion-icon name="mail-outline"></ion-icon></span>
-            <span class="contact-phone"><ion-icon name="call-outline"></ion-icon></span>
-            <span class="contact-map"><ion-icon name="location-outline"></ion-icon></span>
-        </div>
-
-        <div class="contact-list-contain">
             <div class="list-email">
                 <h1>Drop Us A Message</h1>
                 <textarea name="your-message" cols="40" rows="10" id="" aria-required="true"aria-invalid="false" placeholder="Your Message"></textarea></textarea>
-                <br><input type="submit" value="Submit">
+                <br><br><input type="submit" value="Submit">
             </div>
-            
         </div>
+            
     </div>
+
+    <script>
+        document.querySelector('.contact-social').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.list-social').style.display = 'block';
+            document.querySelector('.list-email').style.display = 'none';
+        });
+    
+        document.querySelector('.contact-email').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.list-social').style.display = 'none';
+            document.querySelector('.list-email').style.display = 'block';
+        });
+    
+        // Initially hide both lists
+        document.querySelector('.list-social').style.display = 'none';
+        //document.querySelector('.list-email').style.display = 'none';
+    </script>
 </body>
 </html>
