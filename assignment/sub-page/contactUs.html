@@ -64,6 +64,12 @@
                 <textarea name="your-message" cols="40" rows="10" id="" aria-required="true"aria-invalid="false" placeholder="Your Message"></textarea></textarea>
                 <br><br><input type="submit" value="Submit">
             </div>
+            <div class="list-phone">
+                <h1>Phone</h1>
+            </div>
+            <div class="list-map">
+                <!-- TODO: add map -->
+            </div>
         </div>
             
     </div>
@@ -73,17 +79,27 @@
             event.preventDefault();
             document.querySelector('.list-social').style.display = 'block';
             document.querySelector('.list-email').style.display = 'none';
+            document.querySelector('.list-phone').style.display = 'none';
         });
     
         document.querySelector('.contact-email').addEventListener('click', function(event) {
             event.preventDefault();
             document.querySelector('.list-social').style.display = 'none';
             document.querySelector('.list-email').style.display = 'block';
+            document.querySelector('.list-phone').style.display = 'none';
+        });
+
+        document.querySelector('.contact-phone').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.list-social').style.display = 'none';
+            document.querySelector('.list-email').style.display = 'none';
+            document.querySelector('.list-phone').style.display = 'block';
         });
     
         // Initially hide both lists
         document.querySelector('.list-social').style.display = 'none';
-        //document.querySelector('.list-email').style.display = 'none';
+        document.querySelector('.list-email').style.display = 'none';
+        document.querySelector('.list-phone').style.display = 'none';
     </script>
 </body>
 </html>

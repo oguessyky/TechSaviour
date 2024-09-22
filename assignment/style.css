@@ -758,10 +758,10 @@ div.main {
     /* flex-direction: row; */
 }
 .main > *:nth-child(1){
-    flex: 1 1 30%;
+    flex: 1 1 20%;
 }
 .main > *:nth-child(2){
-    flex: 1 1 70%;
+    flex: 1 1 80%;
 }
 ion-icon{
     font-size: 10vw;
