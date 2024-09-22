@@ -93,7 +93,7 @@ body.homepage{
     background-size: cover;
 }
 body.contactUs{
-    background-size: contain;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position:top;
 }
@@ -751,8 +751,10 @@ h1.contactUs{
 div.main {
     display: flex;
     margin-top: 20vw;
-    margin-bottom: 10vw;
+    margin-bottom: 5vw;
     margin-left: 5vw;
+    width: calc(100% - 5vw);
+    height: 100%;
     /* flex-direction: row; */
 }
 .main > *:nth-child(1){
@@ -762,37 +764,36 @@ div.main {
     flex: 1 1 70%;
 }
 ion-icon{
-    font-size: 12vw;
+    font-size: 10vw;
     color: #ffffff;
 }
 .contact-list{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 5vw;
+    gap: 30px;
 }
 .contact-social, .contact-email, .contact-phone, .contact-map {
     display: flex;
     place-items: center;
     justify-content: center;
-    width: 16vw;
-    height: 16vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 60px;
+    min-height: 60px;
+    max-height: 155px;
+    max-width: 155px;
     background-color: #65c1e6;
-    border-radius: 30px;
+    border-radius: 20px;
 
-    /* 3D effect */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 
-                -4px -4px 10px rgba(255, 255, 255, 0.5), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3), 
-                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    /*3D effect*/
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5),                 -4px -4px 10px rgba(255, 255, 255, 0.5),                 inset 2px 2px 5px rgba(0, 0, 0, 0.3),                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
     background: linear-gradient(145deg, #65c1e6, #a3e4f9);
     border: 2px solid #000;
-
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
     transition: all 0.2s ease-in-out;
 }
 .contact-social:hover, .contact-email:hover, .contact-phone:hover, .contact-map:hover{
@@ -870,6 +871,7 @@ input[type="submit"]:active {
                 inset -4px -4px 10px rgba(255, 255, 255, 0.5);
     transform: translateY(4px);
 }
+
 
 
 
