@@ -784,6 +784,27 @@ ion-icon{
 .contact-email, .contact-phone, .contact-map{
     margin-top: 10vw;
 }
+textarea{
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    display: inline-block;
+    text-align: start;
+    padding: 10px;
+
+    overflow: auto;
+    color: #1a5d7e;
+}
+textarea:focus{
+    /*border-color: #92a2e1;*/
+    border: 3px inset #92a2e1;
+    outline: 0px;
+    background-color: #92a2e13b;
+
+}
+
+
 
 
 /* Below are advance search */
@@ -867,7 +888,9 @@ h1.advancedSearch{
     display: flex;
     flex-direction: row;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),                0 6px 10px rgba(0, 0, 0, 0.1),                0 8px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
+                0 6px 10px rgba(0, 0, 0, 0.1),
+                0 8px 30px rgba(0, 0, 0, 0.1);
     padding: 10px;
     background-color: #ffffff;
     max-width: fit-content;
