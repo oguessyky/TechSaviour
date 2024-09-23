@@ -86,7 +86,9 @@
                 </div>
             </div>
             <div class="list-map">
-                <!-- TODO: add map -->
+                <h1>Location</h1>
+                <address>Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</address>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.14662745759!2d101.6979864759788!3d3.055405696920385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4abb795025d9%3A0x1c37182a714ba968!2sAsia%20Pacific%20University%20of%20Technology%20%26%20Innovation%20(APU)!5e0!3m2!1sen!2smy!4v1727098829188!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
             
@@ -122,14 +124,14 @@
             document.querySelector('.list-social').style.display = 'none';
             document.querySelector('.list-email').style.display = 'none';
             document.querySelector('.list-phone').style.display = 'none';
-            document.querySelector('.list-map').style.display = 'block';
+            document.querySelector('.list-map').style.display = 'flex';
         });
     
         // Initially hide both lists
         document.querySelector('.list-social').style.display = 'none';
         document.querySelector('.list-email').style.display = 'none';
-        document.querySelector('.list-phone').style.display = 'flex';
-        document.querySelector('.list-map').style.display = 'none';
+        document.querySelector('.list-phone').style.display = 'none';
+        document.querySelector('.list-map').style.display = 'flex';
     </script>
 </body>
 </html>

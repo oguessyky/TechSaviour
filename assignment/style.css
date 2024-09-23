@@ -803,7 +803,7 @@ ion-icon{
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
 }
-.list-email h1 {
+.list-email h1, .list-phone h1, .list-map h1{
     font-size: 5vw;
     background: var(--sectionHeading);
     background-clip: text;
@@ -880,15 +880,7 @@ div.list-phone{
     align-items: flex-start;
     gap: 30px;
 }
-.list-phone h1{
-    font-size: 5vw;
-
-    background: var(--sectionHeading);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.list-phone h3{
+.list-phone h3, .list-map address{
     font-size: 4vw;
 
     color: rgb(154, 135, 222);
@@ -897,7 +889,18 @@ div.list-phone{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
 }
-
+.list-map{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2vw;
+}
+.list-map address{
+    font-size: 3vw;
+}
+.list-map iframe{
+    width: 80%;
+}
 
 
 
