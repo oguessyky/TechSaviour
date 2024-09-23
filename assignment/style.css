@@ -783,99 +783,101 @@ ion-icon{
     min-height: 60px;
     max-height: 155px;
     max-width: 155px;
-    background-color: #65c1e6;
+    background-color: #ff9595;
     border-radius: 20px;
 
-    /*3D effect*/
-    box-shadow: 4px 4px 10px rgba(129, 148, 255, 0.5),
-        -4px -4px 10px rgba(255, 255, 255, 0.5),
-        inset 2px 2px 5px rgba(0, 0, 0, 0.3),
-        inset -2px -2px 5px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(145deg, #65c1e6, #a3e4f9);
-    /* border: 2px solid #000; */
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    /* 3D effect */
+    box-shadow: 4px 4px 10px rgba(60, 47, 102, 0.5),
+                -4px -4px 10px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(215deg, #ff9595, #3c2f66);
     transition: all 0.2s ease-in-out;
 }
-.contact-social:hover, .contact-email:hover, .contact-phone:hover, .contact-map:hover{
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 
-                -2px -2px 5px rgba(255, 255, 255, 0.5), 
-                inset 4px 4px 10px rgba(109, 151, 195, 0.3), 
+
+.contact-social:hover, .contact-email:hover, .contact-phone:hover, .contact-map:hover {
+    box-shadow: 2px 2px 5px rgba(60, 47, 102, 0.5),
+                -2px -2px 5px rgba(255, 255, 255, 0.5),
+                inset 4px 4px 10px rgba(109, 151, 195, 0.3),
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
 }
-.list-email h1{
+.list-email h1 {
     font-size: 5vw;
+    background: linear-gradient(215deg, #ff9595, #3c2f66);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
 
+textarea {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    line-height: inherit;
     display: inline-block;
+    font-size: inherit;
     text-align: start;
     padding: 10px;
-
     overflow: auto;
-    color: #1a5d7e;
+    color: #3c2f66;
     margin-top: 20px;
-
     width: 70%;
     height: 30vw;
-
-    border: 2px solid #000;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 
-                -4px -4px 10px rgba(255, 255, 255, 0.5), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3), 
-                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    border: 4px inset #504084;
+    /* box-shadow: 4px 4px 10px rgba(60, 47, 102, 0.5),
+                -4px -4px 10px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3); */
+    /* background: linear-gradient(145deg, #ff959519, #3c2f6619); */
     border-radius: 10px;
 }
+
 textarea:focus {
-    border: 3px inset #92a2e1;
+    border: 4px inset #3c2f66;
     outline: 0px;
-    background-color: #92a2e13b;
-    color: #2649d4;
-
-    box-shadow: 4px 4px 10px rgba(146, 162, 225, 0.5), 
-                -4px -4px 10px rgba(255, 255, 255, 0.5), 
-                inset 2px 2px 5px rgba(146, 162, 225, 0.3), 
+    font-weight: 700;
+    /* background-color: #f473730d; */
+    color: #3c2f66;
+    box-shadow: 4px 4px 10px rgba(60, 47, 102, 0.5),
+                -4px -4px 10px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 5px rgba(60, 47, 102, 0.3),
                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(145deg, #7fc6e938, #ffffff);
+    /* background: linear-gradient(145deg, #ff959519, #3c2f6619); */
     border-radius: 10px;
 }
+
 input[type="submit"] {
     padding: 10px 20px;
-    font-size: 16px;
-    font-family: inherit;
+    font-size: 25px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #fff;
-    background-color: #65c1e6;
+    background-color: #6d5f9d;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-
     /* 3D effect */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 
-                -4px -4px 10px rgba(255, 255, 255, 0.5), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3), 
+    box-shadow: 4px 4px 10px rgba(60, 47, 102, 0.5),
+                -4px -4px 10px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3),
                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(145deg, #65c1e6, #a3e4f9);
+    background: linear-gradient(215deg, #ff9595, #3c2f66);
 }
+
 input[type="submit"]:hover {
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 
-                -2px -2px 5px rgba(255, 255, 255, 0.5), 
-                inset 4px 4px 10px rgba(0, 0, 0, 0.3), 
+    box-shadow: 2px 2px 5px rgba(60, 47, 102, 0.5),
+                -2px -2px 5px rgba(255, 255, 255, 0.5),
+                inset 4px 4px 10px rgba(60, 47, 102, 0.3),
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
 }
+
 input[type="submit"]:active {
-    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5), 
+    box-shadow: inset 4px 4px 10px rgba(60, 47, 102, 0.5),
                 inset -4px -4px 10px rgba(255, 255, 255, 0.5);
     transform: translateY(4px);
 }
+
 
 
 
