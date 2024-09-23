@@ -787,7 +787,10 @@ ion-icon{
     border-radius: 20px;
 
     /*3D effect*/
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5),                 -4px -4px 10px rgba(255, 255, 255, 0.5),                 inset 2px 2px 5px rgba(0, 0, 0, 0.3),                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    box-shadow: 4px 4px 10px rgba(129, 148, 255, 0.5),
+        -4px -4px 10px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.3);
     background: linear-gradient(145deg, #65c1e6, #a3e4f9);
     /* border: 2px solid #000; */
     -webkit-border-radius: 20px;
@@ -799,7 +802,7 @@ ion-icon{
 .contact-social:hover, .contact-email:hover, .contact-phone:hover, .contact-map:hover{
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 
                 -2px -2px 5px rgba(255, 255, 255, 0.5), 
-                inset 4px 4px 10px rgba(0, 0, 0, 0.3), 
+                inset 4px 4px 10px rgba(109, 151, 195, 0.3), 
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
 }
