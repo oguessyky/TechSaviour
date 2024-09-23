@@ -840,6 +840,8 @@ textarea:focus {
                 -4px -4px 10px rgba(255, 255, 255, 0.5), 
                 inset 2px 2px 5px rgba(146, 162, 225, 0.3), 
                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, #7fc6e938, #ffffff);
+    border-radius: 10px;
 }
 input[type="submit"] {
     padding: 10px 20px;

@@ -61,8 +61,11 @@
             </div>
             <div class="list-email">
                 <h1>Drop Us A Message</h1>
-                <textarea name="your-message" cols="40" rows="10" id="" aria-required="true"aria-invalid="false" placeholder="Your Message"></textarea></textarea>
-                <br><br><input type="submit" value="Submit">
+                <form>
+                    <textarea name="your-message" cols="40" rows="10" aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                </form>                
             </div>
             <div class="list-phone">
                 <h1>Phone</h1>
@@ -109,7 +112,7 @@
     
         // Initially hide both lists
         document.querySelector('.list-social').style.display = 'none';
-        document.querySelector('.list-email').style.display = 'none';
+        document.querySelector('.list-email').style.display = 'Block';
         document.querySelector('.list-phone').style.display = 'none';
         document.querySelector('.list-map').style.display = 'none';
     </script>
