@@ -5,7 +5,7 @@
     --accecnt-color:#b933da81;
 
     --pageHeading:white;
-    --sectionHeading:-webkit-linear-gradient(#198ebc, #333333);
+    --sectionHeading:-webkit-linear-gradient(#198ebc, #4a4a4a);
 
     --gradienRepeat: #01dbc2;
 }
@@ -791,7 +791,7 @@ ion-icon{
                 -4px -4px 10px rgba(255, 255, 255, 0.5),
                 inset 2px 2px 5px rgba(0, 0, 0, 0.3),
                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(215deg, #ff9595, #3c2f66);
+    background: var(--sectionHeading);
     transition: all 0.2s ease-in-out;
 }
 
@@ -804,7 +804,7 @@ ion-icon{
 }
 .list-email h1 {
     font-size: 5vw;
-    background: linear-gradient(215deg, #ff9595, #3c2f66);
+    background: var(--sectionHeading);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -861,7 +861,7 @@ input[type="submit"] {
                 -4px -4px 10px rgba(255, 255, 255, 0.5),
                 inset 2px 2px 5px rgba(0, 0, 0, 0.3),
                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(215deg, #ff9595, #3c2f66);
+    background: var(--sectionHeading);
 }
 
 input[type="submit"]:hover {
