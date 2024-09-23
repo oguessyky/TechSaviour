@@ -773,7 +773,7 @@ ion-icon{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 30px;
+    gap: 4vw;
 }
 .contact-social, .contact-email, .contact-phone, .contact-map {
     display: flex;
@@ -831,7 +831,6 @@ textarea {
     /* background: linear-gradient(145deg, #ff959519, #3c2f6619); */
     border-radius: 10px;
 }
-
 textarea:focus {
     border: 4px inset #4763a9;
     outline: 0px;
@@ -845,7 +844,6 @@ textarea:focus {
     /* background: linear-gradient(145deg, #e6e6e6, #ffffff); */
     border-radius: 10px;
 }
-
 input[type="submit"] {
     padding: 10px 20px;
     font-size: 25px;
@@ -863,7 +861,6 @@ input[type="submit"] {
                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
     background: var(--sectionHeading);
 }
-
 input[type="submit"]:hover {
     box-shadow: 2px 2px 5px rgba(60, 47, 102, 0.5),
                 -2px -2px 5px rgba(255, 255, 255, 0.5),
@@ -871,13 +868,35 @@ input[type="submit"]:hover {
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
 }
-
 input[type="submit"]:active {
     box-shadow: inset 4px 4px 10px rgba(60, 47, 102, 0.5),
                 inset -4px -4px 10px rgba(255, 255, 255, 0.5);
     transform: translateY(4px);
 }
+div.list-phone{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 30px;
+}
+.list-phone h1{
+    font-size: 5vw;
 
+    background: var(--sectionHeading);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.list-phone h3{
+    font-size: 4vw;
+
+    color: rgb(154, 135, 222);
+    /* background: linear-gradient(145deg,#4a8197, #558ea0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
 
 
 
@@ -895,7 +914,6 @@ h1.advancedSearch{
     font-size: 7vw;
     text-transform: uppercase;
     padding: 4vw;
-
 }
 .fixed-nav {
     position:sticky;
@@ -915,7 +933,6 @@ h1.advancedSearch{
     -ms-border-radius: 150px;
     -o-border-radius: 150px;
 }
-
 .progress-circle {
     display: flex;
     flex-direction: column;

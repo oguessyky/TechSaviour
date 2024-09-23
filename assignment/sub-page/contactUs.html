@@ -68,7 +68,22 @@
                 </form>                
             </div>
             <div class="list-phone">
-                <h1>Phone</h1>
+                <div>
+                    <h1>Phone</h1>
+                    <h3>+60189887866</h3>
+                </div>
+                <div>
+                    <h1>Fax</h1>
+                    <h3>+60389961000</h3>
+                </div>
+                <div>
+                    <h1>Email</h1>
+                    <h3>techsaviour-contact@gamil.com</h3>
+                </div>
+                <div>
+                    <h1>Web</h1>
+                    <h3>http://www.techsaviour.com/</h3>
+                </div>
             </div>
             <div class="list-map">
                 <!-- TODO: add map -->
@@ -98,7 +113,7 @@
             event.preventDefault();
             document.querySelector('.list-social').style.display = 'none';
             document.querySelector('.list-email').style.display = 'none';
-            document.querySelector('.list-phone').style.display = 'block';
+            document.querySelector('.list-phone').style.display = 'flex';
             document.querySelector('.list-map').style.display = 'none';
         });
 
@@ -112,8 +127,8 @@
     
         // Initially hide both lists
         document.querySelector('.list-social').style.display = 'none';
-        document.querySelector('.list-email').style.display = 'Block';
-        document.querySelector('.list-phone').style.display = 'none';
+        document.querySelector('.list-email').style.display = 'none';
+        document.querySelector('.list-phone').style.display = 'flex';
         document.querySelector('.list-map').style.display = 'none';
     </script>
 </body>
