@@ -47,7 +47,7 @@
 }
 
 /* Below are background */
-.Navigation-bar, body.aboutUs, .contactUs h1, .category_H, .advancedSearch_H{
+.Navigation-bar, body.aboutUs, .contactUs h1, .category_H, .advancedSearch_H, .guide h1{
     font-family:"Mochiy Pop One", sans-serif;
 }
 body.aboutUs{
@@ -69,10 +69,13 @@ body.aboutUs{
     background-attachment: fixed;
     background-position: center;
 }
-body.gaming, body.business, body.art, body.advancedSearch{
+body.gaming, body.business, body.art, body.advancedSearch, body.guide{
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% auto;
+}
+body.guide{
+    background-image: url(image/guide/bg.png);
 }
 body.gaming{
     background-image: url(image/category/category/gaming.png);
@@ -1163,6 +1166,29 @@ progress.ssd::-moz-progress-bar {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+
+
+
+/* Guide */
+.guide h1{
+    text-align: center;
+    color: var(--pageHeading);
+    font-size: 9vw;
+    text-transform: uppercase;
+    /* padding-top: 13vw; */
+    padding: 8vw;
+}
+.pc-guide{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    margin-top: 15vw;
+}
+.pc-guide img{
+    width: 70vw;
 }
 
 
