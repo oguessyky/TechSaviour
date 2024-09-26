@@ -407,6 +407,9 @@ h1.aboutUs{
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
+.login input::-ms-reveal, .register input::-ms-reveal{
+    display: none;
+}
 .login input:focus, .register input:focus{
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
