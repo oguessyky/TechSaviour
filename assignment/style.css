@@ -852,7 +852,7 @@ textarea:focus {
     /* background: linear-gradient(145deg, #e6e6e6, #ffffff); */
     border-radius: 10px;
 }
-input[type="submit"] {
+.list-email input[type="submit"] {
     padding: 10px 20px;
     font-size: 25px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -869,14 +869,14 @@ input[type="submit"] {
                 inset -2px -2px 5px rgba(255, 255, 255, 0.3);
     background: var(--sectionHeading);
 }
-input[type="submit"]:hover {
+.list-email input[type="submit"]:hover {
     box-shadow: 2px 2px 5px rgba(60, 47, 102, 0.5),
                 -2px -2px 5px rgba(255, 255, 255, 0.5),
                 inset 4px 4px 10px rgba(60, 47, 102, 0.3),
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
 }
-input[type="submit"]:active {
+.list-email input[type="submit"]:active {
     box-shadow: inset 4px 4px 10px rgba(60, 47, 102, 0.5),
                 inset -4px -4px 10px rgba(255, 255, 255, 0.5);
     transform: translateY(4px);
