@@ -8,6 +8,10 @@
 <body>
     <?php
     $username = $_POST['username'];
-    echo $username; ?>
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    
+    echo 'mabuyallah';
+    ?>
 </body>
 </html>
