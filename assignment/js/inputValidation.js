@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.forms['Register'];
     const inputs = form.querySelectorAll('input');
+    const passwordInput = form.querySelector('input[name="password"]');
+    const passwordConfirmInput = form.querySelector('input[name="password_confirm"]');
 
     inputs.forEach(input => {
         input.addEventListener('input', function() {
@@ -43,6 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
             errorElement.style.display = 'flex';
             input.parentNode.classList.add('invalid');
             return false;
+        }
+    }
+
+    passwordConfirmInput.addEventListener('input', function() {
+        validatePasswordMatch();
+    });
+
+    function validatePasswordMatch() {
+        const errorElement = passwordConfirmInput.nextElementSibling;
+        if (passwordInput.value !== passwordConfirmInput.value) {
+            errorElement.textContent = "Passwords do not match.";
+            errorElement.style.display = 'flex';
+            passwordConfirmInput.parentNode.classList.add('invalid');
+            return false;
+        } else {
+            errorElement.style.display = 'none';
+            passwordConfirmInput.parentNode.classList.remove('invalid');
+            return true;
         }
     }
 });
