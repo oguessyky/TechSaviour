@@ -15,11 +15,11 @@
             <h2>Login</h2>
             <div class="input">
                 <span></span>
-                <input type="text" placeholder="Username" required="required">
+                <input type="text" id = "login_username" name = "username" placeholder="Username" required autofocus>
             </div>
             <div class="input">
                 <span></span>
-                <input type="password" placeholder="Password" required="required">
+                <input type="password" placeholder="Password" required>
             </div>
             <div class="input">
                 <input type="submit" value="Sign in">
@@ -31,26 +31,26 @@
     </div>
 
     <div class="register" style="display: none;">
-        <form>
+        <form name = "Register" method = "post" onsubmit="return validateRegistration()" action = "Register.php">
             <h2>Register</h2>
             <div class="input">
                 <span></span>
-                <input type="text" placeholder="Username" required="required">
+                <input type="text" name = "username" id = "register_username" placeholder="Username" required autofocus>
             </div>
             <div class="input">
                 <span></span>
-                <input type="email" placeholder="Gmail" required="required">
+                <input type="email" name = "email" placeholder="Email" required pattern = "^[\w._%+\-]+@[\w.\-]+.[a-zA-Z]{2,}$">
             </div>
             <div class="input">
                 <span></span>
-                <input type="password" placeholder="Password" required="required">
+                <input type="password" name = "password" placeholder="Password" required>
             </div>
             <div class="input">
                 <span></span>
-                <input type="password" placeholder="Confirm Password" required="required">
+                <input type="password" name = "password_confirm" placeholder="Confirm Password" required>
             </div>
             <div class="input">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Register">
             </div>
             <div class="group">
                 <a href="#" id="loginLink">Login</a>
@@ -66,6 +66,7 @@
             document.querySelector('.login').style.display = 'none';
             document.querySelector('.register').style.display = 'flex'; // Ensure it's flex to maintain centering
             document.title = 'Register';
+            document.getElementById('register_username').focus();
         });
 
         document.getElementById('loginLink').addEventListener('click', function(event) {
@@ -75,7 +76,16 @@
             document.querySelector('.register').style.display = 'none';
             document.querySelector('.login').style.display = 'flex'; // Ensure it's flex to maintain centering
             document.title = 'Login';
+            document.getElementById('login_username').focus();
         });
+
+        function validateRegistration() {
+            form = document.forms['Register'];
+            if (form['password'].value != form['password_confirm'].value) {
+                alert('Password mismatch!')
+                return false;
+            }
+        }
     </script>
 </body>
 </html>
