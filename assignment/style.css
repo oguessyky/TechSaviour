@@ -416,17 +416,22 @@ h1.aboutUs{
     opacity: 0.5;
 }
 .login .input input[type="submit"], .register .input input[type="submit"]{
-    /* background: #01dbc2; */
-    background: #cfe4ff;
+    /*background: #01dbc2;
+    */background: #cfe4ff;
     cursor: pointer;
-    /* box-shadow: 0 0 0 4px #01dbc2; */
-    /* box-shadow: 0 0 0 2px #365180; */
-    width: 100%;
+    /*box-shadow: 0 0 0 4px #01dbc2;
+    *//*box-shadow: 0 0 0 2px #365180;
+    */width: 100%;
     font-weight: 600;
-    /* color: #292929;
-    filter: drop-shadow(0 0 15px #01dbc2); */
-    color: #56597a;
+    /*color: #292929;
+    filter: drop-shadow(0 0 15px #01dbc2);
+    */color: #56597a;
     filter: drop-shadow(0 0 5px #cbfff9);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 .login .input input[type= "submit"]:hover, .register .input input[type= "submit"]:hover{
     filter: drop-shadow(0 0 15px #cbfff9);
