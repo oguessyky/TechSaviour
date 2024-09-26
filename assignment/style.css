@@ -410,6 +410,13 @@ h1.aboutUs{
 .login input::-ms-reveal, .register input::-ms-reveal{
     display: none;
 }
+.login input:-webkit-autofill, .register input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: #162d8a !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 .login input:focus, .register input:focus{
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
