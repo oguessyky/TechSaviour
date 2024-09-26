@@ -406,6 +406,8 @@ h1.aboutUs{
     color: #162d8a;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    overflow-x:auto;
+    box-sizing: border-box;
 }
 .login input::-ms-reveal, .register input::-ms-reveal{
     display: none;
@@ -419,7 +421,7 @@ h1.aboutUs{
 .register input:-webkit-autofill:focus,
 .register input:-webkit-autofill:active {
     -webkit-background-clip: text;
-    /* -webkit-text-fill-color: #162d8a; */
+    -webkit-text-fill-color: #162d8a;
 }
 
 .login input:focus, .register input:focus{
@@ -471,8 +473,8 @@ h1.aboutUs{
 .login .group a:hover, .register .group a:hover{
     color: #01dbc2;
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
+    -webkit-filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
-
 
 
 /* Below are Homepage */
