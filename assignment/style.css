@@ -361,12 +361,12 @@ h1.aboutUs{
     margin-bottom: 40px;
     width: 240px;
 }
-.login .input span, .register .input span{
+.login .input span.inputSpan, .register .input span.inputSpan{
     position: absolute;
     inset: -2px;
     z-index: 1;
 }
-.login .input span::before, .register .input span::before{
+.login .input span.inputSpan::before, .register .input span.inputSpan::before{
     content: "";
     position: absolute;
     inset: -2px;
@@ -375,16 +375,16 @@ h1.aboutUs{
     box-shadow: 0 0 0 2px #365180;
     border-radius: 20px;
 }
-.login .input:nth-child(2) span::before, .register .input:nth-child(2) span::before{
+.login .input:nth-child(2) span.inputSpan::before, .register .input:nth-child(2) span.inputSpan::before{
     animation-delay: -1.5s;
 }
-.register .input:nth-child(3) span::before{
+.register .input:nth-child(3) span.inputSpan::before{
     animation-delay: -1s;
 }
-.register .input:nth-child(4) span::before{
+.register .input:nth-child(4) span.inputSpan::before{
     animation-delay: -2s;
 }
-.login .input span::after, .register .input span::after{
+.login .input span.inputSpan::after, .register .input span.inputSpan::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -392,7 +392,6 @@ h1.aboutUs{
     background: #81a2c0;
     border-radius: 20px;
 }
-
 .login input, .register input{
     position: relative;
     z-index: 100000;
@@ -423,7 +422,6 @@ h1.aboutUs{
     -webkit-background-clip: text;
     -webkit-text-fill-color: #162d8a;
 }
-
 .login input:focus, .register input:focus{
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
@@ -475,6 +473,28 @@ h1.aboutUs{
     filter: drop-shadow(0 0 5px var(--gradienRepeat));
     -webkit-filter: drop-shadow(0 0 5px var(--gradienRepeat));
 }
+.login .input, .register .input {
+    position: relative;
+}
+.login .input .error-message, .register .input .error-message {
+    color: red;
+    font-size: 0.8em;
+    display: none;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2px 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    white-space: nowrap;
+}
+.login .input.invalid input, .register .input.invalid input {
+    border-color: red;
+}
+
 
 
 /* Below are Homepage */
