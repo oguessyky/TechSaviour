@@ -897,10 +897,15 @@ div.list-phone{
     font-size: 4vw;
 
     color: rgb(154, 135, 222);
+    user-select: text;
     /* background: linear-gradient(145deg,#4a8197, #558ea0);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
+}
+.list-phone h3::selection, .list-map address::selection{
+    background-color:#5975e3;
+    color:#ffffff;
 }
 .list-map{
     display: flex;
