@@ -147,6 +147,7 @@ nav a{
     align-items: center;
     text-decoration: none;
     color: var(--text-color);
+    text-align: center;
 }
 nav a.navIcon::after{
     content: "";
