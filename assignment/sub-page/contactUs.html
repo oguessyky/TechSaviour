@@ -102,6 +102,7 @@
             document.querySelector('.list-email').style.display = 'none';
             document.querySelector('.list-phone').style.display = 'none';
             document.querySelector('.list-map').style.display = 'none';
+            document.title = 'contact-social';
         });
     
         document.querySelector('.contact-email').addEventListener('click', function(event) {
@@ -110,6 +111,7 @@
             document.querySelector('.list-email').style.display = 'block';
             document.querySelector('.list-phone').style.display = 'none';
             document.querySelector('.list-map').style.display = 'none';
+            document.title = 'contact-email';
         });
 
         document.querySelector('.contact-phone').addEventListener('click', function(event) {
@@ -118,6 +120,7 @@
             document.querySelector('.list-email').style.display = 'none';
             document.querySelector('.list-phone').style.display = 'flex';
             document.querySelector('.list-map').style.display = 'none';
+            document.title = 'contact-phone';
         });
 
         document.querySelector('.contact-map').addEventListener('click', function(event) {
@@ -126,6 +129,7 @@
             document.querySelector('.list-email').style.display = 'none';
             document.querySelector('.list-phone').style.display = 'none';
             document.querySelector('.list-map').style.display = 'flex';
+            document.title = 'contact-location';
         });
     
         // Initially hide both lists

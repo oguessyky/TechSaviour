@@ -1147,7 +1147,6 @@ h1.advancedSearch{
     /* white-space: normal;
     overflow-wrap: break-word;
     word-break: keep-all; */
-
 }
 .component-detail h2::selection {
     background-color:#162d8a2e;
@@ -1248,6 +1247,45 @@ progress.ssd::-moz-progress-bar {
 }
 
 
+
+/* pc detail */
+.detail-img img {
+    width: 14vw;
+    height: 14vw;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px inherit #62656f;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.chart {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #4caf50 calc(var(--percent) * 1%),
+      #ddd calc(var(--percent) * 1%)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #fff;
+    position: relative;
+}
+.chart::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+}
 
 
 /* Guide */
