@@ -733,10 +733,8 @@ div.adminButton{
     /* background-color: #0473aa; */
 
 }
-.adminButton button{
-    /* display: inline-block; */
+.adminButton button {
     float: left;
-    /* padding: 15px 25px; */
     padding: 2vw;
     font-size: 2.5vw;
     cursor: pointer;
@@ -746,19 +744,17 @@ div.adminButton{
     color: #fff;
     background-color: #43a2d2;
     border: 2px solid #1a5d7e;
-    /* border-radius: 15px; */
-    /* box-shadow: 0 9px #999;    */
     height: 15vw;
     width: 50%;
     transition: all 0.5s;
 }
-.adminButton button span{
+.adminButton button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-.adminButton button span::after{
+.adminButton button span::after {
     content: "\2b9b";
     position: absolute;
     opacity: 0;
@@ -767,13 +763,19 @@ div.adminButton{
     bottom: -2vw;
     transition: 0.5s;
 }
-.adminButton button:hover{
+.adminButton button:hover:not(.active) {
     background-color: #2787b8;
 }
-.adminButton button:hover span{
+.adminButton button:hover:not(.active) span {
     padding-bottom: 2.5vw;
 }
-.adminButton button:hover span::after{
+.adminButton button:hover:not(.active) span::after {
+    opacity: 1;
+}
+.adminButton button.active {
+    background-color: #2787b8;
+}
+.adminButton button.active span::after {
     opacity: 1;
 }
 .search-bar {
