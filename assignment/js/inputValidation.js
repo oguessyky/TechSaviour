@@ -23,16 +23,14 @@ function validateAllInputs(form) {
     const inputs = form.querySelectorAll('input');
     inputs.forEach(input => {
         input.addEventListener('input', function() {validateInput(input);});
-
-        input.addEventListener('invalid', function(event) {
-            event.preventDefault();
-            validateInput(input);
-        });
     });
     form.addEventListener('submit', function(event) {
         let isValid = true;
         inputs.forEach(input => {
-            isValid = validateInput(input) ? isValid : false;
+            if (!validateInput(input)) {
+                isValid = false;
+                input.focus();
+            }
         });
         if (!isValid) {
             event.preventDefault();
@@ -47,8 +45,13 @@ function validateForm(form) {
             case "Register":
                 const passwordInput = form.querySelector('input[name="password"]');
                 const passwordConfirmInput = form.querySelector('input[name="password_confirm"]');
-
                 passwordConfirmInput.addEventListener('input', validatePasswordMatch);
+                form.addEventListener('submit', function(event) {
+                    if (!validatePasswordMatch()) {
+                        passwordConfirmInput.focus();
+                        event.preventDefault();
+                    }
+                });
 
                 function validatePasswordMatch() {
                     const errorElement = passwordConfirmInput.nextElementSibling;
@@ -57,11 +60,12 @@ function validateForm(form) {
                         errorElement.style.display = 'flex';
                         passwordConfirmInput.parentNode.classList.add('invalid');
                         return false;
-                    } else {
+                    } else if (passwordConfirmInput.validity.valid) {
                         errorElement.style.display = 'none';
                         passwordConfirmInput.parentNode.classList.remove('invalid');
                         return true;
                     }
+                    return false;
                 }
                 break;
         }

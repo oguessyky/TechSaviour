@@ -1,3 +1,6 @@
+<?php
+    include "conn.php";
+?>
 <!DOCTYPE html>
 <html lang="en" class="loginPage">
 <head>
@@ -73,8 +76,51 @@
         </form>
     </div>
 
+    <?php
+        $userQuery = $dbConn -> query("SELECT Username FROM User");
+        $userList = $userQuery -> fetch_all();
+        echo "<script> var userlist = ".json_encode($userList)."; </script>";
+    ?>
+
     <script>
-        validateForm(document.forms['Register']);
+        function userExists(username) {
+            for (user of userlist) {
+                if (user.includes(username)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        registerForm = document.forms['Register'];
+
+        function usernameUnique() {
+            input = registerForm['username'];
+            errorMsg = input.nextElementSibling;
+            if (userExists(input.value)) {
+                errorMsg.textContent = "Username already exist.";
+                errorMsg.style.display = 'flex';
+                input.parentNode.classList.add('invalid');
+                return false;
+            } else if (input.validity.valid) {
+                errorMsg.style.display = 'none';
+                input.parentNode.classList.remove('invalid');
+                return true;
+            }
+            return false;
+        }
+
+        validateForm(registerForm);
+
+        registerForm['username'].addEventListener('change', usernameUnique);
+
+        registerForm.addEventListener('submit',function(event) {
+            if (!usernameUnique) {
+                this['username'].focus;
+                event.preventDefault();
+            }
+        });
+
         document.getElementById('registerLink').addEventListener('click', function(event) {
             event.preventDefault();
             document.body.classList.remove('loginPage');
