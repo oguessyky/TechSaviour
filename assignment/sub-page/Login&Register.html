@@ -37,17 +37,17 @@
             <div class="input">
                 <span class="inputSpan"></span>
                 <span class="error-message"></span>
-                <input type="text" name="username" id="register_username" placeholder="Username" required autofocus pattern="^[\w]{1,20}$" maxlength="20" data-error="Username must be 1-20 characters long and contain only letters, numbers, and underscores.">
+                <input type="text" name="username" id="register_username" placeholder="Username" required autofocus pattern="^[\w_]*$" maxlength="20" data-error="Username can only contain letters, numbers, and underscores.">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
                 <span class="error-message"></span>
-                <input type="text" name="name" placeholder="Name" required pattern="^[\w]{1,255}$" data-error="Name must be 1-255 characters long and contain only letters, numbers, and underscores." maxlength="255">
+                <input type="text" name="name" placeholder="Name" required pattern="[\w\s]*$" data-error="Name must can only contain letters, numbers, and space" maxlength="255">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
                 <span class="error-message"></span>
-                <input type="email" name="email" placeholder="Email" required pattern="^[\w._%+\-]+@[\w.\-]+\.[a-zA-Z]{2,}$" data-error="Please enter a valid email address." maxlength="255">
+                <input type="email" name="email" placeholder="Email" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" data-error="Please enter a valid email address." maxlength="255">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -57,7 +57,7 @@
             <div class="input">
                 <span class="inputSpan"></span>
                 <span class="error-message"></span>
-                <input type="password" name="password" placeholder="Password" required pattern="^.{1,255}$" data-error="Password must be 1-255 characters long." maxlength="255">
+                <input type="password" name="password" placeholder="Password" required data-error="Password cannot be empty." maxlength="255">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -74,6 +74,8 @@
     </div>
 
     <script>
+        validateForm(document.forms['Register']);
+        
         document.getElementById('registerLink').addEventListener('click', function(event) {
             event.preventDefault();
             document.body.classList.remove('loginPage');
@@ -93,14 +95,6 @@
             document.title = 'Login';
             document.getElementById('login_username').focus();
         });
-
-        // function validateRegistration() {
-        //     form = document.forms['Register'];
-        //     if (form['password'].value != form['password_confirm'].value) {
-        //         alert('Password mismatch!')
-        //         return false;
-        //     }
-        // }
     </script>
 </body>
 </html>
