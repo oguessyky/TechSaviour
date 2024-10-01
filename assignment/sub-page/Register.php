@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
+<?php
+    include "conn.php";
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
-    
-    echo 'mabuyallah';
-    ?>
-</body>
-</html>
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+    mysqli_query($dbConn, "INSERT INTO USER VALUES ('$username','User','$password','$name','$email','$phone');");
+?>

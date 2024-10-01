@@ -61,3 +61,4 @@ create table Laptop (
     foreign key (RAM) references RAM(ID),
     foreign key (Storage) references Storage(ID)
 );
+
