@@ -582,7 +582,7 @@ p.homepage_P{
 .pc-flex {
     position: relative;
     width: 100%;
-    height: 45vw;
+    height: 40vw;
     margin-top: 30vw;
 }
 .pc-category {
@@ -595,16 +595,16 @@ p.homepage_P{
     left: 8%;
 }
 .pc-category:nth-child(2) {
-    bottom: 10%;
-    left: 25%;
+    bottom: 4%;
+    left: 27%;
 }
 .pc-category:nth-child(3) {
     top: 10%;
     left: 50%;
 }
 .pc-category:nth-child(4) {
-    bottom: 6%;
-    left: 67%;
+    bottom: 5%;
+    left: 70%;
 }
 .pc-category img {
     position: relative;
@@ -669,7 +669,7 @@ p.homepage_P{
 }
 .homepage footer{
     position: relative;
-    margin-top: 15vw;
+    margin-top: 5vw;
     width: 100%;
     height: auto;
 }
@@ -709,7 +709,7 @@ p.homepage_P{
 }
 .homepage footer img.web_robot{
     position: absolute;
-    width: 40vw;
+    width: 35vw;
     right: 0;
     bottom: 0;
     z-index: 1;
@@ -924,14 +924,13 @@ ion-icon{
     max-width: 155px;
     background-color: #95a3ff;
     border-radius: 20px;
-
-    /* 3D effect */
-    box-shadow: 4px 4px 10px rgba(60, 47, 102, 0.5),
-                -4px -4px 10px rgba(255, 255, 255, 0.5),
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3),
-                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    /*3Deffect*/box-shadow: 4px 4px 10px rgba(60, 47, 102, 0.5),                -4px -4px 10px rgba(255, 255, 255, 0.5),                inset 2px 2px 5px rgba(0, 0, 0, 0.3),                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
     background: var(--contactHeading);
     transition: all 0.2s ease-in-out;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 .contact-social:hover, .contact-email:hover, .contact-phone:hover, .contact-map:hover {
     box-shadow: 2px 2px 5px rgba(60, 47, 102, 0.5),
