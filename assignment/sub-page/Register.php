@@ -17,6 +17,9 @@
         } else {
             mysqli_query($dbConn, "INSERT INTO USER VALUES ('$username','User','$password','$name','$email','$phone');");
             header("location: ../index.html");
+            die();
         }
+    } else {
+        header("location: ../index.html");
         die();
     }
