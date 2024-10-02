@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="icon" type="../image/x-icon" href="../image/thumbnail.png">
-    <script src="../js/inputValidation.js"></script>
+    <script src="../js/inputValidation2.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -32,37 +32,63 @@
     </div>
 
     <div class="register" style="display: none;">
-        <form name="Register" method="post" action="Register.php" novalidate>
+        <form name="Register" method="post" action="Register.php">
             <h2>Register</h2>
             <div class="input">
                 <span class="inputSpan"></span>
+                <input type="text" name="username" id="register_username"
+                placeholder="Username" required autofocus
+                pattern="^[\w_]*$" maxlength="20"
+                oninput="return validateInput(this,
+                'Username must only contain letters(A-Z), numbers(0-9), and underscores(_).',
+                [isEmpty,'Username cannot be empty.'],
+                [userExists, 'Username already exist.']);">
                 <span class="error-message"></span>
-                <input type="text" name="username" id="register_username" placeholder="Username" required autofocus pattern="^[\w_]*$" maxlength="20" data-error="Username can only contain letters, numbers, and underscores.">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
+                <input type="text" name="name" placeholder="Name"
+                required pattern="[\w\s]*$" maxlength="255"
+                oninput="return validateInput(this,
+                'Name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
+                [isEmpty,'Name cannot be empty.']);">
                 <span class="error-message"></span>
-                <input type="text" name="name" placeholder="Name" required pattern="[\w\s]*$" data-error="Name must can only contain letters, numbers, and space" maxlength="255">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
+                <input type="email" name="email" placeholder="Email"
+                required pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$" maxlength="255"
+                oninput="return validateInput(this,
+                'Please enter a valid email address.',
+                [isEmpty,'Email cannot be empty.']);">
                 <span class="error-message"></span>
-                <input type="email" name="email" placeholder="Email" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" data-error="Please enter a valid email address." maxlength="255">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
+                <input type="tel" name="phone" placeholder="Phone number"
+                required maxlength="20"
+                pattern="^\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\W*\d){0,13}\d$"
+                oninput="return validateInput(this,
+                'Please enter a valid phone number.',
+                [isEmpty,'Phone number cannot be empty.']);">
                 <span class="error-message"></span>
-                <input type="tel" name="phone" placeholder="Phone number" required pattern="^\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\W*\d){0,13}\d$" data-error="Please enter a valid phone number." maxlength="20">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
+                <input type="password" name="password" placeholder="Password"
+                required maxlength="255"
+                oninput="return validateInput(this,
+                'Password cannot be empty.');">
                 <span class="error-message"></span>
-                <input type="password" name="password" placeholder="Password" required data-error="Password cannot be empty." maxlength="255">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
+                <input type="password" name="password_confirm" placeholder="Confirm Password"
+                required maxlength="255"
+                oninput="return validateInput(this,
+                'Please confirm your password.',
+                [password => password != document.forms.Register.password.value, 'Passwords do not match.']);">
                 <span class="error-message"></span>
-                <input type="password" name="password_confirm" placeholder="Confirm Password" required data-error="Please confirm your password." maxlength="255">
             </div>
             <div class="input">
                 <input type="submit" value="Register">
@@ -71,10 +97,27 @@
                 <a href="#" id="loginLink">Login</a>
             </div>
         </form>
+        <script>
+            registerForm = document.forms.Register;
+            registerForm.username.setCustomValidity('Username cannot be empty.');
+            registerForm.name.setCustomValidity('Name cannot be empty.');
+            registerForm.email.setCustomValidity('Email cannot be empty.');
+            registerForm.password.setCustomValidity('Password cannot be empty.');
+            registerForm.password_confirm.setCustomValidity('Please confirm your password.');
+        </script>
     </div>
 
     <script>
-        validateForm(document.forms['Register']);
+        var userlist = [];
+        function userExists(username) {
+            for (user of userlist) {
+                if (user.includes(username)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         document.getElementById('registerLink').addEventListener('click', function(event) {
             event.preventDefault();
             document.body.classList.remove('loginPage');
