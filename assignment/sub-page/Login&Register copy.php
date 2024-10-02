@@ -98,14 +98,12 @@
             </div>
         </form>
         <script>
-            /*
             registerForm = document.forms.Register;
             registerForm.username.setCustomValidity('Username cannot be empty.');
             registerForm.name.setCustomValidity('Name cannot be empty.');
             registerForm.email.setCustomValidity('Email cannot be empty.');
             registerForm.password.setCustomValidity('Password cannot be empty.');
             registerForm.password_confirm.setCustomValidity('Please confirm your password.');
-            */
         </script>
     </div>
 
