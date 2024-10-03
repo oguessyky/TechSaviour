@@ -1,5 +1,6 @@
 <?php
-    include "conn.php";
+    include "../headers/dbConn.php";
+    include "../headers/header.html";
     include "Login&Register.html";
     $userQuery = $dbConn -> query("SELECT Username,Password FROM User");
     $userList = $userQuery -> fetch_all();

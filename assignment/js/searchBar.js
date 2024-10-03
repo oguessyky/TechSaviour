@@ -23,7 +23,7 @@ userButton.addEventListener('mouseout', () => {
 function toggleActiveClass(activeElement, inactiveElement) {
     activeElement.classList.add('active');
     inactiveElement.classList.remove('active');
-    searchBar.style.display = 'block';
+    searchBar.style.display = 'flex';
 }
 function temporarilyRemoveActiveClass(elementToRemove, elementToCheck) {
     if (elementToRemove.classList.contains('active') && !elementToCheck.classList.contains('active')) {

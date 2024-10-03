@@ -3,12 +3,12 @@
 :root{
     --color-1: #0f101655;
     --text-color:#f0f0f0;
-    --accecnt-color:#b933da81;
+    --accent-color:#b933da81;
 
     --pageHeading:white;
     --sectionHeading:-webkit-linear-gradient(#198ebc, #4a4a4a);
 
-    --gradienRepeat: #01dbc2;
+    --gradientRepeat: #01dbc2;
 
     --contactHeading: -webkit-linear-gradient(215deg,#198ebc, #4a4a4a);
 
@@ -322,7 +322,7 @@ h1.aboutUs{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: repeating-conic-gradient(from var(--a),var(--gradienRepeat) 0%, var(--gradienRepeat) 10%, transparent 10%, transparent 50%);
+    background: repeating-conic-gradient(from var(--a),var(--gradientRepeat) 0%, var(--gradientRepeat) 10%, transparent 10%, transparent 50%);
     animation: animate 6s linear infinite;
     animation-delay: -1.5s;
 
@@ -381,7 +381,7 @@ h1.aboutUs{
     content: "";
     position: absolute;
     inset: -2px;
-    background: repeating-conic-gradient(from var(--a),var(--gradienRepeat) 0%, var(--gradienRepeat) 10%, transparent 10%, transparent 50%);
+    background: repeating-conic-gradient(from var(--a),var(--gradientRepeat) 0%, var(--gradientRepeat) 10%, transparent 10%, transparent 50%);
     animation: animate 6s linear infinite;
     box-shadow: 0 0 0 2px #365180;
     border-radius: 20px;
@@ -434,7 +434,8 @@ h1.aboutUs{
     -webkit-text-fill-color: #162d8a;
 }
 .login input:focus, .register input:focus{
-    filter: drop-shadow(0 0 5px var(--gradienRepeat));
+    filter: drop-shadow(0 0 5px var(--gradientRepeat));
+    -webkit-filter: drop-shadow(0 0 5px var(--gradientRepeat));
 }
 .login input::placeholder, .register input::placeholder{
     /* color: #fff; */
@@ -481,8 +482,8 @@ h1.aboutUs{
 }
 .login .group a:hover, .register .group a:hover{
     color: #01dbc2;
-    filter: drop-shadow(0 0 5px var(--gradienRepeat));
-    -webkit-filter: drop-shadow(0 0 5px var(--gradienRepeat));
+    filter: drop-shadow(0 0 5px var(--gradientRepeat));
+    -webkit-filter: drop-shadow(0 0 5px var(--gradientRepeat));
 }
 .login .input, .register .input {
     position: relative;
@@ -797,7 +798,8 @@ img.adminTitle{
     padding-bottom: 5px;
 }
 div.adminButton{
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     /* padding: 80px 25px 30px 0; */
     /* font-size: 24px; */
     text-align: center;
@@ -820,7 +822,7 @@ div.adminButton{
     background-color: #43a2d2;
     border: 2px solid #1a5d7e;
     height: 15vw;
-    width: 50%;
+    width: 100%;
     transition: all 0.5s;
 }
 .adminButton button span {
@@ -855,9 +857,17 @@ div.adminButton{
 }
 .search-bar {
     display: none;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 20px;
     text-align: center;
     position: relative;
+}
+.search-bar form {
+    flex-grow: 1;
+}
+.search-bar .add {
+    margin-right: 10px;
 }
 .search-bar input {
     width: 80%;
@@ -871,7 +881,7 @@ div.adminButton{
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
 }
-.search-bar .search-icon {
+.search-bar .search-icon{
     position: absolute;
     right: 10%;
     top: 50%;
@@ -880,9 +890,13 @@ div.adminButton{
     align-items: center;
     justify-content: center;
 }
-.search-bar .search-icon img {
+.search-bar .search-icon img{
     width: 20px;
     height: 20px;
+}
+.search-bar .add svg{
+    width: 30px;
+    height: 30px;
 }
 
 

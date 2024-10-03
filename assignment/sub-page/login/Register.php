@@ -1,5 +1,5 @@
 <?php
-    include "conn.php";
+    include "../headers/dbConn.php";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $name = $_POST['name'];
@@ -11,5 +11,5 @@
         $_SESSION["username"] = $username;
         session_write_close();
     }
-    header("location: ../index.html");
+    header("location: ../home/");
     die();
