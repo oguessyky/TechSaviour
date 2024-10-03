@@ -13,17 +13,8 @@ function validateInput(input, defaultErrorMsg, ...additionalConditionsAndErrorMe
         }
     }
     if (validity) {
-        /*
-        errorMsgDisplay.classList.remove("invalid");
-        errorMsgDisplay.style.display = 'none';
-        */
         return true;
     } else {
-        /*
-        errorMsgDisplay.textContent = displayText;
-        errorMsgDisplay.classList.add("invalid");
-        errorMsgDisplay.style.display = 'flex';
-        */
         input.setCustomValidity(displayText);
         return false;
     }

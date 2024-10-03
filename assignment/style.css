@@ -414,7 +414,7 @@ h1.aboutUs{
     background-color: transparent;
     /* color: #fff; */
     color: #162d8a;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 0.1em;
     overflow-x:auto;
     box-sizing: border-box;

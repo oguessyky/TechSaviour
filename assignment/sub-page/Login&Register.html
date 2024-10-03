@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="icon" type="../image/x-icon" href="../image/thumbnail.png">
-    <script src="../js/inputValidation2.js"></script>
+    <script src="../js/inputValidation.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="loginPage">
     <div class="login">
-        <form name="login" method="post" action="Login.php">
+        <form name="login" method="post">
             <h2>Login</h2>
             <div class="input">
                 <span class="inputSpan"></span>
                 <input type="text" id="login_username" name="username"
-                placeholder="Username" required autofocus maxlength="20"
+                placeholder="USERNAME" required autofocus maxlength="20"
                 oninput="return validateInput(this,
                 'Please enter your username.',
                 [username => !userExists(username), 'User not found.']);">
@@ -25,13 +25,13 @@
             <div class="input">
                 <span class="inputSpan"></span>
                 <input type="password" name="password"
-                placeholder="Password" required maxlength="255"
+                placeholder="PASSWORD" required maxlength="255"
                 oninput="return validateInput(this,
                 'Please enter your password.',
                 [password => !checkPassword(loginForm.username.value,password), 'Incorrect password.']);">
             </div>
             <div class="input">
-                <input type="submit" value="Sign in">
+                <input type="submit" value="SIGN IN">
             </div>
             <div class="group">
                 <a href="#" id="registerLink">Register</a>
@@ -40,22 +40,22 @@
     </div>
 
     <div class="register" style="display: none;">
-        <form name="register" method="post" action="Register.php">
+        <form name="register" method="post">
             <h2>Register</h2>
             <div class="input">
                 <span class="inputSpan"></span>
                 <input type="text" name="username" id="register_username"
-                placeholder="Username" required autofocus
+                placeholder="USERNAME" required autofocus
                 pattern="^[\w_]*$" maxlength="20"
                 oninput="return validateInput(this,
-                'Username must only contain letters(A-Z), numbers(0-9), and underscores(_).',
+                'Username must only contain letters(A-Z,a-z), numbers(0-9), and underscores(_).',
                 [isEmpty,'Username cannot be empty.'],
                 [userExists, 'Username already exist.']);">
                 <span class="error-message"></span>
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
-                <input type="text" name="name" placeholder="Name"
+                <input type="text" name="name" placeholder="NAME"
                 required pattern="[\w\s]*$" maxlength="255"
                 oninput="return validateInput(this,
                 'Name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
@@ -64,7 +64,7 @@
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
-                <input type="email" name="email" placeholder="Email"
+                <input type="email" name="email" placeholder="EMAIL"
                 required pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$" maxlength="255"
                 oninput="return validateInput(this,
                 'Please enter a valid email address.',
@@ -73,7 +73,7 @@
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
-                <input type="tel" name="phone" placeholder="Phone number"
+                <input type="tel" name="phone" placeholder="PHONE NUMBER"
                 required maxlength="20"
                 pattern="^\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\W*\d){0,13}\d$"
                 oninput="return validateInput(this,
@@ -83,7 +83,7 @@
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
-                <input type="password" name="password" placeholder="Password"
+                <input type="password" name="password" placeholder="PASSWORD"
                 required maxlength="255"
                 oninput="return validateInput(this,
                 'Password cannot be empty.');">
@@ -91,7 +91,7 @@
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
-                <input type="password" name="password_confirm" placeholder="Confirm Password"
+                <input type="password" name="password_confirm" placeholder="CONFIRM PASSWORD"
                 required maxlength="255"
                 oninput="return validateInput(this,
                 'Please confirm your password.',
@@ -99,7 +99,7 @@
                 <span class="error-message"></span>
             </div>
             <div class="input">
-                <input type="submit" value="Register">
+                <input type="submit" value="REGISTER">
             </div>
             <div class="group">
                 <a href="#" id="loginLink">Login</a>
