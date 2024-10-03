@@ -45,7 +45,6 @@
                 'Username must only contain letters(A-Z,a-z), numbers(0-9), and underscores(_).',
                 [isEmpty,'Username cannot be empty.'],
                 [userExists, 'Username already exist.']);">
-                <span class="error-message"></span>
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -54,7 +53,6 @@
                 oninput="return validateInput(this,
                 'Name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
                 [isEmpty,'Name cannot be empty.']);">
-                <span class="error-message"></span>
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -63,7 +61,6 @@
                 oninput="return validateInput(this,
                 'Please enter a valid email address. (Eg. ali@gmail.com)',
                 [isEmpty,'Email cannot be empty.']);">
-                <span class="error-message"></span>
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -73,7 +70,6 @@
                 oninput="return validateInput(this,
                 'Please enter a valid phone number. (Eg. +6012-3456789)',
                 [isEmpty,'Phone number cannot be empty.']);">
-                <span class="error-message"></span>
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -81,7 +77,6 @@
                 required maxlength="255"
                 oninput="return validateInput(this,
                 'Password cannot be empty.');">
-                <span class="error-message"></span>
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -90,7 +85,6 @@
                 oninput="return validateInput(this,
                 'Please confirm your password.',
                 [password => password != registerForm.password.value, 'Passwords do not match.']);">
-                <span class="error-message"></span>
             </div>
             <div class="input">
                 <input type="submit" value="REGISTER">
