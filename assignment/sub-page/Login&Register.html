@@ -119,9 +119,9 @@
     </div>
 
     <script>
-        var userlist = [];
+        var userList = [];
         function userExists(username) {
-            for (user of userlist) {
+            for (user of userList) {
                 if (user[0] == username) {
                     return true;
                 }
@@ -130,7 +130,7 @@
         }
 
         function checkPassword(username,password) {
-            for (user of userlist) {
+            for (user of userList) {
                 if (user[0] == username) {
                     return user[1] == password;
                 }
