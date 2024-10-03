@@ -1,6 +1,6 @@
 <?php
     include "conn.php";
     include "Login&Register.html";
-    $userQuery = $dbConn -> query("SELECT Username FROM User");
+    $userQuery = $dbConn -> query("SELECT Username,Password FROM User");
     $userList = $userQuery -> fetch_all();
     echo "<script> var userlist = ".json_encode($userList)."; </script>";

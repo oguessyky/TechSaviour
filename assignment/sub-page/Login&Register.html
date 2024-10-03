@@ -12,15 +12,23 @@
 
 <body class="loginPage">
     <div class="login">
-        <form>
+        <form name="login" method="post" action="Login.php">
             <h2>Login</h2>
             <div class="input">
                 <span class="inputSpan"></span>
-                <input type="text" id = "login_username" name = "username" placeholder="Username" required autofocus maxlength="20">
+                <input type="text" id="login_username" name="username"
+                placeholder="Username" required autofocus maxlength="20"
+                oninput="return validateInput(this,
+                'Please enter your username.',
+                [username => !userExists(username), 'User not found.']);">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
-                <input type="password" placeholder="Password" required maxlength="255">
+                <input type="password" name="password"
+                placeholder="Password" required maxlength="255"
+                oninput="return validateInput(this,
+                'Please enter your password.',
+                [password => !checkPassword(loginForm.username.value,password), 'Incorrect password.']);">
             </div>
             <div class="input">
                 <input type="submit" value="Sign in">
@@ -32,7 +40,7 @@
     </div>
 
     <div class="register" style="display: none;">
-        <form name="Register" method="post" action="Register.php">
+        <form name="register" method="post" action="Register.php">
             <h2>Register</h2>
             <div class="input">
                 <span class="inputSpan"></span>
@@ -87,7 +95,7 @@
                 required maxlength="255"
                 oninput="return validateInput(this,
                 'Please confirm your password.',
-                [password => password != document.forms.Register.password.value, 'Passwords do not match.']);">
+                [password => password != registerForm.password.value, 'Passwords do not match.']);">
                 <span class="error-message"></span>
             </div>
             <div class="input">
@@ -98,12 +106,15 @@
             </div>
         </form>
         <script>
-            registerForm = document.forms.Register;
+            registerForm = document.forms.register;
             registerForm.username.setCustomValidity('Username cannot be empty.');
             registerForm.name.setCustomValidity('Name cannot be empty.');
             registerForm.email.setCustomValidity('Email cannot be empty.');
             registerForm.password.setCustomValidity('Password cannot be empty.');
             registerForm.password_confirm.setCustomValidity('Please confirm your password.');
+            loginForm = document.forms.login;
+            loginForm.username.setCustomValidity('Please enter your username.');
+            loginForm.password.setCustomValidity('Please enter your password.');
         </script>
     </div>
 
@@ -111,8 +122,17 @@
         var userlist = [];
         function userExists(username) {
             for (user of userlist) {
-                if (user.includes(username)) {
+                if (user[0] == username) {
                     return true;
+                }
+            }
+            return false;
+        }
+
+        function checkPassword(username,password) {
+            for (user of userlist) {
+                if (user[0] == username) {
+                    return user[1] == password;
                 }
             }
             return false;
