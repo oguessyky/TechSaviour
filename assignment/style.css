@@ -123,7 +123,6 @@ div.adminPage{
 }
 
 /* Below are Navigation Bar */
-
 nav, .out-container{
     height: 9vw;
     width: auto;
@@ -909,6 +908,9 @@ div.laptop-admin {
     width: 30px;
     height: 30px;
 }
+.table-container{
+    overflow-x: auto;
+}
 .admin-table {
     display: none;
     border-collapse: collapse;
@@ -1627,6 +1629,9 @@ progress.ssd::-moz-progress-bar {
     .Navigation-bar{
         font-size: 3vw;
     }
+    nav{
+        margin-top: 5vw;
+    }
     body.aboutUs{
         background-size:contain;
     }
@@ -1712,6 +1717,9 @@ progress.ssd::-moz-progress-bar {
 @media screen and (min-width: 750px){
     .Navigation-bar{
         font-size: 1.5vw;
+    }
+    nav{
+        margin-top: 2vw;
     }
     nav a.navIcon::after{
         width: 70%;

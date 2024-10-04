@@ -1,50 +1,75 @@
 const laptopButton = document.querySelector('.laptopDatabase');
 const userButton = document.querySelector('.userDatabase');
+const feedbackButton = document.querySelector('.feedbackDatabase');
 const searchBar = document.getElementById('searchBar');
 const addIcon = document.getElementById('add');
 const adminTable = document.getElementById('adminTable');
 
 laptopButton.addEventListener('click', () => {
-    toggleActiveClass(laptopButton, userButton);
+    handleButtonClick(laptopButton);
 });
 userButton.addEventListener('click', () => {
-    toggleActiveClass(userButton, laptopButton);
+    handleButtonClick(userButton);
 });
+feedbackButton.addEventListener('click', () => {
+    handleButtonClick(feedbackButton);
+});
+
 laptopButton.addEventListener('mouseover', () => {
-    temporarilyRemoveActiveClass(userButton, laptopButton);
+    temporarilyRemoveActiveClass(laptopButton);
 });
 laptopButton.addEventListener('mouseout', () => {
-    restoreActiveClass(userButton, laptopButton);
+    restoreActiveClass(laptopButton);
 });
 userButton.addEventListener('mouseover', () => {
-    temporarilyRemoveActiveClass(laptopButton, userButton);
+    temporarilyRemoveActiveClass(userButton);
 });
 userButton.addEventListener('mouseout', () => {
-    restoreActiveClass(laptopButton, userButton);
+    restoreActiveClass(userButton);
 });
-function toggleActiveClass(activeElement, inactiveElement) {
-    if (activeElement.classList.contains('active')) {
-        activeElement.classList.remove('active');
-        searchBar.style.display = 'none';
-        addIcon.style.display = 'none';
-        adminTable.style.display = 'none';
-    } else {
-        activeElement.classList.add('active');
-        inactiveElement.classList.remove('active');
+feedbackButton.addEventListener('mouseover', () => {
+    temporarilyRemoveActiveClass(feedbackButton);
+});
+feedbackButton.addEventListener('mouseout', () => {
+    restoreActiveClass(feedbackButton);
+});
+
+function handleButtonClick(clickedButton) {
+    const buttons = [laptopButton, userButton, feedbackButton];
+    const isActive = clickedButton.classList.contains('active');
+
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    if (!isActive) {
+        clickedButton.classList.add('active');
         searchBar.style.display = 'flex';
         addIcon.style.display = 'flex';
         adminTable.style.display = 'table';
+    } else {
+        searchBar.style.display = 'none';
+        addIcon.style.display = 'none';
+        adminTable.style.display = 'none';
     }
 }
-function temporarilyRemoveActiveClass(elementToRemove, elementToCheck) {
-    if (elementToRemove.classList.contains('active') && !elementToCheck.classList.contains('active')) {
-        elementToRemove.classList.add('temp-active');
-        elementToRemove.classList.remove('active');
-    }
+
+function temporarilyRemoveActiveClass(element) {
+    const buttons = [laptopButton, userButton, feedbackButton];
+    buttons.forEach(button => {
+        if (button !== element && button.classList.contains('active')) {
+            button.classList.add('temp-active');
+            button.classList.remove('active');
+        }
+    });
 }
-function restoreActiveClass(elementToRestore, elementToCheck) {
-    if (elementToRestore.classList.contains('temp-active') && !elementToCheck.classList.contains('active')) {
-        elementToRestore.classList.add('active');
-        elementToRestore.classList.remove('temp-active');
-    }
+
+function restoreActiveClass(element) {
+    const buttons = [laptopButton, userButton, feedbackButton];
+    buttons.forEach(button => {
+        if (button !== element && button.classList.contains('temp-active')) {
+            button.classList.add('active');
+            button.classList.remove('temp-active');
+        }
+    });
 }
