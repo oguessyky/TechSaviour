@@ -855,49 +855,99 @@ div.adminButton{
 .adminButton button.active span::after {
     opacity: 1;
 }
-.search-bar {
-    display: none;
+div.laptop-admin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    width: 100%;
     margin-top: 20px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
     text-align: center;
     position: relative;
+    width: 70%;
+    max-width: 800px;
 }
 .search-bar form {
+    display: flex;
+    align-items: center;
     flex-grow: 1;
-}
-.search-bar .add {
-    margin-right: 10px;
+    position: relative;
 }
 .search-bar input {
-    width: 80%;
+    width: 100%;
     padding: 10px 40px 10px 20px;
     font-size: 1rem;
     border: 2px solid #1a5d7e;
     border-radius: 50px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
 }
-.search-bar .search-icon{
+.search-bar .search-icon {
     position: absolute;
-    right: 10%;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
-.search-bar .search-icon img{
+.search-bar .search-icon img {
     width: 20px;
     height: 20px;
 }
-.search-bar .add svg{
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    height: 100%;
+}
+.add svg {
     width: 30px;
     height: 30px;
 }
+.admin-table {
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 80%;
+    max-width: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+.admin-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+}
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+}
+.admin-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+}
+.admin-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+.admin-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.admin-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+.responsive-img {
+    width: 20vw;
+    height: auto;
+    max-width: 200px;
+}
+
+
+
 
 
 /* Below are Contact US page */
