@@ -1,6 +1,8 @@
 const laptopButton = document.querySelector('.laptopDatabase');
 const userButton = document.querySelector('.userDatabase');
 const searchBar = document.getElementById('searchBar');
+const addIcon = document.getElementById('add');
+const adminTable = document.getElementById('adminTable');
 
 laptopButton.addEventListener('click', () => {
     toggleActiveClass(laptopButton, userButton);
@@ -21,9 +23,18 @@ userButton.addEventListener('mouseout', () => {
     restoreActiveClass(laptopButton, userButton);
 });
 function toggleActiveClass(activeElement, inactiveElement) {
-    activeElement.classList.add('active');
-    inactiveElement.classList.remove('active');
-    searchBar.style.display = 'flex';
+    if (activeElement.classList.contains('active')) {
+        activeElement.classList.remove('active');
+        searchBar.style.display = 'none';
+        addIcon.style.display = 'none';
+        adminTable.style.display = 'none';
+    } else {
+        activeElement.classList.add('active');
+        inactiveElement.classList.remove('active');
+        searchBar.style.display = 'flex';
+        addIcon.style.display = 'flex';
+        adminTable.style.display = 'table';
+    }
 }
 function temporarilyRemoveActiveClass(elementToRemove, elementToCheck) {
     if (elementToRemove.classList.contains('active') && !elementToCheck.classList.contains('active')) {

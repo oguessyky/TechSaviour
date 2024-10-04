@@ -864,7 +864,7 @@ div.laptop-admin {
     margin-top: 20px;
 }
 .search-bar {
-    display: flex;
+    display: none;
     align-items: center;
     text-align: center;
     position: relative;
@@ -899,7 +899,7 @@ div.laptop-admin {
     height: 20px;
 }
 .add {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin-left: 15px;
@@ -910,6 +910,7 @@ div.laptop-admin {
     height: 30px;
 }
 .admin-table {
+    display: none;
     border-collapse: collapse;
     margin: 25px auto;
     font-size: 0.9em;
