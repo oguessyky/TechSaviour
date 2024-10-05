@@ -1112,6 +1112,7 @@ textarea.list-email {
     display: inline-block;
     font-size: inherit;
     text-align: start;
+    resize: vertical;
     padding: 10px;
     overflow: auto;
     color: #5e83ae;
