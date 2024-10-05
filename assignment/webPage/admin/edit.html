@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Information Form</title>
+    <link rel="icon" type="image/x-icon" href="../../image/thumbnail.png">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="deviceForm">
+    <div class="container-deviceForm">
+        <form class="deviceForm">
+            <div class="form-group-deviceForm">
+                <label for="image" class="deviceForm">Upload Image:</label>
+                <div class="image-container-deviceForm">
+                    <img id="imagePreview_deviceForm" src="#" alt="Image Preview" style="display: none;">
+                </div>
+                <label for="image" class="custom-file-upload-deviceForm">Choose File</label>
+                <input type="file" id="image" name="image" accept="image/*" class="deviceForm" required>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="deviceName" class="deviceForm">Device Name:</label>
+                <input type="text" id="deviceName" name="deviceName" class="deviceForm" required>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="detail" class="deviceForm">Detail:</label>
+                <textarea id="detail" name="detail" rows="4" class="deviceForm" required></textarea>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="cpu" class="deviceForm">CPU and CPU Benchmark:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="text" id="cpu" name="cpu" placeholder="CPU" class="deviceForm" required>
+                    <input type="number" id="cpuBenchmark" name="cpuBenchmark" min="0" placeholder="CPU Benchmark" class="deviceForm" required>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="gpu" class="deviceForm">GPU and GPU Benchmark:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="text" id="gpu" name="gpu" placeholder="GPU" class="deviceForm" required>
+                    <input type="number" id="gpuBenchmark" name="gpuBenchmark" min="0" placeholder="GPU Benchmark" class="deviceForm" required>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="ram" class="deviceForm">RAM:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" id="ram" name="ram" min="0" class="deviceForm" required>
+                    <select id="ramUnit" name="ramUnit" class="deviceForm" required>
+                        <option value="MB">MB</option>
+                        <option value="GB">GB</option>
+                        <option value="TB">TB</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="storage" class="deviceForm">Storage:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" id="storage" name="storage" min="0" class="deviceForm" required>
+                    <select id="storageUnit" name="storageUnit" class="deviceForm" required>
+                        <option value="MB">MB</option>
+                        <option value="GB">GB</option>
+                        <option value="TB">TB</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="deviceForm">Submit</button>
+        </form>
+    </div>
+
+    <script src="../../js/deviceForm.js"></script>
+</body>
+
+
+
+</html>

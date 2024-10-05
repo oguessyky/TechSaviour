@@ -336,8 +336,7 @@ h1.aboutUs{
     content: '';
     position: absolute;
     inset: 2px;
-    /*border: 20px solid #222;
-    */border: 5px solid #deebeb;
+    border: 5px solid #deebeb;
     background: -webkit-repeating-linear-gradient(#81a2c0,#365180);
     transform: rotate(180deg);
     border-radius: 10%;
@@ -437,21 +436,15 @@ h1.aboutUs{
     -webkit-filter: drop-shadow(0 0 5px var(--gradientRepeat));
 }
 .login input::placeholder, .register input::placeholder{
-    /* color: #fff; */
     color: #2e2eb9;
     opacity: 0.5;
 }
 .login .input input[type="submit"], .register .input input[type="submit"]{
-    /*background: #01dbc2;
-    */background: #cfe4ff;
+    background: #cfe4ff;
     cursor: pointer;
-    /*box-shadow: 0 0 0 4px #01dbc2;
-    *//*box-shadow: 0 0 0 2px #365180;
-    */width: 100%;
+    width: 100%;
     font-weight: 600;
-    /*color: #292929;
-    filter: drop-shadow(0 0 15px #01dbc2);
-    */color: #56597a;
+    color: #56597a;
     filter: drop-shadow(0 0 5px #cbfff9);
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -522,7 +515,7 @@ h1.homepage{
     margin: auto;
 }
 p.homepage_P{
-    font-size: 2vw;
+    font-size: 3vw;
     text-transform: capitalize;
     width: 70%;
     margin: auto;
@@ -530,14 +523,14 @@ p.homepage_P{
 .robot img.gif{
     position: absolute;
     right: 0vw;
-    top: 28vw;
+    top: 43vw;
     height: 35vw;
     width: auto;
 }
 .robot .index-content {
     position: absolute;
     right: 26vw;
-    top: 41vw;
+    top: 53vw;
     height: auto;
     width: auto;
     padding: 10px 0 0 10px;
@@ -583,7 +576,7 @@ p.homepage_P{
     position: relative;
     width: 100%;
     height: 40vw;
-    margin-top: 30vw;
+    margin-top: 35vw;
 }
 .pc-category {
     display: block;
@@ -677,7 +670,7 @@ p.homepage_P{
 }
 .homepage footer{
     position: relative;
-    margin-top: 5vw;
+    margin-top: 10vw;
     width: 100%;
     height: auto;
 }
@@ -695,7 +688,7 @@ p.homepage_P{
 }
 .homepage footer div.text h2{
     font-weight: 900;
-    font-size: 8vw;
+    font-size: 10vw;
     text-transform: capitalize;
 }
 .homepage footer div.text{
@@ -704,22 +697,22 @@ p.homepage_P{
     left: 5%;
 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 4vw;
+    font-size: 6vw;
     color: #ffffff;
     font-weight: 300;
 }
 
 .homepage footer img.bg {
     width: 100%;
-    height: 40vw;
+    height: auto;
     /* clip-path: inset(0 0 20% 0); */
     z-index: -1;
 }
 .homepage footer img.web_robot{
     position: absolute;
-    width: 35vw;
+    width: 40vw;
     right: 0;
-    bottom: 0;
+    bottom: 50px;
     z-index: 1;
 }
 .homepage footer img.web_robot:hover{
@@ -1112,7 +1105,7 @@ ion-icon{
     left: 12vw;
     top: calc(23vh + 20px);
 }
-textarea {
+textarea.list-email {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     line-height: inherit;
@@ -1133,7 +1126,7 @@ textarea {
     /* background: linear-gradient(145deg, #ff959519, #3c2f6619); */
     border-radius: 10px;
 }
-textarea:focus {
+textarea.list-email:focus {
     border: 4px inset #4763a9;
     outline: 0px;
     font-weight: 700;
@@ -1601,7 +1594,7 @@ progress.ssd::-moz-progress-bar {
 
 
 
-/* Guide */
+/* Below are Guide */
 .guide h1{
     text-align: center;
     color: var(--pageHeading);
@@ -1624,6 +1617,160 @@ progress.ssd::-moz-progress-bar {
 
 
 
+/* Below are device form */
+body.deviceForm {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+}
+.container-deviceForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+form.deviceForm {
+    background: -webkit-repeating-linear-gradient(#81a2c0, #365180);
+    border: 5px solid #deebeb;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    max-width: 600px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    animation: fadeIn-deviceForm 1s ease-in-out;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+@keyframes fadeIn-deviceForm {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.form-group-deviceForm {
+    margin-bottom: 15px;
+}
+label.deviceForm {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #deebeb;
+}
+input[type="text"].deviceForm, input[type="number"].deviceForm, input[type="file"].deviceForm, textarea.deviceForm, select.deviceForm {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    background-color: #f4f4f4;
+    color: #365180;
+}
+input[type="text"].deviceForm:focus, input[type="number"].deviceForm:focus, input[type="file"].deviceForm:focus, textarea.deviceForm:focus, select.deviceForm:focus {
+    border-color: #007BFF;
+}
+textarea.deviceForm {
+    resize: vertical;
+}
+.inline-group-deviceForm {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.inline-group-deviceForm input[type="text"].deviceForm, .inline-group-deviceForm input[type="number"].deviceForm {
+    flex: 1;
+    max-width: 30%;
+}
+.inline-group-deviceForm select.deviceForm {
+    max-width: fit-content;
+}
+button.deviceForm, .custom-file-upload-deviceForm {
+    background-color: #365180;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+button.deviceForm:hover, .custom-file-upload-deviceForm:hover {
+    background-color: #81a2c0;
+    transform: scale(1.05);
+}
+#imagePreview_deviceForm {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid #deebeb;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+#imagePreview_deviceForm:hover {
+    transform: scale(1.05);
+}
+.image-container-deviceForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+input[type="file"].deviceForm {
+    display: none;
+}
+.custom-file-upload-deviceForm {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    color: #365180;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.modal-deviceForm {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content-deviceForm {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #deebeb;
+    border-radius: 8px;
+}
+.close-deviceForm {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.close-deviceForm:hover,
+.close-deviceForm:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
 /* Below are respond design */
 @media screen and (max-width: 750px){
     .Navigation-bar{
@@ -1631,6 +1778,9 @@ progress.ssd::-moz-progress-bar {
     }
     nav{
         margin-top: 5vw;
+    }
+    div.homepage_H{
+        margin-top: 7vw;
     }
     body.aboutUs{
         background-size:contain;
@@ -1711,12 +1861,25 @@ progress.ssd::-moz-progress-bar {
         flex-direction: row;
         align-items: center;
     }
+    .inline-group-deviceForm {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .inline-group-deviceForm input[type="text"].deviceForm, .inline-group-deviceForm input[type="number"].deviceForm, .inline-group-deviceForm select.deviceForm {
+        max-width: 100%;
+    }
+    form.deviceForm {
+        margin-top: 20px;
+    }
     
 }
 
 @media screen and (min-width: 750px){
     .Navigation-bar{
         font-size: 1.5vw;
+    }
+    div.homepage_H{
+        margin-top: 3vw;
     }
     nav{
         margin-top: 2vw;
