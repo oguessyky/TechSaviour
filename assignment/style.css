@@ -1786,7 +1786,7 @@ input[type="file"].deviceForm {
     background: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    display: flex;/*Initially hidden*/
+    display: none;/*Initially hidden*/
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
