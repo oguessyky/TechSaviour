@@ -1771,6 +1771,97 @@ input[type="file"].deviceForm {
 
 
 
+/* Below are Log out */
+.logout-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;/*Initially hidden*/
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+h2.logout-H,
+p.logout-H {
+    color: #fff;
+    margin: 0;
+    padding: 10px 0;
+}
+.popup-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.popup-content::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: -webkit-repeating-linear-gradient(#81a2c0, #365180);
+    border-radius: 20px;
+    z-index: -1;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.popup-content::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 5px solid #deebeb;
+    transform: rotate(180deg);
+    border-radius: 20px;
+    z-index: -1;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.logout-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.logout-button button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #86a7e0;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.logout-button button:hover {
+    background-color: #81a2c0;
+}
+
+
+
+
 
 /* Below are respond design */
 @media screen and (max-width: 750px){

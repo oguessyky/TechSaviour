@@ -4,87 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Logout</title>
+    <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body>
-    <style>
-        .logout-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            min-height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10%;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: none;/* Initially hidden */
-        }
-
-        h2.logout-H,
-        p.logout-H {
-            color: #fff;
-        }
-
-        .popup-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            border-radius: 10%;
-        }
-
-        .popup-content::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: -webkit-repeating-linear-gradient(#81a2c0, #365180);
-            border-radius: 10%;
-            z-index: -1;
-        }
-
-        .popup-content::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            border: 5px solid #deebeb;
-            transform: rotate(180deg);
-            border-radius: 10%;
-            z-index: -1;
-        }
-
-        .logout-button {
-            display: flex;
-            flex-direction: row;
-
-        }
-
-        .logout-button button {
-            margin: 10px;
-            padding: 10px 20px;
-            border: none;
-            background-color: #86a7e0;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .logout-button button:hover {
-            background-color: #81a2c0;
-        }
-    </style>
-
-
     <div class="logout-popup" id="logoutPopup">
         <div class="popup-content">
             <h2 class="logout-H">Log Out</h2>
@@ -95,24 +19,8 @@
             </div>
         </div>
     </div>
-
     
-    <script>
-        function showPopup() {
-            document.getElementById('logoutPopup').style.display = 'flex';
-        }
-
-        function closePopup() {
-            document.getElementById('logoutPopup').style.display = 'none';
-        }
-
-        function logout() {
-            // Function place for logout
-            alert('Logged out!');
-            closePopup();
-        }
-
-    </script>
+    <script src="../../js/logout.js"></script>
 </body>
 
 </html>
