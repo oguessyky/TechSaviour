@@ -1690,17 +1690,19 @@ textarea.deviceForm {
     max-width: fit-content;
 }
 button.deviceForm, .custom-file-upload-deviceForm {
-    background-color: #365180;
+    background-color: #a5c0ed;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    transform: scale(1.05);
 }
 button.deviceForm:hover, .custom-file-upload-deviceForm:hover {
-    background-color: #81a2c0;
-    transform: scale(1.05);
+    background-color: #5e8fbc;
+    color: white;
+    transform: scale(1);
 }
 #imagePreview_deviceForm {
     margin-top: 10px;
