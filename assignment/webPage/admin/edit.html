@@ -48,11 +48,17 @@
             <div class="form-group-deviceForm">
                 <label for="gpu" class="deviceForm">GPU and GPU Benchmark:</label>
                 <div class="inline-group-deviceForm">
+                    <input type="text" list="gpuManufacturerList" id="gpuManufacturer" name="gpuManufacturer" placeholder="Manufacturer" class="deviceForm" required>
+                    <datalist id="gpuManufacturerList">
+                        <option value="NVIDIA">NVIDIA</option>
+                        <option value="AMD">AMD</option>
+                        <!-- Add more options -->
+                    </datalist>
                     <input type="text" list="gpuList" id="gpu" name="gpu" placeholder="GPU" class="deviceForm" required>
                     <datalist id="gpuList">
-                        <option value="NVIDIA GeForce RTX 3080">
-                        <option value="AMD Radeon RX 6800 XT">
-                        <option value="NVIDIA GeForce GTX 1660">
+                        <option value="GeForce RTX 3080">
+                        <option value="Radeon RX 6800 XT">
+                        <option value="GeForce GTX 1660">
                         <!-- Add more options -->
                     </datalist>
                     <input type="number" id="gpuBenchmark" name="gpuBenchmark" min="0" placeholder="GPU Benchmark" class="deviceForm" required>
@@ -64,7 +70,7 @@
                     <input type="number" id="ram" name="ram" min="0" class="deviceForm" required>
                     <select id="ramUnit" name="ramUnit" class="deviceForm" required>
                         <option value="MB">MB</option>
-                        <option value="GB">GB</option>
+                        <option value="GB" selected>GB</option>
                         <option value="TB">TB</option>
                     </select>
                 </div>
@@ -75,14 +81,14 @@
                     <input type="number" id="storage" name="storage" min="0" class="deviceForm" required>
                     <select id="storageUnit" name="storageUnit" class="deviceForm" required>
                         <option value="MB">MB</option>
-                        <option value="GB">GB</option>
+                        <option value="GB" selected>GB</option>
                         <option value="TB">TB</option>
                     </select>
                     <select id="storageUnitType" name="storageUnitType" class="deviceForm" required>
                         <option value="HDD">HDD</option>
                         <option value="SSD">SSD</option>
                         <option value="M2 SSD DDR4">M2 SSD DDR4</option>
-                        <option value="M2 SSD DDR5">M2 SSD DDR5</option>
+                        <option value="M2 SSD DDR5" selected>M2 SSD DDR5</option>
                     </select>
                 </div>
             </div>
