@@ -29,14 +29,32 @@
             <div class="form-group-deviceForm">
                 <label for="cpu" class="deviceForm">CPU and CPU Benchmark:</label>
                 <div class="inline-group-deviceForm">
-                    <input type="text" id="cpu" name="cpu" placeholder="CPU" class="deviceForm" required>
+                    <input type="text" list="cpuManufacturerList" id="cpuManufacturer" name="cpuManufacturer" placeholder="Manufacturer" class="deviceForm" required>
+                    <datalist id="cpuManufacturerList">
+                        <option value="INTEL">INTEL</option>
+                        <option value="AMD">AMD</option>
+                        <!-- Add more options -->
+                    </datalist>
+                    <input type="text" list="cpuList" id="cpu" name="cpu" placeholder="CPU" class="deviceForm" required>
+                    <datalist id="cpuList">
+                        <option value="i3 12300H">
+                        <option value="i5 13500H"></option>
+                        <option value="i7 14700HX">
+                        <!-- Add more options -->
+                    </datalist>
                     <input type="number" id="cpuBenchmark" name="cpuBenchmark" min="0" placeholder="CPU Benchmark" class="deviceForm" required>
                 </div>
             </div>
             <div class="form-group-deviceForm">
                 <label for="gpu" class="deviceForm">GPU and GPU Benchmark:</label>
                 <div class="inline-group-deviceForm">
-                    <input type="text" id="gpu" name="gpu" placeholder="GPU" class="deviceForm" required>
+                    <input type="text" list="gpuList" id="gpu" name="gpu" placeholder="GPU" class="deviceForm" required>
+                    <datalist id="gpuList">
+                        <option value="NVIDIA GeForce RTX 3080">
+                        <option value="AMD Radeon RX 6800 XT">
+                        <option value="NVIDIA GeForce GTX 1660">
+                        <!-- Add more options -->
+                    </datalist>
                     <input type="number" id="gpuBenchmark" name="gpuBenchmark" min="0" placeholder="GPU Benchmark" class="deviceForm" required>
                 </div>
             </div>
@@ -59,6 +77,12 @@
                         <option value="MB">MB</option>
                         <option value="GB">GB</option>
                         <option value="TB">TB</option>
+                    </select>
+                    <select id="storageUnitType" name="storageUnitType" class="deviceForm" required>
+                        <option value="HDD">HDD</option>
+                        <option value="SSD">SSD</option>
+                        <option value="M2 SSD DDR4">M2 SSD DDR4</option>
+                        <option value="M2 SSD DDR5">M2 SSD DDR5</option>
                     </select>
                 </div>
             </div>

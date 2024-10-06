@@ -126,7 +126,6 @@ div.adminPage{
 nav, .out-container{
     height: 9vw;
     width: auto;
-    /* background-color: var(--color-1); */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -138,15 +137,43 @@ nav, .out-container{
     flex-direction: row;
     align-items: center;
 }
-nav a{
+nav a, nav button.navIcon{
     position: relative;
-    height: 100%;
     display: flex;
-    padding: 0 20px;
     align-items: center;
     text-decoration: none;
     color: var(--text-color);
     text-align: center;
+    height: 100%;
+}
+nav a{
+    padding: 0 20px;
+}
+nav button.navIcon {
+    font-family: "Mochiy Pop One", sans-serif;
+    position: relative;
+    color: var(--text-color);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.71);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.297);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+    padding: 0 30px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+nav button.navIcon:hover{
+    background: #fff;
+    color: #162938;
 }
 div.profile{
     display: flex;
@@ -162,46 +189,16 @@ nav a.navIcon::after {
     transform: scaleX(0);
     transform-origin: left;
     transition: 1s;
-
-    
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -ms-transition: 1s;
-    -o-transition: 1s;
-    -webkit-transform: scaleX(0);
-    -moz-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    -o-transform: scaleX(0);
 }
-nav a.navIcon.active::after {
+nav a.navIcon.active::after{
     transform: scaleX(1);
-
-    -webkit-transform: scaleX(1);
-    -moz-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    -o-transform: scaleX(1);
 }
-nav a.navIcon.inactive::after {
+nav a.navIcon.inactive::after{
     transform: scaleX(0);
-    
-    -webkit-transform: scaleX(0);
-    -moz-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    -o-transform: scaleX(0);
 }
 nav a.navIcon:hover::after{
     transform-origin: right;
     transform: scaleX(1);
-
-
-    -webkit-transform: scaleX(1);
-    -moz-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    -o-transform: scaleX(1);
 }
 div.icon{
     margin: auto;
@@ -1686,25 +1683,33 @@ textarea.deviceForm {
     gap: 10px;
     align-items: center;
 }
+datalist.deviceForm option {
+    background-color: #f4f4f4;
+    color: #365180;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
 .inline-group-deviceForm input[type="text"].deviceForm, .inline-group-deviceForm input[type="number"].deviceForm {
     flex: 1;
-    max-width: 30%;
+    max-width: 45%;
 }
 .inline-group-deviceForm select.deviceForm {
     max-width: fit-content;
 }
 button.deviceForm, .custom-file-upload-deviceForm {
-    background-color: #365180;
+    background-color: #a5c0ed;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    transform: scale(1.05);
 }
 button.deviceForm:hover, .custom-file-upload-deviceForm:hover {
-    background-color: #81a2c0;
-    transform: scale(1.05);
+    background-color: #5e8fbc;
+    color: white;
+    transform: scale(1);
 }
 #imagePreview_deviceForm {
     margin-top: 10px;
@@ -1870,8 +1875,11 @@ p.logout-H {
 
 /* Below are respond design */
 @media screen and (max-width: 750px){
-    .Navigation-bar{
+    .Navigation-bar, nav button.navIcon{
         font-size: 3vw;
+    }
+    nav button.navIcon{
+        height: fit-content;
     }
     nav{
         margin-top: 5vw;
@@ -1920,17 +1928,12 @@ p.logout-H {
         border-radius:0 10% 10% 0;
         overflow: auto;
     }
-    nav a{
+    nav a,  div.profile{
         box-sizing:border-box;
         height: auto;
         width: 100%;
         padding: 20px 30px;
         justify-content: center;
-    }
-    div.profile{
-        width: 100%;
-        justify-content: flex-end;
-        align-items: center;
     }
     nav .sidebar-h{
         flex-direction: column;
@@ -1941,7 +1944,6 @@ p.logout-H {
         right: 25%;
     }
     .open-sidebar-button, .close-sidebar-button{
-
         padding: 20px;
         display: block;
     }
@@ -1973,11 +1975,17 @@ p.logout-H {
     form.deviceForm {
         margin-top: 20px;
     }
+    nav .profile{
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 750px){
-    .Navigation-bar{
+    .Navigation-bar, nav button.navIcon{
         font-size: 1.5vw;
+    }
+    nav button.navIcon{
+        height: 60%;
     }
     div.homepage_H{
         margin-top: 3vw;
@@ -1994,6 +2002,7 @@ p.logout-H {
         height: 100%;
         align-items: center;
         justify-content: flex-end;
+        margin-right: 20px;
     }
     body.aboutUs{
         background-size:cover;
@@ -2014,4 +2023,5 @@ p.logout-H {
     .icon2{
         display: none;
     }
+    
 }
