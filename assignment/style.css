@@ -150,29 +150,36 @@ nav a{
     padding: 0 20px;
 }
 nav button.navIcon {
-    padding: 0 40px;
-    background: transparent;
+    font-family: "Mochiy Pop One", sans-serif;
+    position: relative;
     color: var(--text-color);
-    border: none;
-    cursor: pointer;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     text-align: center;
-    font-family: "Mochiy Pop One", sans-serif;
-    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.71);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.297);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+    padding: 0 30px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
-nav button.navIcon:hover::after,
-nav button.navIcon:focus::after {
-    transform: scaleX(1);
-    transform-origin: right;
+nav button.navIcon:hover{
+    background: #fff;
+    color: #162938;
 }
 div.profile{
     display: flex;
     flex-direction: row;
 }
-nav a.navIcon::after, nav button.navIcon::after{
+nav a.navIcon::after{
     content: "";
     position: absolute;
     height: 3px;
@@ -183,13 +190,13 @@ nav a.navIcon::after, nav button.navIcon::after{
     transform-origin: left;
     transition: 1s;
 }
-nav a.navIcon.active::after, nav button.navIcon.active::after {
+nav a.navIcon.active::after{
     transform: scaleX(1);
 }
-nav a.navIcon.inactive::after, nav button.navIcon.inactive::after {
+nav a.navIcon.inactive::after{
     transform: scaleX(0);
 }
-nav a.navIcon:hover::after, nav button:hover::after, nav button:focus::after{
+nav a.navIcon:hover::after{
     transform-origin: right;
     transform: scaleX(1);
 }
@@ -1862,6 +1869,9 @@ p.logout-H {
     .Navigation-bar, nav button.navIcon{
         font-size: 3vw;
     }
+    nav button.navIcon{
+        height: fit-content;
+    }
     nav{
         margin-top: 5vw;
     }
@@ -1919,7 +1929,7 @@ p.logout-H {
     nav .sidebar-h{
         flex-direction: column;
     }
-    nav a.navIcon::after, nav button.navIcon::after{
+    nav a.navIcon::after{
         width: 50%;
         left: 25%;
         right: 25%;
@@ -1962,8 +1972,11 @@ p.logout-H {
 }
 
 @media screen and (min-width: 750px){
-    .Navigation-bar, nav button{
+    .Navigation-bar, nav button.navIcon{
         font-size: 1.5vw;
+    }
+    nav button.navIcon{
+        height: 60%;
     }
     div.homepage_H{
         margin-top: 3vw;
@@ -1971,7 +1984,7 @@ p.logout-H {
     nav{
         margin-top: 2vw;
     }
-    nav a.navIcon::after, nav button::after{
+    nav a.navIcon::after{
         width: 70%;
         left: 15%;
         right: 15%;
@@ -1980,6 +1993,7 @@ p.logout-H {
         height: 100%;
         align-items: center;
         justify-content: flex-end;
+        margin-right: 20px;
     }
     body.aboutUs{
         background-size:cover;
