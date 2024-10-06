@@ -1682,9 +1682,15 @@ textarea.deviceForm {
     gap: 10px;
     align-items: center;
 }
+datalist.deviceForm option {
+    background-color: #f4f4f4;
+    color: #365180;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
 .inline-group-deviceForm input[type="text"].deviceForm, .inline-group-deviceForm input[type="number"].deviceForm {
     flex: 1;
-    max-width: 30%;
+    max-width: 45%;
 }
 .inline-group-deviceForm select.deviceForm {
     max-width: fit-content;
