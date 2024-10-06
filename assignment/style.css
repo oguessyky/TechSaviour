@@ -148,6 +148,10 @@ nav a{
     color: var(--text-color);
     text-align: center;
 }
+div.profile{
+    display: flex;
+    flex-direction: row;
+}
 nav a.navIcon::after{
     content: "";
     position: absolute;
@@ -1922,6 +1926,11 @@ p.logout-H {
         padding: 20px 30px;
         justify-content: center;
     }
+    div.profile{
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+    }
     nav .sidebar-h{
         flex-direction: column;
     }
@@ -1980,6 +1989,11 @@ p.logout-H {
         width: 70%;
         left: 15%;
         right: 15%;
+    }
+    div.profile{
+        height: 100%;
+        align-items: center;
+        justify-content: flex-end;
     }
     body.aboutUs{
         background-size:cover;
