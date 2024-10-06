@@ -7,8 +7,4 @@
         $role = $_SESSION['role'];
     }
     session_abort();
-    if ($isSet && $role == 'Admin') {
-        header("location: ../admin/adminPage1.html");
-        die();
-    }
     include "header.html";

@@ -5,16 +5,6 @@ const searchBar = document.getElementById('searchBar');
 const addIcon = document.getElementById('add');
 const adminTable = document.getElementById('adminTable');
 
-laptopButton.addEventListener('click', () => {
-    handleButtonClick(laptopButton);
-});
-userButton.addEventListener('click', () => {
-    handleButtonClick(userButton);
-});
-feedbackButton.addEventListener('click', () => {
-    handleButtonClick(feedbackButton);
-});
-
 laptopButton.addEventListener('mouseover', () => {
     temporarilyRemoveActiveClass(laptopButton);
 });
