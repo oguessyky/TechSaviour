@@ -215,6 +215,9 @@ nav .sidebar-h{
     width: 100%;
     height: 100%;
 }
+nav .profile{
+    height: 100%;
+}
 img.logo, .icon2 img{
     min-height: 68px;
     height: 12vw;
@@ -1963,7 +1966,9 @@ p.logout-H {
     form.deviceForm {
         margin-top: 20px;
     }
-    
+    nav .profile{
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 750px){
@@ -2000,5 +2005,4 @@ p.logout-H {
     .icon2{
         display: none;
     }
-    
 }
