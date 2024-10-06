@@ -137,7 +137,7 @@ nav, .out-container{
     flex-direction: row;
     align-items: center;
 }
-nav a, nav button.navIcon{
+nav a{
     position: relative;
     display: flex;
     align-items: center;
