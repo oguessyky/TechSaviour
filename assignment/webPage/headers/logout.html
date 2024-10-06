@@ -13,14 +13,14 @@
     <button onclick="showPopup()" style="margin: 300px; height: 50px; width: 70px; background-color: aliceblue; border: 2px inset lightskyblue; color: blue;">show</button>
     
     <div class="logout-popup" id="logoutPopup">
-        <div class="popup-content">
+        <form class="popup-content" action="logout.php">
             <h2 class="logout-H">Log Out</h2>
             <p class="logout-H">Are you sure you want to log out?</p>
             <div class="logout-button">
-                <button onclick="logout()">Yes</button>
+                <button type="submit" onclick="logout()">Yes</button>
                 <button onclick="closePopup()">No</button>
             </div>
-        </div>
+        </form>
     </div>
     
     <script src="../../js/logout.js"></script>
