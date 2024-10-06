@@ -179,6 +179,9 @@ div.profile{
     display: flex;
     flex-direction: row;
 }
+div.profileOptions{
+    display: none;
+}
 nav a.navIcon::after {
     content: "";
     position: absolute;
