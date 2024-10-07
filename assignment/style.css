@@ -76,7 +76,7 @@ body.aboutUs{
     background-attachment: fixed;
     background-position: center;
 }
-body.homepage, body.gaming, body.business, body.art, body.advancedSearch, body.guide, body.detail{
+body.homepage, body.gaming, body.business, body.art, body.guide, body.detail{
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% auto;
@@ -95,6 +95,9 @@ body.art{
 }
 body.advancedSearch{
     background-image: url("image/general bg.png");
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: 100vw auto;
 }
 body.detail{
     background-image: url("image/general bg.png");
@@ -1246,47 +1249,47 @@ h1.advancedSearch{
 }
 div.main-explore {
     display: flex;
-    margin-top: 20vw;
-    margin-bottom: 5vw;
-    margin-left: 5vw;
-    width: calc(100% - 5vw);
-    height: 100%;
-    /* flex-direction: row; */
+    flex-direction: row;
+    margin-top: 30vw;
 }
-.main-explore > *:nth-child(1){
-    flex: 1 1 15%;
-}
-.main-explore > *:nth-child(2){
-    flex: 1 1 85%;
-}
-.button-body-explore{
-    position:sticky;
+.button-body-explore {
+    position: sticky;
+    top: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #000000;
+    z-index: 1000;
 }
 .button-inner-explore {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: fit-content;
-    width: fit-content;
+    width: 100%; /* Ensure it takes full width */
     border-radius: 100px;
     padding: 20px;
     background-color: #9abefd;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 .button-container-explore {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5vh; /* Adjust gap for better spacing */
+    width: 100%; /* Ensure it takes full width */
+    padding: 1vh; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 .circle-button-explore {
     position: relative;
-    width: 9vw;
-    height: 9vw;
-    max-width: 100px;
-    max-height: 100px;
+    flex: 1 1 auto; /* Allow buttons to grow and shrink */
+    width: 10vw; /* Adjust width for better responsiveness */
+    height: 10vw; /* Adjust height for better responsiveness */
+    max-width: 150px; /* Increase max width */
+    max-height: 150px; /* Increase max height */
+    min-width: 90px; /* Set minimum width */
+    min-height: 90px; /* Set minimum height */
     border-radius: 50%;
     background: #e0e0e0;
     display: flex;
@@ -1299,10 +1302,12 @@ div.main-explore {
 .circle-button-explore::before {
     content: '';
     position: absolute;
-    width: 8vw;
-    height: 8vw;
-    max-width: 80px;
-    max-height: 80px;
+    width: 9vw; /* Adjust width for better responsiveness */
+    height: 9vw; /* Adjust height for better responsiveness */
+    max-width: 130px; /* Increase max width */
+    max-height: 130px; /* Increase max height */
+    min-width: 70px; /* Set minimum width */
+    min-height: 70px; /* Set minimum height */
     background: #ffffff;
     border-radius: 50%;
     z-index: 1;
@@ -1318,10 +1323,6 @@ div.main-explore {
     background: conic-gradient(var(--color) calc(var(--percent) * 1%), #d7f7fd calc(var(--percent) * 1%));
     z-index: 0;
     transition: opacity 0.2s;
-    -webkit-transition: opacity 0.2s;
-    -moz-transition: opacity 0.2s;
-    -ms-transition: opacity 0.2s;
-    -o-transition: opacity 0.2s;
 }
 .circle-button-explore:hover {
     transform: scale(1.1);
@@ -1334,17 +1335,22 @@ div.main-explore {
     z-index: 2;
 }
 .number-explore {
-    font-size: 2vw;
+    font-size: 2vw; /* Adjust font size for better responsiveness */
     font-weight: bold;
     margin-top: 8px;
 }
 .icon-explore {
-    width: 4vw;
-    height: 4vw;
-    max-width: 40px;
-    max-height: 40px;
+    width: 5vw; /* Adjust width for better responsiveness */
+    height: 5vw; /* Adjust height for better responsiveness */
+    max-width: 80px; /* Increase max width */
+    max-height: 80px; /* Increase max height */
+    min-width: 50px; /* Set minimum width */
+    min-height: 50px; /* Set minimum height */
     fill: var(--color);
 }
+
+
+
 
 
 
