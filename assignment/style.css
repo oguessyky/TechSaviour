@@ -76,7 +76,7 @@ body.aboutUs{
     background-attachment: fixed;
     background-position: center;
 }
-body.gaming, body.business, body.art, body.advancedSearch, body.guide, body.detail{
+body.homepage, body.gaming, body.business, body.art, body.advancedSearch, body.guide, body.detail{
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% auto;
@@ -103,9 +103,6 @@ body.homepage, body.contactUs{
     background-image: url("image/general bg.png");
     background-repeat: no-repeat;
     position: relative;
-}
-body.homepage{
-    background-size: cover;
 }
 body.contactUs{
     background-size: 100% auto;
@@ -556,19 +553,19 @@ p.homepage_P{
 .robot img.gif{
     position: absolute;
     right: 0vw;
-    top: 43vw;
+    top: 34vw;
     height: 35vw;
     width: auto;
 }
 .robot .index-content {
     position: absolute;
     right: 26vw;
-    top: 53vw;
+    top: 48vw;
     height: auto;
     width: auto;
     padding: 10px 0 0 10px;
     background-color: #1cd9ffc0;
-    border: 3px solid white;
+    border: 3px solid #1c9dff;
     color: rgb(255, 255, 255);
     overflow: hidden;
     letter-spacing: 0.1em;
@@ -1247,29 +1244,108 @@ h1.advancedSearch{
     text-transform: uppercase;
     padding: 4vw;
 }
-.fixed-nav {
-    position:sticky;
-    margin-top: 20vw;
-    top: 0;
-    left: 0;
-    width: 20vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #92bae2;
-    border-radius: 150px;
-    -webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    -ms-border-radius: 150px;
-    -o-border-radius: 150px;
-}
 .progress-circle {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+}
+div.main-explore {
+    display: flex;
+    margin-top: 20vw;
+    margin-bottom: 5vw;
+    margin-left: 5vw;
+    width: calc(100% - 5vw);
+    height: 100%;
+    /* flex-direction: row; */
+}
+.main-explore > *:nth-child(1){
+    flex: 1 1 15%;
+}
+.main-explore > *:nth-child(2){
+    flex: 1 1 85%;
+}
+.button-body-explore{
+    position:sticky;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+.button-inner-explore {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 100px;
+    padding: 20px;
+    background-color: #9abefd;
+}
+.button-container-explore {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.circle-button-explore {
+    position: relative;
+    width: 9vw;
+    height: 9vw;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.circle-button-explore::before {
+    content: '';
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    max-width: 80px;
+    max-height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+}
+.circle-button-explore::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(var(--color) calc(var(--percent) * 1%), #d7f7fd calc(var(--percent) * 1%));
+    z-index: 0;
+    transition: background 0.2s;
+}
+.circle-button-explore:hover {
+    transform: scale(1.1);
+}
+.content-explore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #6797ff;
+    z-index: 2;
+}
+.number-explore {
+    font-size: 2vw;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.icon-explore {
+    width: 4vw;
+    height: 4vw;
+    max-width: 40px;
+    max-height: 40px;
+    fill: var(--color);
 }
 
 
@@ -1343,8 +1419,8 @@ h1.advancedSearch{
     padding: 10px;
 }
 .component-img img {
-    width: 14vw;
-    height: 14vw;
+    width: 12vw;
+    height: 12vw;
     min-width: 100px;
     min-height: 100px;
     max-width: 250px;
@@ -1908,7 +1984,7 @@ p.logout-H {
         height: fit-content;
     }
     nav{
-        margin-top: 5vw;
+        margin-top: 3vw;
     }
     div.homepage_H{
         margin-top: 7vw;
