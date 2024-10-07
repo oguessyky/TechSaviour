@@ -1244,12 +1244,6 @@ h1.advancedSearch{
     text-transform: uppercase;
     padding: 4vw;
 }
-.progress-circle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
 div.main-explore {
     display: flex;
     margin-top: 20vw;
@@ -1323,7 +1317,11 @@ div.main-explore {
     border-radius: 50%;
     background: conic-gradient(var(--color) calc(var(--percent) * 1%), #d7f7fd calc(var(--percent) * 1%));
     z-index: 0;
-    transition: background 0.2s;
+    transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
 }
 .circle-button-explore:hover {
     transform: scale(1.1);
