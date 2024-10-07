@@ -1688,7 +1688,7 @@ label.deviceForm {
     font-weight: bold;
     color: #deebeb;
 }
-input[type="text"].deviceForm, input[type="number"].deviceForm, input[type="file"].deviceForm, textarea.deviceForm, select.deviceForm {
+input[type="text"].deviceForm, input[type="number"].deviceForm, input[type="file"].deviceForm, input[type="email"].deviceForm, input[type="tel"].deviceForm, textarea.deviceForm, select.deviceForm {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -1698,7 +1698,7 @@ input[type="text"].deviceForm, input[type="number"].deviceForm, input[type="file
     background-color: #f4f4f4;
     color: #365180;
 }
-input[type="text"].deviceForm:focus, input[type="number"].deviceForm:focus, input[type="file"].deviceForm:focus, textarea.deviceForm:focus, select.deviceForm:focus {
+input[type="text"].deviceForm:focus, input[type="number"].deviceForm:focus, input[type="file"].deviceForm:focus, input[type="email"].deviceForm:focus, input[type="tel"].deviceForm:focus, textarea.deviceForm:focus, select.deviceForm:focus {
     border-color: #007BFF;
 }
 textarea.deviceForm {

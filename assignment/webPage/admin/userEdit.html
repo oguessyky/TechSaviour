@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="icon" type="image/x-icon" href="../../image/thumbnail.png">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="deviceForm">
+    <div class="container-deviceForm">
+        <form class="deviceForm">
+            <div class="form-group-deviceForm">
+                <label for="userName" class="deviceForm">Username:</label>
+                <input type="text" id="userName" name="userName" placeholder="Username" class="deviceForm" required>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="name" class="deviceForm">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Name" class="deviceForm" required>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="email" class="deviceForm">Email and Phone number:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="email" id="email" name="email" placeholder="Email" class="deviceForm" required>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="deviceForm" required>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="userRole" class="deviceForm">User role:</label>
+                <select id="userRole" name="userRole" class="deviceForm" required>
+                    <option value="USER" selected>USER</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </div>
+
+            <button type="submit" class="deviceForm">Submit</button>
+        </form>
+    </div>
+</body>
+
+
+
+</html>
