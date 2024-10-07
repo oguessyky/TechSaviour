@@ -260,7 +260,7 @@ nav svg{
     display: block;
 }
 .profileOptions a.navIcon::after{
-    background: purple;
+    background: transparent;
 }
 .profileOptions a:hover {
     background-color: #ddd;
