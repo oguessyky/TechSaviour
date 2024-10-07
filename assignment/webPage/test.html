@@ -8,7 +8,14 @@
 </head>
 <body>
     <style>
-.button-body {
+.button-body{
+    position:fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+.button-inner {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -87,7 +94,7 @@
 
     </style>
     <div class="button-body">
-        <div class="button-out">
+        <div class="button-inner">
             <div class="button-container">
                 <div class="circle-button cpu" data-initial="0" data-max="10" data-color="#FF6A6A" onclick="buttonClick(this)">
                     <div class="content">
