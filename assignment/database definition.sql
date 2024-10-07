@@ -19,16 +19,24 @@ create table Contact (
     foreign key (Username) references User(Username)
 );
 
+create table CPU (
+    ID int auto_increment primary key not null,
+    Name varchar(255) not null,
+    Score int not null
+);
+
+create table GPU (
+    ID int auto_increment primary key not null,
+    Name varchar(255) not null,
+    Score int not null
+);
+
 create table Laptop (
     ID int auto_increment primary key not null,
     Name varchar(255) not null,
     Description varchar(255),
     Image blob,
-    CPU int not null,
-    CPUManufacturer varchar(255) not null,
     CPUScore int not null,
-    GPU int not null,
-    GPUManufacturer varchar(255) not null,
     GPUScore int not null,
     RAM int not null,
     RAMScore int not null,
@@ -38,9 +46,6 @@ create table Laptop (
     ScreenResolution varchar(255) not null,
     ScreenRefreshRate varchar(255) not null,
     Add_on varchar(255),
-    foreign key (CPU) references CPU(ID),
-    foreign key (GPU) references GPU(ID),
-    foreign key (RAM) references RAM(ID),
-    foreign key (Storage) references Storage(ID)
+    foreign key (CPUScore) references CPU(ID),
+    foreign key (GPUScore) references GPU(ID)
 );
-
