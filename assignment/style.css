@@ -1232,7 +1232,7 @@ div.list-phone{
 
 
 
-/* Below are advance search or explore*/
+/* Below are advance search or  */
 div.advancedSearch_H{
     text-align: center;
     width: 90%;
@@ -1382,7 +1382,9 @@ div.main-explore {
     display: flex;
     flex-direction: row;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),                0 6px 10px rgba(0, 0, 0, 0.1),                0 8px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
+                0 6px 10px rgba(0, 0, 0, 0.1),               
+                0 8px 30px rgba(0, 0, 0, 0.1);
     padding: 10px;
     background-color: #ffffff;
     position: relative;
@@ -1419,8 +1421,8 @@ div.main-explore {
     padding: 10px;
 }
 .component-img img {
-    width: 12vw;
-    height: 12vw;
+    width: 14vw;
+    height: 14vw;
     min-width: 100px;
     min-height: 100px;
     max-width: 250px;
