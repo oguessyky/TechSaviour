@@ -250,7 +250,8 @@ nav svg{
     border-radius: 10px;
 }
 .profile:hover .profileOptions {
-    display: block;
+    /* change display to block */
+    display: none; 
 }
 .profileOptions a {
     color: black;
