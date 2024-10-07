@@ -1,13 +1,14 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const allContents = document.querySelectorAll('.all-content');
+    const progressElements = document.querySelectorAll('progress');
     let maxWidth = 0;
     let maxHeight = 0;
 
     // Calculate the maximum width and height
     allContents.forEach(content => {
         const rect = content.getBoundingClientRect();
-        if (rect.width > maxWidth) maxWidth = rect.width;
-        if (rect.height > maxHeight) maxHeight = rect.height;
+        maxWidth = Math.max(maxWidth, rect.width);
+        maxHeight = Math.max(maxHeight, rect.height);
     });
 
     // Apply the maximum width and height to all elements
