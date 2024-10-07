@@ -1259,6 +1259,7 @@ div.main-explore {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-left: 5px;
     /* background-color: #000000; */
     z-index: 10;
 }
@@ -1447,7 +1448,7 @@ div.main-explore {
     padding-bottom: 5px;
     text-transform: uppercase;
     min-width: 80px; /* Set minimum width */
-    width: 12.6vw;
+    /* width: 12.6vw; */
     max-width: 500px;
     font-weight: 700;
     user-select: text;
@@ -1461,6 +1462,8 @@ div.main-explore {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .placement a {
     text-decoration: none;
