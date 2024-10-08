@@ -63,3 +63,10 @@ function restoreActiveClass(element) {
         }
     });
 }
+
+function autoSelectDatabase(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        document.getElementById("search").click();
+    }
+}
