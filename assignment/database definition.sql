@@ -15,7 +15,7 @@ create table Feedback (
     ID int auto_increment primary key not null,
     Username varchar(20) not null,
     Inquiry varchar(255) not null,
-    Status enum('Pending','Resolved') not null,
+    Status enum('Pending','Resolved') not null default 'Pending',
     foreign key (Username) references User(Username)
 );
 

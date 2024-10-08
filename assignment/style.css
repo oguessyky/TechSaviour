@@ -244,10 +244,16 @@ nav svg{
 .profileOptions {
     display: none;
     position: absolute;
+    flex-direction: column;
+    flex-wrap: nowrap;
     background-color: white;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 .profile:hover .profileOptions {
     /* change display to block */
@@ -1107,6 +1113,9 @@ ion-icon{
                 inset 4px 4px 10px rgba(109, 151, 195, 0.3),
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
+}
+.list-email h1.unlogin{
+    font-size: 3vw;
 }
 .list-email h1, .list-phone h1, .list-map h1{
     font-size: 5vw;
