@@ -7,5 +7,5 @@
     include "navBar.html";
     if ($isSet) {
         echo "<script>document.getElementById('login').innerHTML = '$username'</script>";
-        echo "<style>.profile:hover .profileOptions {display: block;}</style>";
+        echo "<style>.profile:hover .profileOptions {display: flex;}</style>";
     }
