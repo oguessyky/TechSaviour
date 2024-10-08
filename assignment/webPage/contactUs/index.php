@@ -11,3 +11,13 @@
     }
     ?>
 </script>
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        require "../headers/dbConn.php";
+        $inquiry = $_POST['inquiry'];
+        if ($dbConn -> query("INSERT INTO Feedback(Username,Inquiry) VALUES ('$username','$inquiry')")) {
+            echo "<script>alert('Your message has been submitted successfully!');</script>";
+        }
+        $dbConn -> close();
+    }
+?>
