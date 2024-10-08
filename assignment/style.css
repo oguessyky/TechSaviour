@@ -1269,7 +1269,7 @@ div.list-phone{
 
 
 
-/* Below are advance search or  */
+/* Below are advance search or explore*/
 div.advancedSearch_H{
     text-align: center;
     width: 90%;
@@ -1281,20 +1281,18 @@ h1.advancedSearch{
     text-transform: uppercase;
     padding: 4vw;
 }
-div.main-explore {
-    display: flex;
-    flex-direction: row;
+.main-explore {
     margin-top: 30vw;
 }
 .button-body-explore {
+    grid-area: top;
     position: sticky;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    width: 100vw;
     margin-left: 5px;
-    /* background-color: #000000; */
     z-index: 10;
 }
 .button-inner-explore {
@@ -1302,23 +1300,21 @@ div.main-explore {
     justify-content: center;
     align-items: center;
     height: fit-content;
-    width: 100%;
+    width: fit-content;
     border-radius: 100px;
-    /* padding: 20px; */
     background-color: #9abefd;
     box-sizing: border-box;
 }
 .button-container-explore {
     display: flex;
-    flex-direction: column;
-    gap: 5vh;
+    flex-direction: row;
+    gap: 5vw;
     width: 100%;
-    padding: 1vh;
+    padding: 1vw;
     box-sizing: border-box;
 }
 .circle-button-explore {
     position: relative;
-    flex: 1 1 auto;
     width: 10vw;
     height: 10vw;
     max-width: 150px;
@@ -1337,12 +1333,12 @@ div.main-explore {
 .circle-button-explore::before {
     content: '';
     position: absolute;
-    width: 9vw; /* Adjust width for better responsiveness */
-    height: 9vw; /* Adjust height for better responsiveness */
-    max-width: 130px; /* Increase max width */
-    max-height: 130px; /* Increase max height */
-    min-width: 50px; /* Set minimum width */
-    min-height: 50px; /* Set minimum height */
+    width: 9vw;
+    height: 9vw;
+    max-width: 130px;
+    max-height: 130px;
+    min-width: 50px;
+    min-height: 50px;
     background: #ffffff;
     border-radius: 50%;
     z-index: 1;
@@ -1370,19 +1366,20 @@ div.main-explore {
     z-index: 2;
 }
 .number-explore {
-    font-size: 2vw; /* Adjust font size for better responsiveness */
+    font-size: 2vw;
     font-weight: bold;
     margin-top: 8px;
 }
 .icon-explore {
-    width: 5vw; /* Adjust width for better responsiveness */
-    height: 5vw; /* Adjust height for better responsiveness */
-    max-width: 80px; /* Increase max width */
-    max-height: 80px; /* Increase max height */
-    min-width: 30px; /* Set minimum width */
-    min-height: 30px; /* Set minimum height */
+    width: 5vw;
+    height: 5vw;
+    max-width: 80px;
+    max-height: 80px;
+    min-width: 20px;
+    min-height: 20px;
     fill: var(--color);
 }
+
 
 
 
@@ -1413,8 +1410,7 @@ div.main-explore {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 40px;
-    margin: 15vw 20px 100px 20px;
+    gap: 20px;
 }
 .all-content {
     display: grid;
@@ -1439,12 +1435,12 @@ div.main-explore {
     padding: 10px;
 }
 .component-img img {
-    width: 12vw;
-    height: 12vw;
-    min-width: 100px;
-    min-height: 100px;
-    max-width: 250px;
-    max-height: 250px;
+    width: 10vw;
+    height: 10vw;
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 170px;
+    max-height: 170px;
     object-fit: contain;
     border-radius: 10px;
     border: 2px inherit #62656f;
@@ -1485,8 +1481,9 @@ div.main-explore {
     color:#2787b8;
 }
 .component-cpu, .component-gpu, .component-ram, .component-ssd {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
@@ -1973,71 +1970,61 @@ p.logout-H {
 
 
 /* Below are respond design */
-@media screen and (max-width: 750px){
-    .Navigation-bar, nav button.navIcon{
+@media screen and (max-width: 850px) {
+    .Navigation-bar, nav button.navIcon {
         font-size: 3vw;
     }
-    nav button.navIcon{
+    nav button.navIcon {
         height: fit-content;
     }
-    nav{
+    nav {
         margin-top: 3vw;
     }
-    div.homepage_H{
+    div.homepage_H {
         margin-top: 7vw;
     }
-    body.aboutUs{
-        background-size:contain;
+    body.aboutUs {
+        background-size: contain;
     }
-    .section1, .section2{
+    .section1, .section2 {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-    }
-    .section1{
         flex-wrap: wrap;
     }
-    .section2{
-        flex-wrap:wrap-reverse;
+    .section2 {
+        flex-wrap: wrap-reverse;
     }
-    .section1 th, .section2 th{
+    .section1 th, .section2 th, .section1 td, .section2 td {
         text-align: center;
     }
-    .section1 td, .section2 td{
-        text-align: center;
-    }
-    .links-container{
+    .links-container {
         flex-direction: column;
         align-items: flex-start;
-        
         position: fixed;
         top: 0;
         left: -150%;
         z-index: 1000;
         width: 60%;
-
         background-image: url(image/sidebar_bg.png);
-        /* background-color: var(--color-1); */
         box-shadow: 5px 0 5px rgba(0, 0, 0, 0.25);
         transition: 0.75s ease;
-    }
-    .links-container{
         background-position: 100%;
         background-size: cover;
-        border-radius:0 10% 10% 0;
+        border-radius: 0 10% 10% 0;
         overflow: auto;
     }
-    nav a,  div.profile{
-        box-sizing:border-box;
+    nav a, div.profile {
+        box-sizing: border-box;
         height: auto;
         width: 100%;
         padding: 20px 30px;
         justify-content: center;
     }
-    nav .sidebar-h{
+    nav .sidebar-h {
         flex-direction: column;
     }
-    nav a.navIcon::after{
+    nav a.navIcon::after {
         width: 50%;
         left: 25%;
         right: 25%;
@@ -2045,14 +2032,14 @@ p.logout-H {
     .profileOptions {
         bottom: 100%;
     }
-    .open-sidebar-button, .close-sidebar-button{
+    .open-sidebar-button, .close-sidebar-button {
         padding: 20px;
         display: block;
     }
-    #sidebar-active:checked ~ .links-container{
+    #sidebar-active:checked ~ .links-container {
         left: 0;
     }
-    #sidebar-active:checked ~ #overlay{
+    #sidebar-active:checked ~ #overlay {
         height: 100%;
         width: 100%;
         position: fixed;
@@ -2060,7 +2047,7 @@ p.logout-H {
         right: 0;
         z-index: 999;
     }
-    .out-container{
+    .out-container {
         height: 100%;
         width: 100%;
         display: flex;
@@ -2077,33 +2064,37 @@ p.logout-H {
     form.deviceForm {
         margin-top: 20px;
     }
-    nav .profile{
+    nav .profile {
         width: 100%;
     }
     .component-detail h2 {
         max-width: 140px;
     }
+    .placement {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
 }
 
-@media screen and (min-width: 750px){
-    .Navigation-bar, nav button.navIcon{
+@media screen and (min-width: 850px) {
+    .Navigation-bar, nav button.navIcon {
         font-size: 1.5vw;
     }
-    nav button.navIcon{
+    nav button.navIcon {
         height: 60%;
     }
-    div.homepage_H{
+    div.homepage_H {
         margin-top: 3vw;
     }
-    nav{
+    nav {
         margin-top: 2vw;
     }
-    nav a.navIcon::after{
+    nav a.navIcon::after {
         width: 70%;
         left: 15%;
         right: 15%;
     }
-    div.profile{
+    div.profile {
         height: 100%;
         align-items: center;
         justify-content: flex-end;
@@ -2113,27 +2104,35 @@ p.logout-H {
         top: 100%;
         left: 0;
     }
-    body.aboutUs{
-        background-size:cover;
+    body.aboutUs {
+        background-size: cover;
     }
-    .section1, .section2{
+    .section1, .section2 {
         flex-wrap: nowrap;
     }
-    .section1 th{
+    .section1 th {
         text-align: left;
     }
-    .section2 th{
+    .section2 th {
         text-align: right;
     }
-    .section1 td, .section2 td{
+    .section1 td, .section2 td {
         text-align: justify;
         text-justify: inter-word;
     }
-    .icon2{
+    .icon2 {
         display: none;
     }
     .component-detail h2 {
         max-width: 180px;
     }
-    
+    .placement {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .placement {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
