@@ -886,6 +886,9 @@ div.adminButton{
 .adminButton button.active span::after {
     opacity: 1;
 }
+.adminButton button.noShow {
+    display: none;
+}
 div.laptop-admin {
     display: flex;
     flex-direction: row;
