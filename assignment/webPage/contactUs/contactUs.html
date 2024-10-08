@@ -51,12 +51,20 @@
             </div>
             <div class="list-email">
                 <h1>Drop Us A Message</h1>
-                <br>
-                <form>
-                    <textarea name="your-message" rows="20" cols="30" aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea>
-                    <br><br>
-                    <input type="submit" value="Submit">
-                </form>
+                <div class="list-email-login">
+                    <br>
+                    <form>
+                        <textarea name="your-message" rows="20" cols="30" aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="list-email-unlogin">
+                    <br>
+                    <h1 style="background: -webkit-linear-gradient(215deg,#ff7474, #ff0000); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">You are <strong>REQUIRED</strong> to login/register before send us the message</h1>
+                    <br>
+                    <button class="unlogin" type="button" onclick="location.href = '../login/'" target="_self" id="login">Click here to login</button>
+                </div>
             </div>
             <div class="list-phone">
                 <div>
