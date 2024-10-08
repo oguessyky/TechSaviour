@@ -1,17 +1,11 @@
 <?php
     include "header.php";
-
-    // Ensure $isSet and $role are initialized
-    if (isset($isSet) && $isSet && isset($role) && $role == 'Admin') {
-        header("Location: ../admin/");
-        exit();
+    if ($isSet && $role == 'Admin') {
+        header("location: ../admin/");
+        die();
     }
-
     include "navBar.html";
-
-    if (isset($isSet) && $isSet) {
-        // Sanitize $username to prevent XSS
-        $safeUsername = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
-        echo "<script>document.getElementById('login').innerHTML = '$safeUsername'</script>";
+    if ($isSet) {
+        echo "<script>document.getElementById('login').innerHTML = '$username'</script>";
         echo "<style>.profile:hover .profileOptions {display: block;}</style>";
     }
