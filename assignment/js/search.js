@@ -64,9 +64,30 @@ function restoreActiveClass(element) {
     });
 }
 
-function autoSelectDatabase(event) {
-    event.preventDefault();
-    if (event.keyCode == 13) {
-        document.getElementById("search").click();
+deleteButtonClicked = false;
+
+function showPopUp() {
+    document.getElementById('popUp').style.display = 'flex';
+    deleteButtonClicked = true;
+}
+
+function closePopUp() {
+    document.getElementById('popUp').style.display = 'none';
+    deleteButtonClicked = false;
+}
+
+submitButton = document.getElementById("id")
+
+function prepareEdit(id) {
+    submitButton.value = id;
+    if (!deleteButtonClicked) {
+        submitButton.click();
+    }
+}
+
+function checkEditType() {
+    document.getElementById('data').value = document.querySelector('.adminButton button.active').value;
+    if (deleteButtonClicked) {
+        document.forms.edit.action = 'delete.php';
     }
 }

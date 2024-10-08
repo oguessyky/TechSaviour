@@ -886,7 +886,7 @@ div.adminButton{
 .adminButton button.active span::after {
     opacity: 1;
 }
-.adminButton button.noShow {
+.noShow {
     display: none;
 }
 div.laptop-admin {
@@ -985,6 +985,15 @@ div.laptop-admin {
 }
 .admin-table tbody tr:hover {
     background-color: #bdbdbd;
+}
+.admin-table tbody td button{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 50;
+    height: 100%;
+    width: 100%;
 }
 .responsive-img {
     width: 15vw;
@@ -1883,8 +1892,8 @@ input[type="file"].deviceForm {
 
 
 
-/* Below are Log out */
-.logout-popup {
+/* Below are popup */
+.popUp {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -1904,8 +1913,8 @@ input[type="file"].deviceForm {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
-h2.logout-H,
-p.logout-H {
+h2.popUp-H,
+p.popUp-H {
     color: #fff;
     margin: 0;
     padding: 10px 0;
@@ -1951,13 +1960,13 @@ p.logout-H {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
-.logout-button {
+.popUp-button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
 }
-.logout-button button {
+.popUp-button button {
     margin: 10px;
     padding: 10px 20px;
     border: none;
@@ -1967,7 +1976,7 @@ p.logout-H {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.logout-button button:hover {
+.popUp-button button:hover {
     background-color: #81a2c0;
 }
 
