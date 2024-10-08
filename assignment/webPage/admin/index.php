@@ -4,7 +4,7 @@
         header("location: ../home/");
         die();
     }
-    include "adminPage1.html";
+    include "adminPage.html";
 ?>
 <script>
     searchInput = document.getElementById('search');
