@@ -11,11 +11,11 @@ create table User (
     Phone varchar(20)
 );
 
-create table Contact (
+create table Feedback (
     ID int auto_increment primary key not null,
     Username varchar(20) not null,
     Inquiry varchar(255) not null,
-    status enum('Pending','Resolved') not null,
+    Status enum('Pending','Resolved') not null,
     foreign key (Username) references User(Username)
 );
 

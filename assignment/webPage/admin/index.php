@@ -75,6 +75,15 @@
                                 <th>Remove</th>
                             </tr>
                         </thead>";
+
+                        $sql =
+                        "SELECT Feedback.Username,User.Name,User.Email,User.Phone,Feedback.Inquiry,Feedback.Status FROM Feedback
+                        LEFT JOIN User ON Feedback.Username = User.Username";
+                        if (isset($_GET["search"])) {
+                            $sql .= " WHERE User.Name LIKE %".$_GET["search"]."%;";
+                        } else {
+                            $sql .= ";";
+                        }
                         break;
                 }
                 // if ($result = $dbConn -> query($sql)) {
