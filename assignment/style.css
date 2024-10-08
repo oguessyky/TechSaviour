@@ -1290,6 +1290,7 @@ h1.advancedSearch{
 .button-body-explore {
     grid-area: top;
     position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2084,9 +2085,6 @@ p.logout-H {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
-    .button-body-explore {
-        top: 80%;
-    }
 }
 
 @media screen and (min-width: 850px) {
@@ -2142,16 +2140,10 @@ p.logout-H {
     .placement {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .button-body-explore {
-        top: 0;
-    }
 }
 
 @media screen and (min-width: 1700px) {
     .placement {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .button-body-explore {
-        top: 0;
     }
 }
