@@ -259,8 +259,6 @@ nav svg{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    right: 0;
-    left: auto;
     white-space: wrap;
     min-width: 150px;
 }
@@ -2107,7 +2105,7 @@ p.popUp-H {
     }
 }
 
-@media screen and (min-width: 920px) {
+@media screen and (min-width: 921px) {
     .Navigation-bar, nav button.navIcon {
         font-size: 1.5vw;
     }
@@ -2128,12 +2126,12 @@ p.popUp-H {
     div.profile {
         height: 100%;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         margin-right: 20px;
     }
     .profileOptions {
         top: 100%;
-        left: 0;
+        justify-content: center;
     }
     .section1, .section2 {
         flex-wrap: nowrap;
