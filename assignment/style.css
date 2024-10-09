@@ -241,7 +241,7 @@ nav svg{
 .profile {
     position: relative;
     width: auto;
-    min-width: 100px;
+    min-width: 150px;
 }
 .profileOptions {
     display: none;
@@ -259,7 +259,7 @@ nav svg{
     right: 0;
     left: auto;
     white-space: wrap;
-    min-width: 100px;
+    min-width: 150px;
 }
 .profile:hover .profileOptions {
     /* change display to block */
