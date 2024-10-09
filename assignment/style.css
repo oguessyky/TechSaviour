@@ -1141,9 +1141,6 @@ ion-icon{
                 inset -4px -4px 10px rgba(255, 255, 255, 0.3);
     transform: translateY(2px);
 }
-.list-email h1.unlogin{
-    font-size: 3vw;
-}
 .list-email h1, .list-phone h1, .list-map h1{
     font-size: 5vw;
     background: var(--sectionHeading);
@@ -1157,7 +1154,7 @@ ion-icon{
 .list-email button.unlogin{
     display: inline-block;
     padding: 15px 25px;
-    font-size: 24px;
+    font-size: 3vw;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -1167,6 +1164,8 @@ ion-icon{
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    width: 20vw;
+    height: 10vw;
 }
 .list-email button.unlogin:hover{
     background-color: #d74545;
