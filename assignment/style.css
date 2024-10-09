@@ -163,8 +163,10 @@ nav button.navIcon {
     backdrop-filter: blur(10px);
     outline: none;
     cursor: pointer;
-    padding: 0 30px;
+    padding: 0 10px;
     border-radius: 10px;
+    white-space: wrap;
+    text-wrap: wrap;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -240,8 +242,6 @@ nav svg{
 }
 .profile {
     position: relative;
-    width: auto;
-    min-width: 150px;
 }
 .profile button.navIcon{
     min-width: 150px;
@@ -2004,7 +2004,7 @@ p.popUp-H {
 
 
 /* Below are respond design */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 920px) {
     .Navigation-bar, nav button.navIcon {
         font-size: 3vw;
     }
@@ -2107,7 +2107,7 @@ p.popUp-H {
     }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 920px) {
     .Navigation-bar, nav button.navIcon {
         font-size: 1.5vw;
     }
