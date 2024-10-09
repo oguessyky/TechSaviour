@@ -243,6 +243,9 @@ nav svg{
     width: auto;
     min-width: 150px;
 }
+.profile button.navIcon{
+    min-width: 150px;
+}
 .profileOptions {
     display: none;
     position: absolute;
