@@ -177,6 +177,7 @@ nav button.navIcon:hover{
 div.profile{
     display: flex;
     flex-direction: row;
+    width: auto;
 }
 div.profileOptions{
     display: none;
@@ -239,6 +240,8 @@ nav svg{
 }
 .profile {
     position: relative;
+    width: auto;
+    min-width: 100px;
 }
 .profileOptions {
     display: none;
@@ -253,6 +256,10 @@ nav svg{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    right: 0;
+    left: auto;
+    white-space: wrap;
+    min-width: 100px;
 }
 .profile:hover .profileOptions {
     /* change display to block */
@@ -263,6 +270,9 @@ nav svg{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    white-space: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 .profileOptions a.navIcon::after{
     background: transparent;
