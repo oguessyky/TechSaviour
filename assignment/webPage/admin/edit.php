@@ -9,6 +9,7 @@
             case 'laptop':
                 break;
             case 'user':
+                include "userEdit.html";
                 break;
             case 'feedback':
                 if ($result = $dbConn -> query("SELECT Status FROM Feedback WHERE ID = '$id' LIMIT 1;")) {
