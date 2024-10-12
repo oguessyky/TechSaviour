@@ -2034,6 +2034,40 @@ input[type="file"].deviceForm {
     text-decoration: none;
     cursor: pointer;
 }
+.checkbox-group-deviceForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    color: #365180;
+    transition: border-color 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+.checkbox-group-deviceForm input[type="checkbox"] {
+    display: none;
+}
+.checkbox-group-deviceForm label {
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.checkbox-group-deviceForm input[type="checkbox"]:checked + label {
+    background-color: #527bbe;
+    color: #fff;
+    border-radius: 4px;
+}
+.checkbox-group-deviceForm input[type="checkbox"]:focus + label {
+    border-color: #527bbe;
+    border-radius: 4px;
+}
+
+
+
+
 
 
 
