@@ -2159,6 +2159,13 @@ p.popUp-H {
     background-color: #81a2c0;
 }
 
+/* ignore here for laptop area */
+/* color need to found #1fb9fa */
+#path22:hover, #path9:hover, #path4:hover, #path7:hover, #path7-3:hover{
+    fill: red;
+    stroke: red;
+    cursor: pointer;
+}
 
 
 
