@@ -81,7 +81,7 @@ body.aboutUs{
     font-size: 2vw;
 }
 body.guide{
-    background-image: url(image/guide/bg.png);
+    background-image: url(image/general\ bg.png);
 }
 body.gaming{
     background-image: url(image/category/category/gaming.png);
@@ -754,7 +754,7 @@ footer.homepage_f div.text{
     font-weight: 300;
 }
 
-footer.homepage_f img.bg {
+footer.homepage_f img.bg,.guide img.bg {
     width: 100%;
     height: auto;
     /* clip-path: inset(0 0 20% 0); */
@@ -2263,6 +2263,9 @@ p.popUp-H {
     .explanation{
         margin: 15vw 10vw 0 10vw;
     }
+    .guide h1{
+        margin-bottom: 8vh;
+    }
 }
 
 @media screen and (min-width: 921px) {
@@ -2318,6 +2321,9 @@ p.popUp-H {
     .explanation{
         margin: 15vw 15vw 0 15vw;
     }
+    .guide h1{
+        margin-bottom: 15vh;
+    }
 }
 
 @media screen and (min-width: 1700px) {
@@ -2326,5 +2332,8 @@ p.popUp-H {
     }
     .explanation{
         margin: 15vw 20vw 0 20vw;
+    }
+    .guide h1{
+        margin-bottom: 30vh;
     }
 }

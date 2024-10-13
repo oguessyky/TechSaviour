@@ -10,32 +10,33 @@
             align-items: center;
             height: fit-content;
             background-color: transparent;
-            margin-top: 15vw;
             flex-direction: column;
         }
 
         .slider {
-            width: 80vw;
+            width: 100vw;
             overflow: hidden;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
             border-radius: 10px;
-            background-color: #fff;
+            /* background-color: #fff; */
         }
 
         .slides {
             display: flex;
-            transition: transform 1s ease-in-out;
-            width: 30vw;
-            height: 30vh;
+            transition: transform 2s ease-in-out;
+            width: 50vw;
+            height: auto;
+            max-height: 100vh;
         }
 
         .slides img {
-            width: 30vw;
-            height: 30vh;
+            width: 50vw;
+            height: auto;
+            max-height: 100vh;
             flex-shrink: 0;
             object-fit: contain;
             border-radius: 10px;
@@ -90,11 +91,13 @@
             <span class="dot" onclick="currentSlide(7)"></span>
         </div>
     </div>
+    <img src="../../image/footer.png" class="bg" alt="">
     <script>
         let currentIndex = 0;
         const slides = document.querySelectorAll('.slides img');
         const totalSlides = slides.length;
         const dots = document.querySelectorAll('.dot');
+        let slideInterval = setInterval(showNextSlide, 7000); // Change slide every 7 seconds
 
         function showNextSlide() {
             currentIndex = (currentIndex + 1) % totalSlides;
@@ -104,6 +107,10 @@
         function currentSlide(index) {
             currentIndex = index;
             updateSlider();
+            clearInterval(slideInterval); // Stop the automatic sliding
+            setTimeout(() => {
+                slideInterval = setInterval(showNextSlide, 5000); // Restart the automatic sliding after 20 seconds
+            }, 20000); // 20 seconds
         }
 
         function updateSlider() {
@@ -113,7 +120,10 @@
             });
         }
 
-        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => currentSlide(index));
+        });
+
         updateSlider(); // Initialize the slider
     </script>
 </body>
