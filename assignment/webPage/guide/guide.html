@@ -13,28 +13,40 @@
             margin-top: 15vw;
             flex-direction: column;
         }
+
         .slider {
-            width: 50%;
+            width: 80vw;
             overflow: hidden;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
         }
+
         .slides {
             display: flex;
             transition: transform 1s ease-in-out;
+            width: 30vw;
+            height: 30vh;
         }
+
         .slides img {
-            width: 100%;
+            width: 30vw;
+            height: 30vh;
             flex-shrink: 0;
             object-fit: contain;
+            border-radius: 10px;
         }
+
         .navigation-dots {
             display: flex;
             justify-content: center;
             margin-top: 10px;
         }
+
         .dot {
             height: 15px;
             width: 15px;
@@ -43,8 +55,10 @@
             border-radius: 50%;
             display: inline-block;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .slides.active {
+
+        .dot.active {
             background-color: #717171;
         }
     </style>
