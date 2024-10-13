@@ -1309,14 +1309,9 @@ h1.advancedSearch{
     margin-top: 30vw;
 }
 .button-body-explore {
-    grid-area: top;
-    position: sticky;
-    top: 0;
+    position:sticky;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    margin-left: 5px;
+    top: 0;
     z-index: 10;
 }
 .button-inner-explore {
@@ -1331,7 +1326,6 @@ h1.advancedSearch{
 }
 .button-container-explore {
     display: flex;
-    flex-direction: row;
     gap: 5vw;
     width: 100%;
     padding: 1vw;
