@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Guide</title>
     <style>
@@ -10,10 +11,11 @@
             height: fit-content;
             background-color: transparent;
             margin-top: 15vw;
+            flex-direction: column;
         }
 
         .slider {
-            width: 80%;
+            width: 50%;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -31,8 +33,29 @@
             flex-shrink: 0;
             object-fit: contain;
         }
+
+        .navigation-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #717171;
+        }
     </style>
 </head>
+
 <body class="guide">
     <h1>Guide</h1>
     <div class="auto-scrolling">
@@ -48,18 +71,43 @@
                 <img src="../../image/guide/computer.png" alt="Slide 8">
             </div>
         </div>
+        <div class="navigation-dots">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+        </div>
     </div>
     <script>
         let currentIndex = 0;
         const slides = document.querySelectorAll('.slides img');
         const totalSlides = slides.length;
+        const dots = document.querySelectorAll('.dot');
 
         function showNextSlide() {
             currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function currentSlide(index) {
+            currentIndex = index;
+            updateSlider();
+        }
+
+        function updateSlider() {
             document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
         }
 
         setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+        updateSlider(); // Initialize the slider
     </script>
 </body>
+
 </html>
