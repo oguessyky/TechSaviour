@@ -2,53 +2,64 @@
 <html lang="en">
 <head>
     <title>Guide</title>
+    <style>
+        .auto-scrolling {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            background-color: transparent;
+            margin-top: 15vw;
+        }
+
+        .slider {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body class="guide">
-    <!-- <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
-
     <h1>Guide</h1>
-    <div class="pc-guide">
-        <img src="../../image/guide/computer.png" alt="pc display">
+    <div class="auto-scrolling">
+        <div class="slider">
+            <div class="slides">
+                <img src="../../image/dummies guide/laptop with CPU.svg" alt="Slide 1">
+                <img src="../../image/dummies guide/laptop with GPU.svg" alt="Slide 2">
+                <img src="../../image/dummies guide/laptop with RAM.svg" alt="Slide 3">
+                <img src="../../image/dummies guide/laptop with storage.svg" alt="Slide 4">
+                <img src="../../image/guide/computer.png" alt="Slide 5">
+                <img src="../../image/guide/computer.png" alt="Slide 6">
+                <img src="../../image/guide/computer.png" alt="Slide 7">
+                <img src="../../image/guide/computer.png" alt="Slide 8">
+            </div>
+        </div>
     </div>
-
     <script>
-        document.querySelector('.contact-social').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.list-social').style.display = 'block';
-            document.querySelector('.list-email').style.display = 'none';
-            document.querySelector('.list-phone').style.display = 'none';
-            document.querySelector('.list-map').style.display = 'none';
-        });
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slides img');
+        const totalSlides = slides.length;
 
-        document.querySelector('.contact-email').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.list-social').style.display = 'none';
-            document.querySelector('.list-email').style.display = 'block';
-            document.querySelector('.list-phone').style.display = 'none';
-            document.querySelector('.list-map').style.display = 'none';
-        });
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
 
-        document.querySelector('.contact-phone').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.list-social').style.display = 'none';
-            document.querySelector('.list-email').style.display = 'none';
-            document.querySelector('.list-phone').style.display = 'flex';
-            document.querySelector('.list-map').style.display = 'none';
-        });
-
-        document.querySelector('.contact-map').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.list-social').style.display = 'none';
-            document.querySelector('.list-email').style.display = 'none';
-            document.querySelector('.list-phone').style.display = 'none';
-            document.querySelector('.list-map').style.display = 'flex';
-        });
-
-        // Initially hide both lists
-        document.querySelector('.list-social').style.display = 'block';
-        document.querySelector('.list-email').style.display = 'none';
-        document.querySelector('.list-phone').style.display = 'none';
-        document.querySelector('.list-map').style.display = 'none';
+        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
     </script>
 </body>
 </html>

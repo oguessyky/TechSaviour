@@ -1862,18 +1862,6 @@ footer.detail_f .bottom .black img {
     /* padding-top: 13vw; */
     padding: 8vw;
 }
-.pc-guide{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-
-    margin-top: 15vw;
-}
-.pc-guide img{
-    width: 70vw;
-}
-
-
 
 
 /* Below are device form */
