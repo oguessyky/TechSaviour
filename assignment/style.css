@@ -2322,7 +2322,7 @@ p.popUp-H {
         margin: 15vw 15vw 0 15vw;
     }
     .guide h1{
-        margin-bottom: 15vh;
+        margin-bottom: 10vw;
     }
 }
 
@@ -2334,6 +2334,6 @@ p.popUp-H {
         margin: 15vw 20vw 0 20vw;
     }
     .guide h1{
-        margin-bottom: 30vh;
+        margin-bottom: 15vw;
     }
 }
