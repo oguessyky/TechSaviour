@@ -3,102 +3,89 @@
 
 <head>
     <title>Guide</title>
-    <style>
-        .auto-scrolling {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: fit-content;
-            background-color: transparent;
-            flex-direction: column;
-        }
-
-        .slider {
-            width: 100vw;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-            border-radius: 10px;
-            /* background-color: #fff; */
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 2s ease-in-out;
-            width: 50vw;
-            height: auto;
-            max-height: 100vh;
-        }
-
-        .slides img {
-            width: 50vw;
-            height: auto;
-            max-height: 100vh;
-            flex-shrink: 0;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .navigation-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .dot.active {
-            background-color: #717171;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(255, 255, 255);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .modal-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #313131;
-            font-size: 100px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+<style>
+.auto-scrolling {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: transparent;
+    flex-direction: column;
+}
+.slider {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.slides {
+    display: flex;
+    transition: transform 2s ease-in-out;
+    width: 50vw;
+    height: auto;
+    max-height: 100vh;
+}
+.slides img {
+    width: 50vw;
+    height: auto;
+    max-height: 100vh;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.navigation-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.dot.active {
+    background-color: #717171;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #313131;
+    font-size: 100px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
 </head>
 
 <body class="guide">
@@ -110,10 +97,10 @@
                 <img src="../../image/dummies guide/laptop with GPU.svg" alt="Slide 2">
                 <img src="../../image/dummies guide/laptop with RAM.svg" alt="Slide 3">
                 <img src="../../image/dummies guide/laptop with storage.svg" alt="Slide 4">
-                <img src="../../image/guide/computer.png" alt="Slide 5">
-                <img src="../../image/guide/computer.png" alt="Slide 6">
-                <img src="../../image/guide/computer.png" alt="Slide 7">
-                <img src="../../image/guide/computer.png" alt="Slide 8">
+                <img src="../../image/dummies guide/laptop with display resolution.svg" alt="Slide 5">
+                <img src="../../image/dummies guide/laptop with FPS.svg" alt="Slide 6">
+                <img src="../../image/dummies guide/laptop with colour accuracy.svg" alt="Slide 7">
+                <img src="../../image/dummies guide/laptop.svg" alt="Slide 8">
             </div>
         </div>
         <div class="navigation-dots">
@@ -138,55 +125,7 @@
         </div>
     </div>
 
-    <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slides img');
-        const totalSlides = slides.length;
-        const dots = document.querySelectorAll('.dot');
-        let slideInterval = setInterval(showNextSlide, 7000); // Change slide every 7 seconds
-
-        function showNextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlider();
-        }
-
-        function currentSlide(index) {
-            currentIndex = index;
-            updateSlider();
-            clearInterval(slideInterval); // Stop the automatic sliding
-            setTimeout(() => {
-                slideInterval = setInterval(showNextSlide, 8000); // Restart the automatic sliding after 20 seconds
-            }, 20000); // 20 seconds
-        }
-
-        function updateSlider() {
-            document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-        }
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => currentSlide(index));
-        });
-
-        updateSlider(); // Initialize the slider
-
-        // Zoom in functionality
-        slides.forEach((slide) => {
-            slide.addEventListener('click', () => {
-                const modal = document.getElementById('myModal');
-                const modalImg = document.getElementById('modalImage');
-                modal.style.display = 'flex';
-                modalImg.src = slide.src;
-            });
-        });
-
-        function closeModal() {
-            document.getElementById('myModal').style.display = 'none';
-        }
-
-    </script>
+    <script src="../../js/guide.js"></script>
 </body>
 
 </html>
