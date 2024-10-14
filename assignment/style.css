@@ -296,10 +296,18 @@ h1.aboutUs{
 }
 .section1, .section2{
     display: flex;
+    row-gap: 10px;
     justify-content: center;
+    align-items: center;
+    align-content:center;
     flex-grow: 0;
 }
-
+.section1{
+    padding-top: 15vw;
+}
+.section2{
+    padding-top: 5vw;
+}
 .section1 img, .section2 img{
     max-width: 35vw;
     max-height: 35vw;
@@ -318,10 +326,12 @@ h1.aboutUs{
     padding-right: 30px;
     padding-left: 30px;
 }
+.section1 td p, .section2 td p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .section1 td, .section2 td{
     font-size: 2.5vw;
     padding-top: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
