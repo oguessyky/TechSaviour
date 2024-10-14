@@ -2,7 +2,7 @@ let currentIndex = 0;
 const slides = document.querySelectorAll('.slides img');
 const totalSlides = slides.length;
 const dots = document.querySelectorAll('.dot');
-let slideInterval = setInterval(showNextSlide, 7000); // Change slide every 7 seconds
+let slideInterval = setInterval(showNextSlide, 8000); // Change slide every 8 seconds
 
 function showNextSlide() {
     currentIndex = (currentIndex + 1) % totalSlides;
@@ -12,24 +12,24 @@ function showNextSlide() {
 function currentSlide(index) {
     currentIndex = index;
     updateSlider();
-    clearInterval(slideInterval); // Stop the automatic sliding
-    setTimeout(() => {
-        slideInterval = setInterval(showNextSlide, 8000); // Restart the automatic sliding after 20 seconds
-    }, 20000); // 20 seconds
 }
 
 function updateSlider() {
-    document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+    const slidesContainer = document.querySelector('.slides');
+    slidesContainer.style.transition = 'transform 2s ease'; // Apply transition timing
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentIndex);
     });
 }
 
+// Add event listeners for the dots
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => currentSlide(index));
 });
 
-updateSlider(); // Initialize the slider
+// Initialize the slider
+updateSlider();
 
 // Zoom in functionality
 slides.forEach((slide) => {
