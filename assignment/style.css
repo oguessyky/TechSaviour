@@ -354,7 +354,7 @@ h1.aboutUs {
 }
 .section1 th,
 .section2 th {
-  font-size: 7vw;
+  font-size: clamp(1.6018rem, -0.1549rem + 8.7838vw, 8.0798rem);
   text-transform: capitalize;
 
   /* make the gradient color on text */
@@ -375,7 +375,7 @@ h1.aboutUs {
 }
 .section1 td,
 .section2 td {
-  font-size: 2.5vw;
+  font-size: clamp(1.6018rem, 1.2748rem + 1.635vw, 2.8076rem);
   padding-top: 10px;
 }
 
