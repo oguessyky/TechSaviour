@@ -18,11 +18,11 @@
         </div>
         <img class="gif" src="../../image/Homepage/robot.gif" alt="Robot gif">
     </div>
-    <script>
+    <!-- <script>
         window.addEventListener('resize', function () {
             location.reload();
         });
-    </script>
+    </script> -->
     <style>
         .main-explore {
             display: grid;
@@ -31,11 +31,11 @@
         }
 
         .button-body-explore {
-            grid-template: button;
+            grid-area: button;
         }
 
         .placement {
-            grid-template: placement;
+            grid-area: placement;
         }
 
         @media screen and (max-width: 920px) {
@@ -65,7 +65,7 @@
             }
 
             .button-body-explore {
-                justify-content: flex-start;
+                justify-content: center;
                 align-items: center;
                 height: 100vh;
                 width: auto;
@@ -155,7 +155,7 @@
                 </div>
             </div>
         </div>
-        <div class="placement" style="margin: 0 20px 100px 20px; overflow-x: scroll;">
+        <div class="placement">
             <a href="detail.php">
                 <div class="all-content">
                     <div class="component-img">
@@ -1496,7 +1496,7 @@
             </a>
         </div>
     </div>
-    <script src="../../js/placement.js"></script>
+    <!-- <script src="../../js/placement.js"></script> -->
 </body>
 
 </html>
