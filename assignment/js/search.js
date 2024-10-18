@@ -65,6 +65,8 @@ function restoreActiveClass(element) {
 }
 
 deleteButtonClicked = false;
+popUpTitle = document.getElementById('popUpTitle');
+popUpMsg = document.getElementById('popUpMsg');
 
 function showPopUp() {
     document.getElementById('popUp').style.display = 'flex';
@@ -80,7 +82,9 @@ submitButton = document.getElementById("id")
 
 function prepareEdit(id) {
     submitButton.value = id;
-    if (!deleteButtonClicked) {
+    if (deleteButtonClicked) {
+        popUpMsg.innerHTML = `Are you sure you want to delete ${id}?`;
+    } else {
         submitButton.click();
     }
 }

@@ -48,7 +48,7 @@
                         }
                         if ($result = $dbConn -> query($sql)) {
                             while ($row = $result -> fetch_row()) {
-                                $tableContent .= '<tr onclick="'."prepareEdit('$row[0]')".'">';
+                                $tableContent .= '<tr onclick="'."prepareEdit('$row[0]');".'">';
                                 foreach (array_slice($row,1) as $element) {
                                     $tableContent .= "<td>$element</td>";
                                 }
@@ -84,7 +84,7 @@
 
                         if ($result = $dbConn -> query($sql)) {
                             while ($row = $result -> fetch_row()) {
-                                $tableContent .= '<tr onclick="'."prepareEdit('$row[0]')".'">';
+                                $tableContent .= '<tr onclick="'."prepareEdit('$row[0]');".'">';
                                 foreach ($row as $element) {
                                     $tableContent .= "<td>$element</td>";
                                 }
@@ -123,7 +123,7 @@
 
                         if ($result = $dbConn -> query($sql)) {
                             while ($row = $result -> fetch_row()) {
-                                $tableContent .= '<tr onclick="'."prepareEdit('$row[0]')".'">';
+                                $tableContent .= '<tr onclick="'."prepareEdit('$row[0]');".'">';
                                 foreach (array_slice($row,1) as $element) {
                                     $tableContent .= "<td>$element</td>";
                                 }

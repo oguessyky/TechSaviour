@@ -2,36 +2,71 @@
 <html lang="en">
 <head>
     <title>User Information Form</title>
+    <script src="../../js/inputValidation.js"></script>
 </head>
 <body class="deviceForm">
     <div class="container-deviceForm">
-        <form class="deviceForm">
+        <form class="deviceForm" name="update">
+            <input type="text" id="oldUsername" name="oldUsername" class="noShow" required>
             <div class="form-group-deviceForm">
-                <label for="userName" class="deviceForm">Username:</label>
-                <input type="text" id="userName" name="userName" placeholder="Username" class="deviceForm" required>
+                <label for="username" class="deviceForm">Username:</label>
+                <input type="text" id="username" name="username" 
+                placeholder="Username" class="deviceForm" required autofocus
+                pattern="^[\w_]*$" maxlength="20"
+                oninput="return validateInput(this,
+                'Username must only contain letters(A-Z,a-z), numbers(0-9), and underscores(_).',
+                [isEmpty,'Username cannot be empty.'],
+                [userExists, 'Username already exist.']);">
             </div>
             <div class="form-group-deviceForm">
                 <label for="name" class="deviceForm">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Name" class="deviceForm" required>
+                <input type="text" id="name" name="name" 
+                placeholder="Name" class="deviceForm" required
+                pattern="[\w\s]*$" maxlength="255"
+                oninput="return validateInput(this,
+                'Name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
+                [isEmpty,'Name cannot be empty.']);">
             </div>
             <div class="form-group-deviceForm">
                 <label for="email" class="deviceForm">Email and Phone number:</label>
                 <div class="inline-group-deviceForm">
-                    <input type="email" id="email" name="email" placeholder="Email" class="deviceForm" required>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="deviceForm" required>
+                    <input type="email" id="email" name="email" 
+                    placeholder="Email" class="deviceForm" required
+                    pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$" maxlength="255"
+                    oninput="return validateInput(this,
+                    'Please enter a valid email address. (Eg. ali@gmail.com)',
+                    [isEmpty,'Email cannot be empty.']);">
+                    <input type="tel" id="phone" name="phone" 
+                    placeholder="Phone Number" class="deviceForm" required
+                    maxlength="20"
+                    pattern="^\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\W*\d){0,13}\d$"
+                    oninput="return validateInput(this,
+                    'Please enter a valid phone number. (Eg. +6012-3456789)',
+                    [isEmpty,'Phone number cannot be empty.']);">
                 </div>
             </div>
             <div class="form-group-deviceForm">
-                <label for="userRole" class="deviceForm">User role:</label>
-                <select id="userRole" name="userRole" class="deviceForm" required>
-                    <option value="USER" selected>USER</option>
-                    <option value="ADMIN">ADMIN</option>
+                <label for="role" class="deviceForm">User role:</label>
+                <select id="role" name="role" class="deviceForm" required>
+                    <option value="User">USER</option>
+                    <option value="Admin">ADMIN</option>
                 </select>
             </div>
 
-            <button type="submit" class="deviceForm">Submit</button>
+            <button type="submit" class="deviceForm">Update User</button>
         </form>
     </div>
+    <script>
+        var userList = [];
+        function userExists(username) {
+            for (user of userList) {
+                if (user[0] == username) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    </script>
 </body>
 
 
