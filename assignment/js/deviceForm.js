@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const imageInput = document.getElementById('image');
     const imagePreview = document.getElementById('imagePreview_deviceForm');
-
     imageInput.addEventListener('change', function() {
         const file = this.files[0];
         if (file) {
@@ -32,3 +31,4 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'flex';
     });
 });
+

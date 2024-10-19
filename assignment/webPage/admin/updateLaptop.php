@@ -45,7 +45,7 @@
                 $sql = "UPDATE Laptop SET
                 Name='$name',
                 Description='$description',
-                ImageAddress='$newImageDir',
+                ImageAddress='".$image["name"]."',
                 CPUName='$cpu',
                 CPUManufacturer='$cpuManufacturer',
                 CPUScore='$cpuScore',
@@ -61,21 +61,21 @@
                 WHERE ID='$id';";
             } else {
                 $sql = "INSERT INTO Laptop(Name,Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt)
-VALUES ('$name',
-        '$description',
-        '$newImageDir',
-        '$cpu',
-        '$cpuManufacturer',
-        $cpuScore,
-        '$gpu',
-        '$gpuManufacturer',
-        $gpuScore,
-        $ram,
-        $storage,
-        '$storageType',"
-        .json_encode($forGaming).","
-        .json_encode($forBusiness).","
-        .json_encode($forArt).");";
+                VALUES ('$name',
+                '$description',
+                '$newImageDir',
+                '$cpu',
+                '$cpuManufacturer',
+                $cpuScore,
+                '$gpu',
+                '$gpuManufacturer',
+                $gpuScore,
+                $ram,
+                $storage,
+                '$storageType',"
+                .json_encode($forGaming).","
+                .json_encode($forBusiness).","
+                .json_encode($forArt).");";
             }
             $dbConn -> query($sql);
             $dbConn -> close();
