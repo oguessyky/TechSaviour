@@ -23,7 +23,7 @@
                 <label for="deviceName" class="deviceForm">Device Name:</label>
                 <input type="text" id="deviceName" name="deviceName"
                     placeholder="Device Name" class="deviceForm" required
-                    pattern="[\w\s\-]*$" maxlength="255"
+                    pattern="^[\w\s\-]*$" maxlength="255"
                     oninput="return validateInput(this,
                     'Device name must can only contain letters(A-Z,a-z), numbers(0-9), spaces( ) and dashes(-).',
                     [isEmpty,'Device name cannot be empty.']);">
@@ -38,14 +38,14 @@
                 <div class="inline-group-deviceForm">
                     <input type="text" list="cpuManufacturerList" id="cpuManufacturer" name="cpuManufacturer"
                         placeholder="Manufacturer" class="deviceForm" required
-                        pattern="[\w\s]*$" maxlength="255"
+                        pattern="^[\w\s]*$" maxlength="255"
                         oninput="return validateInput(this,
                         'Manufacturer name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
                         [isEmpty,'Manufacturer name cannot be empty.']);">
                     <datalist id="cpuManufacturerList">
                     </datalist>
                     <input type="text" list="cpuList" id="cpu" name="cpu" placeholder="CPU" class="deviceForm"
-                        required pattern="[\w\s\-]*$" maxlength="255" oninput="return validateInput(this,
+                        required pattern="^[\w\s\-]*$" maxlength="255" oninput="return validateInput(this,
                         'CPU name must can only contain letters(A-Z,a-z), numbers(0-9), spaces( ) and dashes(-).',
                         [isEmpty,'CPU name cannot be empty.']);">
                     <datalist id="cpuList">
@@ -62,19 +62,19 @@
                 <div class="inline-group-deviceForm">
                     <input type="text" list="gpuManufacturerList" id="gpuManufacturer" name="gpuManufacturer"
                         placeholder="Manufacturer" class="deviceForm" required
-                        pattern="[\w\s]*$" maxlength="255"
+                        pattern="^[\w\s]*$" maxlength="255"
                         oninput="return validateInput(this,
                         'Manufacturer name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
                         [isEmpty,'Manufacturer name cannot be empty.']);">
                     <datalist id="gpuManufacturerList">
                     </datalist>
-                    <input type="text" list="gpuList" id="gpu" name="gpu" placeholder="GPU" class="deviceForm" 
-                        required pattern="[\w\s]*$" maxlength="255" oninput="return validateInput(this,
+                    <input type="text" list="gpuList" id="gpu" name="gpu" placeholder="GPU" class="deviceForm"
+                        required pattern="^[\w\s\-]*$" maxlength="255" oninput="return validateInput(this,
                         'GPU name must can only contain letters(A-Z,a-z), numbers(0-9), spaces( ) and dashes(-).',
                         [isEmpty,'GPU name cannot be empty.']);">
                     <datalist id="gpuList">
                     </datalist>
-                    <input type="number" id="gpuBenchmark" name="gpuBenchmark" 
+                    <input type="number" id="gpuBenchmark" name="gpuBenchmark"
                         placeholder="GPU Benchmark" class="deviceForm" required min="0" max="2147483647" pattern="^[\d]*$"
                         oninput="return validateInput(this,
                         'CPU Benchmark must be a number between 0 - 2147483647.',
