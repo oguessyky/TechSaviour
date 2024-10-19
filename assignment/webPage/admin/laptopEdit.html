@@ -45,7 +45,7 @@
                     <datalist id="cpuManufacturerList">
                     </datalist>
                     <input type="text" list="cpuList" id="cpu" name="cpu" placeholder="CPU" class="deviceForm"
-                        required pattern="[\w\s]*$" maxlength="255" oninput="return validateInput(this,
+                        required pattern="[\w\s\-]*$" maxlength="255" oninput="return validateInput(this,
                         'CPU name must can only contain letters(A-Z,a-z), numbers(0-9), spaces( ) and dashes(-).',
                         [isEmpty,'CPU name cannot be empty.']);">
                     <datalist id="cpuList">
