@@ -48,6 +48,12 @@ create table Laptop (
     ScreenResolution varchar(255) not null,
     ScreenRefreshRate varchar(255) not null,
     Add_on varchar(255),
+    ForGaming boolean,
+    ForBusiness boolean,
+    ForArt boolean,
     foreign key (CPU) references CPU(ID),
     foreign key (GPU) references GPU(ID)
 );
+
+/* admin user */
+INSERT INTO User VALUES ('admin','Admin','admin','Admin','admin@techsaviour.com','+60123456789');

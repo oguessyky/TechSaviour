@@ -6,11 +6,11 @@
 </head>
 <body class="deviceForm">
     <div class="container-deviceForm">
-        <form class="deviceForm" name="update">
+        <form class="deviceForm" name="update" method="post">
             <input type="text" id="oldUsername" name="oldUsername" class="noShow" required>
             <div class="form-group-deviceForm">
-                <label for="username" class="deviceForm">Username:</label>
-                <input type="text" id="username" name="username" 
+                <label for="newUsername" class="deviceForm">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" 
                 placeholder="Username" class="deviceForm" required autofocus
                 pattern="^[\w_]*$" maxlength="20"
                 oninput="return validateInput(this,
@@ -56,17 +56,6 @@
             <button type="submit" class="deviceForm">Update User</button>
         </form>
     </div>
-    <script>
-        var userList = [];
-        function userExists(username) {
-            for (user of userList) {
-                if (user[0] == username) {
-                    return true;
-                }
-            }
-            return false;
-        }
-    </script>
 </body>
 
 

@@ -1,5 +1,4 @@
 <?php
-    echo"";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         include "../headers/header.php";
         require "../headers/dbConn.php";
@@ -17,13 +16,15 @@
                     echo "<script>
                         var userList = ".json_encode($userList).";
                         document.getElementById('oldUsername').value = '$row[0]';
-                        document.getElementById('username').value = '$row[0]';
+                        document.getElementById('newUsername').value = '$row[0]';
                         document.getElementById('name').value = '$row[1]';
                         document.getElementById('email').value = '$row[2]';
                         document.getElementById('phone').value = '$row[3]';
                         document.getElementById('role').value = '$row[4]';
+                        document.update.action = 'updateUser.php';
                     </script>";
                 }
+                $dbConn -> close();
                 break;
             case 'feedback':
                 if ($result = $dbConn -> query("SELECT Status FROM Feedback WHERE ID = '$id' LIMIT 1;")) {
@@ -45,7 +46,6 @@
                 }
                 break;
         }
-    } else {
-        header("location: ./");
-        die();
     }
+    header("location: ./");
+    die();

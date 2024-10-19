@@ -75,9 +75,9 @@
                         </thead>
                         <tbody>";
 
-                        $sql = "SELECT Username,Name,Role,Email,Phone FROM User";
+                        $sql = "SELECT Username,Name,Role,Email,Phone FROM User WHERE Username != '$username'";
                         if (isset($search)) {
-                            $sql .= " WHERE Name LIKE '%$search%';";
+                            $sql .= " AND Name LIKE '%$search%';";
                         } else {
                             $sql .= ";";
                         }
