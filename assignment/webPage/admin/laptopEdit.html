@@ -31,7 +31,7 @@
             <div class="form-group-deviceForm">
                 <label for="description" class="deviceForm">Detail:</label>
                 <textarea id="description" name="description" rows="4" placeholder="Device Description" class="deviceForm"
-                required maxlength="255" oninput="return validateInput(this,'Description cannot be empty.');"></textarea>
+                required maxlength="65535" oninput="return validateInput(this,'Description cannot be empty.');"></textarea>
             </div>
             <div class="form-group-deviceForm">
                 <label for="cpu" class="deviceForm">CPU and CPU Benchmark:</label>
@@ -97,6 +97,20 @@
                 </div>
             </div>
             <div class="form-group-deviceForm">
+                <label for="maxram" class="deviceForm" style="color: rgb(255, 119, 119);">MAX RAM:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" id="maxram" name="maxram" placeholder="MAX RAM Capacity" class="deviceForm"
+                        min="0" max="2147483647" pattern="^[\d]*$"
+                        oninput="return validateInput(this,
+                        'RAM Capacity must be a number between 0 - 2147483647.');">
+                    <select id="maxramUnit" name="maxramUnit" class="deviceForm" required>
+                        <option value="MB">MB</option>
+                        <option value="GB" selected>GB</option>
+                        <option value="TB">TB</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
                 <label for="storage" class="deviceForm">Storage:</label>
                 <div class="inline-group-deviceForm">
                     <input type="number" id="storage" name="storage" placeholder="Storage Capacity" class="deviceForm"
@@ -118,7 +132,78 @@
                 </div>
             </div>
             <div class="form-group-deviceForm">
-                <label for="gaming" class="deviceForm">Category:</label>
+                <label for="maxstorage" class="deviceForm" style="color: rgb(255, 119, 119);">MAX Storage:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" id="maxstorage" name="maxstorage" placeholder="MAX Storage Capacity" class="deviceForm"
+                        min="0" max="2147483647" pattern="^[\d]*$"
+                        oninput="return validateInput(this,
+                        'Storage Capacity must be a number between 0 - 2147483647.');">
+                    <select id="maxstorageUnit" name="maxstorageUnit" class="deviceForm" required>
+                        <option value="MB">MB</option>
+                        <option value="GB" selected>GB</option>
+                        <option value="TB">TB</option>
+                    </select>
+                    <select id="maxstorageType" name="maxstorageType" class="deviceForm" required>
+                        <option value="HDD">HDD</option>
+                        <option value="SSD">SSD</option>
+                        <option value="M2 SSD DDR4">M2 SSD DDR4</option>
+                        <option value="M2 SSD DDR5" selected>M2 SSD DDR5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="resolution" class="deviceForm">Screen Resolution:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" list="resolution" id="resolution" name="resolution"
+                        placeholder="Resolution" class="deviceForm" required min="0" max="2147483647"
+                        oninput="return validateInput(this,
+                        'Screen Resolution must be a number between 0 - 2147483647.',
+                        [isEmpty,'Screen Resolution cannot be empty.']);">
+                    <label style="color: white;">x</label>
+                    <input type="number" list="resolution2" id="resolution2" name="resolution2"
+                    placeholder="Resolution" class="deviceForm" required min="0" max="2147483647"
+                    oninput="return validateInput(this,
+                    'Screen Resolution must be a number between 0 - 2147483647.',
+                    [isEmpty,'Screen Resolution cannot be empty.']);">
+                    
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="resolution3" class="deviceForm3" style="color: rgb(255, 247, 200);">Screen Resolution possible add-on:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" list="resolution3" id="resolution3" name="resolution3"
+                        placeholder="Resolution" class="deviceForm" min="0" max="2147483647"
+                        oninput="return validateInput(this,
+                        'Screen Resolution must be a number between 0 - 2147483647.');">
+                    <label style="color: white;">x</label>
+                    <input type="number" list="resolution4" id="resolution4" name="resolution4"
+                    placeholder="Resolution" class="deviceForm" min="0" max="2147483647"
+                    oninput="return validateInput(this,
+                    'Screen Resolution must be a number between 0 - 2147483647.');">
+                    
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="fps" class="deviceForm">Frame Per Second(FPS):</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" list="fps" id="fps" name="fps"
+                        placeholder="Frame Per Second(FPS)" class="deviceForm" min="0" max="2000"
+                        oninput="return validateInput(this,
+                        'Screen Resolution must be a number between 0 - 2000.');">
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="color_accuracy" class="deviceForm">Screen Color Accuracy:</label>
+                <div class="inline-group-deviceForm">
+                    <label style="color: white;">E < </label>
+                    <input type="number" list="color_accuracy" id="color_accuracy" name="color_accuracy"
+                        placeholder="Screen Color Accuracy" class="deviceForm" min="0" max="2000"
+                        oninput="return validateInput(this,
+                        'Screen Resolution must be a number between 0 - 2000.');">
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="category" class="deviceForm">Category:</label>
                 <div class="deviceForm">
                     <div class="checkbox-group-deviceForm">
                         <input type="checkbox" id="gaming" name="forGaming" value="gaming">
