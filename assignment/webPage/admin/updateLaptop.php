@@ -56,45 +56,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 Name = '$name',
                 Description = '$description',
                 ImageAddress='".$image["name"]."',
-                CPUName = '$cpu',
-                CPUManufacturer = '$cpuManufacturer',
-                CPUScore = '$cpuScore',
-                GPUName = '$gpu',
-                GPUManufacturer = '$gpuManufacturer',
-                GPUScore = '$gpuScore',
-                RAM = '$ram',
-                MaxRAM = " . ($maxRam ? "'$maxRam'" : "NULL") . ",
-                Storage = '$storage',
-                MaxStorage = " . ($maxStorage ? "'$maxStorage'" : "NULL") . ",
-                MaxStorageType = " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ",
-                StorageType = '$storageType',
-                Resolution = '$resolution',
-                AdditionalResolution = " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ",
-                FPS = " . ($fps ? "'$fps'" : "NULL") . ",
-                ColorAccuracy = " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ",
-                ForGaming = '" . json_encode($forGaming) . "',
-                ForBusiness = '" . json_encode($forBusiness) . "',
-                ForArt = '" . json_encode($forArt) . "'
-                WHERE ID = '$id'";
-        } else {
-            $sql = "INSERT INTO Laptop (
-                Name, Description, ImageAddress, CPUName, CPUManufacturer, CPUScore,
-                GPUName, GPUManufacturer, GPUScore, RAM, MaxRAM, Storage, MaxStorage, 
-                MaxStorageType, StorageType, Resolution, AdditionalResolution, FPS, 
-                ColorAccuracy, ForGaming, ForBusiness, ForArt
-            ) VALUES (
-                '$name', '$description', '". ($image["name"]) . "', '$cpu', 
-                '$cpuManufacturer', $cpuScore, '$gpu', '$gpuManufacturer', $gpuScore, 
-                $ram, " . ($maxRam ? "'$maxRam'" : "NULL") . ", $storage, " . ($maxStorage ? "'$maxStorage'" : "NULL") . ", 
-                " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ", '$storageType', 
-                '$resolution', " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ",
-                " . ($fps ? "'$fps'" : "NULL") . ", " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ", 
-                " . json_encode($forGaming) . ", " . json_encode($forBusiness) . ", " . json_encode($forArt) . "
-            )";
+                CPUName='$cpu',
+                CPUManufacturer='$cpuManufacturer',
+                CPUScore='$cpuScore',
+                GPUName='$gpu',
+                GPUManufacturer='$gpuManufacturer',
+                GPUScore='$gpuScore',
+                RAM='$ram',
+                Storage='$storage',
+                StorageType='$storageType',
+                ForGaming='".json_encode($forGaming)."',
+                ForBusiness='".json_encode($forBusiness)."',
+                ForArt='".json_encode($forArt)."'
+                WHERE ID='$id';";
+            } else {
+                $sql = "INSERT INTO Laptop(Name,Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt)
+                VALUES ('$name',
+                '$description',
+                '$newImageDir',
+                '$cpu',
+                '$cpuManufacturer',
+                $cpuScore,
+                '$gpu',
+                '$gpuManufacturer',
+                $gpuScore,
+                $ram,
+                $storage,
+                '$storageType',"
+                .json_encode($forGaming).","
+                .json_encode($forBusiness).","
+                .json_encode($forArt).");";
+            }
+            echo $sql;
+            if (!$dbConn -> query($sql)) {
+                die("Failed to update Laptop table");
+            }
+            $dbConn -> close();
         }
-        $dbConn->query($sql);
-        $dbConn->close();
     }
-}
-header("Location: ./?data=laptop");
-die();
+    header("location: ./?data=laptop");
+    die();
