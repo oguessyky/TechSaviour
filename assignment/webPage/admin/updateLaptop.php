@@ -41,8 +41,8 @@
         $newImageDir = "../../image/Laptop Images/".$image["name"];
         if (move_uploaded_file($image["tmp_name"],$newImageDir)) {
             require "../headers/dbConn.php";
-            if (isset($id)) {
-                $sql = "UPDATE Laptop SET
+
+            $sql = isset($id) ? "UPDATE Laptop SET
                 Name='$name',
                 Description='$description',
                 ImageAddress='".$image["name"]."',
@@ -55,12 +55,11 @@
                 RAM='$ram',
                 Storage='$storage',
                 StorageType='$storageType',
-                ForGaming='".json_encode($forGaming)."',
-                ForBusiness='".json_encode($forBusiness)."',
-                ForArt='".json_encode($forArt)."'
-                WHERE ID='$id';";
-            } else {
-                $sql = "INSERT INTO Laptop(Name,Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt)
+                ForGaming=".json_encode($forGaming).",
+                ForBusiness=".json_encode($forBusiness).",
+                ForArt=".json_encode($forArt)."
+                WHERE ID='$id';" :
+                "INSERT INTO Laptop(Name,Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt)
                 VALUES ('$name',
                 '$description',
                 '$newImageDir',
@@ -76,8 +75,11 @@
                 .json_encode($forGaming).","
                 .json_encode($forBusiness).","
                 .json_encode($forArt).");";
+
+            echo $sql;
+            if (!$dbConn -> query($sql)) {
+                die("Failed to update Laptop table");
             }
-            $dbConn -> query($sql);
             $dbConn -> close();
         }
     }

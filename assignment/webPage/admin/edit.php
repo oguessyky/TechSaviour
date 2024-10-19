@@ -7,22 +7,43 @@
         switch ($data) {
             case 'laptop':
                 include "laptopEdit.html";
-                echo "<script>updateForm.id.value = $id;";
+                echo "<script>updateForm.id.value = $id;
+                    var cpuManufacturerList = document.getElementById('cpuManufacturerList');
+                    var cpuList = document.getElementById('cpuList');
+                    var gpuManufacturerList = document.getElementById('gpuManufacturerList');
+                    var gpuList = document.getElementById('gpuList');";
+                    if ($result = $dbConn -> query("SELECT CPUManufacturer from Laptop GROUP BY CPUManufacturer;")) {
+                        while ($row = $result -> fetch_row()) {
+                            echo "var option = document.createElement('option');
+                            option.value = '$row[0]';
+                            cpuManufacturerList.appendChild(option);";
+                        }
+                    }
+                    if ($result = $dbConn -> query("SELECT CPUName from Laptop GROUP BY CPUName;")) {
+                        while ($row = $result -> fetch_row()) {
+                            echo "var option = document.createElement('option');
+                            option.value = '$row[0]';
+                            cpuList.appendChild(option);";
+                        }
+                    }
+                    if ($result = $dbConn -> query("SELECT GPUManufacturer from Laptop GROUP BY GPUManufacturer;")) {
+                        while ($row = $result -> fetch_row()) {
+                            echo "var option = document.createElement('option');
+                            option.value = '$row[0]';
+                            gpuManufacturerList.appendChild(option);";
+                        }
+                    }
+                    if ($result = $dbConn -> query("SELECT GPUName from Laptop GROUP BY GPUName;")) {
+                        while ($row = $result -> fetch_row()) {
+                            echo "var option = document.createElement('option');
+                            option.value = '$row[0]';
+                            gpuList.appendChild(option);";
+                        }
+                    }
                 $idValue = json_decode($id);
                 if (isset($idValue)) {
                     if ($result = $dbConn -> query("SELECT Name,Description,ImageAddress,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,Storage,StorageType,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
                         $row = $result -> fetch_row();
-                        echo "const imagePreview = document.getElementById('imagePreview_deviceForm');
-                            imagePreview.src = '../../image/Laptop Images/$row[2]';
-                            imagePreview.style.display = 'block';
-                            fetch('../../image/Laptop Images/$row[2]')
-                            .then(res => res.blob())
-                            .then(blob => {
-                                const file = new File([blob], '$row[2]', blob);
-                                const dataTransfer = new DataTransfer();
-                                dataTransfer.items.add(file);
-                                document.getElementById('image').files = dataTransfer.files;
-                            });";
                         $ram = $row[9];
                         $storage = $row[10];
                         if ($ram & 1023) {
@@ -47,7 +68,18 @@
                                 echo "updateForm.storageUnit.value = 'TB';";
                             }
                         }
-                        echo "updateForm.deviceName.value = '$row[0]';
+                        echo "const imagePreview = document.getElementById('imagePreview_deviceForm');
+                            imagePreview.src = '../../image/Laptop Images/$row[2]';
+                            imagePreview.style.display = 'block';
+                            fetch('../../image/Laptop Images/$row[2]')
+                            .then(res => res.blob())
+                            .then(blob => {
+                                const file = new File([blob], '$row[2]', blob);
+                                const dataTransfer = new DataTransfer();
+                                dataTransfer.items.add(file);
+                                document.getElementById('image').files = dataTransfer.files;
+                            });
+                            updateForm.deviceName.value = '$row[0]';
                             updateForm.description.value = `$row[1]`;
                             updateForm.cpu.value = '$row[3]';
                             updateForm.cpuManufacturer.value = '$row[4]';
@@ -59,8 +91,7 @@
                             updateForm.storage.value = $storage;
                             updateForm.forGaming.checked = $row[12];
                             updateForm.forBusiness.checked = $row[13];
-                            updateForm.forArt.checked = $row[14];
-                        </script>";
+                            updateForm.forArt.checked = $row[14];";
                     }
                 } else {
                     echo "
@@ -73,9 +104,9 @@
                         updateForm.gpu.setCustomValidity('GPU name cannot be empty.');
                         updateForm.gpuBenchmark.setCustomValidity('GPU benchmark cannot be empty.');
                         updateForm.ram.setCustomValidity('RAM Capacity cannot be empty.');
-                        updateForm.storage.setCustomValidity('Storage Capacity cannot be empty.');
-                    </script>";
+                        updateForm.storage.setCustomValidity('Storage Capacity cannot be empty.');";
                 }
+                echo "</script>";
                 break;
             case 'user':
                 if ($result = $dbConn -> query("SELECT Username,Name,Email,Phone,Role FROM User WHERE Username = '$id' LIMIT 1;")) {
