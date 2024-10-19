@@ -19,41 +19,45 @@ create table Feedback (
     foreign key (Username) references User(Username)
 );
 
-create table CPU (
-    ID int auto_increment primary key not null,
-    Name varchar(255) not null,
-    Manufacturer varchar(255) not null,
-    Score int not null
-);
-
-create table GPU (
-    ID int auto_increment primary key not null,
-    Name varchar(255) not null,
-    Manufacturer varchar(255) not null,
-    Score int not null
-);
-
 create table Laptop (
     ID int auto_increment primary key not null,
     Name varchar(255) not null,
     Description varchar(255),
-    Image blob,
-    CPU int not null,
-    GPU int not null,
+    ImageAddress varchar(255),
+    CPUName varchar(255) not null,
+    CPUManufacturer varchar(255) not null,
+    CPUScore int not null,
+    GPUName varchar(255) not null,
+    GPUManufacturer varchar(255) not null,
+    GPUScore int not null,
     RAM int not null,
-    RAMScore int not null, /* change to derived */
     Storage int not null,
     StorageType enum('HDD','SSD','M2 SSD DDR4','M2 SSD DDR5') not null,
-    StorageScore int not null, /* change to derived */
-    ScreenResolution varchar(255) not null,
-    ScreenRefreshRate varchar(255) not null,
-    Add_on varchar(255),
-    ForGaming boolean,
-    ForBusiness boolean,
-    ForArt boolean,
-    foreign key (CPU) references CPU(ID),
-    foreign key (GPU) references GPU(ID)
+    ForGaming boolean not null,
+    ForBusiness boolean not null,
+    ForArt boolean not null
 );
 
 /* admin user */
 INSERT INTO User VALUES ('admin','Admin','admin','Admin','admin@techsaviour.com','+60123456789');
+
+INSERT INTO Laptop(Name,Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt)
+VALUES ('[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]','[value-16]')
+
+UPDATE Laptop SET
+Name='[value-2]',
+Description='[value-3]',
+ImageAddress='[value-4]',
+CPUName='[value-5]',
+CPUManufacturer='[value-6]',
+CPUScore='[value-7]',
+GPUName='[value-8]',
+GPUManufacturer='[value-9]',
+GPUScore='[value-10]',
+RAM='[value-11]',
+Storage='[value-12]',
+StorageType='[value-13]',
+ForGaming='[value-14]',
+ForBusiness='[value-15]',
+ForArt='[value-16]'
+WHERE ID='[value-1]';

@@ -6,6 +6,27 @@
         $id = $_POST['id'];
         switch ($data) {
             case 'laptop':
+                include "laptopEdit.html";
+                echo "<script>updateForm.id.value = $id;</script>";
+                $idValue = json_decode($id);
+                if (isset($idValue)) {
+                    if ($result = $dbConn -> query("SELECT Name,Description,Image,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,Storage,StorageType,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
+                        $row = $result -> fetch_row();
+                    }
+                } else {
+                    echo "<script>
+                        updateForm.deviceName.setCustomValidity('Device name cannot be empty.');
+                        updateForm.description.setCustomValidity('Description cannot be empty.');
+                        updateForm.cpuManufacturer.setCustomValidity('Manufacturer name cannot be empty.');
+                        updateForm.cpu.setCustomValidity('CPU name cannot be empty.');
+                        updateForm.cpuBenchmark.setCustomValidity('CPU benchmark cannot be empty.');
+                        updateForm.gpuManufacturer.setCustomValidity('Manufacturer name cannot be empty.');
+                        updateForm.gpu.setCustomValidity('GPU name cannot be empty.');
+                        updateForm.gpuBenchmark.setCustomValidity('GPU benchmark cannot be empty.');
+                        updateForm.ram.setCustomValidity('RAM Capacity cannot be empty.');
+                        updateForm.storage.setCustomValidity('Storage Capacity cannot be empty.');
+                    </script>";
+                }
                 break;
             case 'user':
                 if ($result = $dbConn -> query("SELECT Username,Name,Email,Phone,Role FROM User WHERE Username = '$id' LIMIT 1;")) {
@@ -37,15 +58,13 @@
                             $status = "Pending";
                             break;
                     }
-                    if (!$dbConn -> query("UPDATE Feedback SET Status = '$status' WHERE ID = '$id';")) {
-                        die("Error Updating Status");
-                    }
-                    $dbConn -> close();
-                    header("location: ./?data=$data");
-                    die();
+                    $dbConn -> query("UPDATE Feedback SET Status = '$status' WHERE ID = '$id';");
                 }
-                break;
+                $dbConn -> close();
+                header("location: ./?data=$data");
+                die();
         }
+    } else {
+        header("location: ./");
+        die();
     }
-    header("location: ./");
-    die();

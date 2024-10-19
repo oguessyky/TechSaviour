@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Device Information Form</title>
+    <script src="../../js/deviceForm.js"></script>
+    <script src="../../js/inputValidation.js"></script>
+</head>
+
+<body class="deviceForm">
+    <div class="container-deviceForm">
+        <form class="deviceForm" method="post" enctype="multipart/form-data" name="update" action="updateLaptop.php">
+            <input type="text" id="id" name = "id" class="noShow">
+            <div class="form-group-deviceForm">
+                <label for="image" class="deviceForm">Upload Image:</label>
+                <div class="image-container-deviceForm">
+                    <img id="imagePreview_deviceForm" src="#" alt="Image Preview" style="display: none;">
+                </div>
+                <label for="image" class="custom-file-upload-deviceForm">Choose File</label>
+                <input type="file" id="image" name="image" accept="image/*" class="deviceForm" required>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="deviceName" class="deviceForm">Device Name:</label>
+                <input type="text" id="deviceName" name="deviceName"
+                    placeholder="Device Name" class="deviceForm" required
+                    pattern="[\w\s\-]*$" maxlength="255"
+                    oninput="return validateInput(this,
+                    'Device name must can only contain letters(A-Z,a-z), numbers(0-9), spaces( ) and dashes(-).',
+                    [isEmpty,'Device name cannot be empty.']);">
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="description" class="deviceForm">Detail:</label>
+                <textarea id="description" name="description" rows="4" placeholder="Device Description" class="deviceForm"
+                required maxlength="255" oninput="return validateInput(this,'Description cannot be empty.');"></textarea>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="cpu" class="deviceForm">CPU and CPU Benchmark:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="text" list="cpuManufacturerList" id="cpuManufacturer" name="cpuManufacturer"
+                        placeholder="Manufacturer" class="deviceForm" required
+                        pattern="[\w\s]*$" maxlength="255"
+                        oninput="return validateInput(this,
+                        'Manufacturer name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
+                        [isEmpty,'Manufacturer name cannot be empty.']);">
+                    <datalist id="cpuManufacturerList">
+                        <option value="INTEL">INTEL</option>
+                        <option value="AMD">AMD</option>
+                        <!-- Add more options -->
+                    </datalist>
+                    <input type="text" list="cpuList" id="cpu" name="cpu" placeholder="CPU" class="deviceForm"
+                        required pattern="[\w\s]*$" maxlength="255" oninput="return validateInput(this,
+                        'CPU name must can only contain letters(A-Z,a-z), numbers(0-9), spaces( ) and dashes(-).',
+                        [isEmpty,'CPU name cannot be empty.']);">
+                    <datalist id="cpuList">
+                        <option value="i3 12300H">
+                        <option value="i5 13500H">
+                        <option value="i7 14700HX">
+                            <!-- Add more options -->
+                    </datalist>
+                    <input type="number" id="cpuBenchmark" name="cpuBenchmark"
+                        placeholder="CPU Benchmark" class="deviceForm" required min="0" max="2147483647" pattern="^[\d]*$"
+                        oninput="return validateInput(this,
+                        'CPU Benchmark must be a number between 0 - 2147483647.',
+                        [isEmpty,'CPU Benchmark cannot be empty.']);">
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="gpu" class="deviceForm">GPU and GPU Benchmark:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="text" list="gpuManufacturerList" id="gpuManufacturer" name="gpuManufacturer"
+                        placeholder="Manufacturer" class="deviceForm" required
+                        pattern="[\w\s]*$" maxlength="255"
+                        oninput="return validateInput(this,
+                        'Manufacturer name must can only contain letters(A-Z,a-z), numbers(0-9), and spaces( ).',
+                        [isEmpty,'Manufacturer name cannot be empty.']);">
+                    <datalist id="gpuManufacturerList">
+                        <option value="NVIDIA">NVIDIA</option>
+                        <option value="AMD">AMD</option>
+                        <!-- Add more options -->
+                    </datalist>
+                    <input type="text" list="gpuList" id="gpu" name="gpu" placeholder="GPU" class="deviceForm" 
+                        required pattern="[\w\s]*$" maxlength="255" oninput="return validateInput(this,
+                        'GPU name must can only contain letters(A-Z,a-z), numbers(0-9), spaces( ) and dashes(-).',
+                        [isEmpty,'GPU name cannot be empty.']);">
+                    <datalist id="gpuList">
+                        <option value="GeForce RTX 3080">
+                        <option value="Radeon RX 6800 XT">
+                        <option value="GeForce GTX 1660">
+                            <!-- Add more options -->
+                    </datalist>
+                    <input type="number" id="gpuBenchmark" name="gpuBenchmark" 
+                        placeholder="GPU Benchmark" class="deviceForm" required min="0" max="2147483647" pattern="^[\d]*$"
+                        oninput="return validateInput(this,
+                        'CPU Benchmark must be a number between 0 - 2147483647.',
+                        [isEmpty,'CPU benchmark cannot be empty.']);">
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="ram" class="deviceForm">RAM:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" id="ram" name="ram" placeholder="RAM Capacity" class="deviceForm"
+                        required min="0" max="2147483647" pattern="^[\d]*$"
+                        oninput="return validateInput(this,
+                        'RAM Capacity must be a number between 0 - 2147483647.',
+                        [isEmpty,'RAM Capacity cannot be empty.']);">
+                    <select id="ramUnit" name="ramUnit" class="deviceForm" required>
+                        <option value="MB">MB</option>
+                        <option value="GB" selected>GB</option>
+                        <option value="TB">TB</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="storage" class="deviceForm">Storage:</label>
+                <div class="inline-group-deviceForm">
+                    <input type="number" id="storage" name="storage" placeholder="Storage Capacity" class="deviceForm"
+                        required min="0" max="2147483647" pattern="^[\d]*$"
+                        oninput="return validateInput(this,
+                        'Storage Capacity must be a number between 0 - 2147483647.',
+                        [isEmpty,'Storage Capacity cannot be empty.']);">
+                    <select id="storageUnit" name="storageUnit" class="deviceForm" required>
+                        <option value="MB">MB</option>
+                        <option value="GB" selected>GB</option>
+                        <option value="TB">TB</option>
+                    </select>
+                    <select id="storageType" name="storageType" class="deviceForm" required>
+                        <option value="HDD">HDD</option>
+                        <option value="SSD">SSD</option>
+                        <option value="M2 SSD DDR4">M2 SSD DDR4</option>
+                        <option value="M2 SSD DDR5" selected>M2 SSD DDR5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="category" class="deviceForm">Category:</label>
+                <div class="deviceForm">
+                    <div class="checkbox-group-deviceForm">
+                        <input type="checkbox" id="gaming" name="forGaming" value="gaming">
+                        <label for="gaming">Gaming</label>
+                    </div>
+                    <div class="checkbox-group-deviceForm">
+                        <input type="checkbox" id="business" name="forBusiness" value="business">
+                        <label for="business">Business</label>
+                    </div>
+                    <div class="checkbox-group-deviceForm">
+                        <input type="checkbox" id="art" name="forArt" value="art">
+                        <label for="art">Art</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="deviceForm">Submit</button>
+        </form>
+        <script>
+            updateForm = document.forms.update;
+        </script>
+    </div>
+</body>
+
+
+
+</html>

@@ -38,11 +38,9 @@
                         <tbody>";
 
                         $sql =
-                        "SELECT Laptop.ID,Laptop.Image,Laptop.Name,Laptop.Description,CPU.Name,GPU.Name,Laptop.RAM,Laptop.Storage FROM Laptop
-                        LEFT JOIN CPU ON Laptop.CPU = CPU.ID
-                        LEFT JOIN GPU ON Laptop.GPU = GPU.ID";
+                        "SELECT ID,ImageAddress,Name,Description,CPUName,GPUName,RAM,Storage FROM Laptop";
                         if (isset($search)) {
-                            $sql .= " WHERE Laptop.Name LIKE '%$search%';";
+                            $sql .= " WHERE Name LIKE '%$search%';";
                         } else {
                             $sql .= ";";
                         }
