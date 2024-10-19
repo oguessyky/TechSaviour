@@ -40,24 +40,3 @@ create table Laptop (
 
 /* admin user */
 INSERT INTO User VALUES ('admin','Admin','admin','Admin','admin@techsaviour.com','+60123456789');
-
-INSERT INTO Laptop(Name,Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt)
-VALUES ('[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]','[value-16]')
-
-UPDATE Laptop SET
-Name='[value-2]',
-Description='[value-3]',
-ImageAddress='[value-4]',
-CPUName='[value-5]',
-CPUManufacturer='[value-6]',
-CPUScore='[value-7]',
-GPUName='[value-8]',
-GPUManufacturer='[value-9]',
-GPUScore='[value-10]',
-RAM='[value-11]',
-Storage='[value-12]',
-StorageType='[value-13]',
-ForGaming='[value-14]',
-ForBusiness='[value-15]',
-ForArt='[value-16]'
-WHERE ID='[value-1]';
