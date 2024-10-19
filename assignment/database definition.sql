@@ -22,7 +22,7 @@ create table Feedback (
 create table Laptop (
     ID int auto_increment primary key not null,
     Name varchar(255) not null,
-    Description varchar(255),
+    Description varchar(65535),
     ImageAddress varchar(255),
     CPUName varchar(255) not null,
     CPUManufacturer varchar(255) not null,

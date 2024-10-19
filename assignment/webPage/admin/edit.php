@@ -7,14 +7,63 @@
         switch ($data) {
             case 'laptop':
                 include "laptopEdit.html";
-                echo "<script>updateForm.id.value = $id;</script>";
+                echo "<script>updateForm.id.value = $id;";
                 $idValue = json_decode($id);
                 if (isset($idValue)) {
-                    if ($result = $dbConn -> query("SELECT Name,Description,Image,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,Storage,StorageType,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
+                    if ($result = $dbConn -> query("SELECT Name,Description,ImageAddress,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,Storage,StorageType,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
                         $row = $result -> fetch_row();
+                        echo "const imagePreview = document.getElementById('imagePreview_deviceForm');
+                            imagePreview.src = '../../image/Laptop Images/$row[2]';
+                            imagePreview.style.display = 'block';
+                            fetch('../../image/Laptop Images/$row[2]')
+                            .then(res => res.blob())
+                            .then(blob => {
+                                const file = new File([blob], '$row[2]', blob);
+                                const dataTransfer = new DataTransfer();
+                                dataTransfer.items.add(file);
+                                document.getElementById('image').files = dataTransfer.files;
+                            });";
+                        $ram = $row[9];
+                        $storage = $row[10];
+                        if ($ram & 1023) {
+                            echo "updateForm.ramUnit.value = 'MB';";
+                        } else {
+                            $ram >>= 10;
+                            if ($ram & 1023) {
+                                echo "updateForm.ramUnit.value = 'GB';";
+                            } else {
+                                $ram >>= 10;
+                                echo "updateForm.ramUnit.value = 'TB';";
+                            }
+                        }
+                        if ($storage & 1023) {
+                            echo "updateForm.storageUnit.value = 'MB';";
+                        } else {
+                            $storage >>= 10;
+                            if ($storage & 1023) {
+                                echo "updateForm.storageUnit.value = 'GB';";
+                            } else {
+                                $storage >>= 10;
+                                echo "updateForm.storageUnit.value = 'TB';";
+                            }
+                        }
+                        echo "updateForm.deviceName.value = '$row[0]';
+                            updateForm.description.value = `$row[1]`;
+                            updateForm.cpu.value = '$row[3]';
+                            updateForm.cpuManufacturer.value = '$row[4]';
+                            updateForm.cpuBenchmark.value = $row[5];
+                            updateForm.gpu.value = '$row[6]';
+                            updateForm.gpuManufacturer.value = '$row[7]';
+                            updateForm.gpuBenchmark.value = $row[8];
+                            updateForm.ram.value = $ram;
+                            updateForm.storage.value = $storage;
+                            updateForm.forGaming.checked = $row[12];
+                            updateForm.forBusiness.checked = $row[13];
+                            updateForm.forArt.checked = $row[14];
+                        </script>";
                     }
                 } else {
-                    echo "<script>
+                    echo "
                         updateForm.deviceName.setCustomValidity('Device name cannot be empty.');
                         updateForm.description.setCustomValidity('Description cannot be empty.');
                         updateForm.cpuManufacturer.setCustomValidity('Manufacturer name cannot be empty.');
@@ -45,7 +94,6 @@
                         document.update.action = 'updateUser.php';
                     </script>";
                 }
-                $dbConn -> close();
                 break;
             case 'feedback':
                 if ($result = $dbConn -> query("SELECT Status FROM Feedback WHERE ID = '$id' LIMIT 1;")) {
@@ -64,6 +112,7 @@
                 header("location: ./?data=$data");
                 die();
         }
+        $dbConn -> close();
     } else {
         header("location: ./");
         die();

@@ -95,3 +95,4 @@ function checkEditType() {
         document.forms.edit.action = 'delete.php';
     }
 }
+
