@@ -26,15 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $resolutionWidthAdd = $_POST['resolution3'] ?: null;
     $resolutionHeightAdd = $_POST['resolution4'] ?: null;
     $additionalResolution = $resolutionWidthAdd && $resolutionHeightAdd ? $resolutionWidthAdd . " x " . $resolutionHeightAdd : null;
-    $RefreshRate = $_POST['RefreshRate'] ?: null;
+    $refreshRate = $_POST['RefreshRate'] ?: null;
     $colorAccuracy = $_POST['color_accuracy'] ?: null;
     $forGaming = isset($_POST['forGaming']);
     $forBusiness = isset($_POST['forBusiness']);
     $forArt = isset($_POST['forArt']);
 
-    // Convert units and set to appropriate variables
-    function convertUnit(&$value, $unit)
-    {
+    function convertUnit(&$value, $unit) {
         switch ($unit) {
             case "GB":
                 $value <<= 10;
@@ -49,82 +47,80 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     convertUnit($storage, $storageUnit);
     if ($maxStorage) convertUnit($maxStorage, $maxStorageUnit);
 
-    $newImageDir = "../../image/Laptop Images/" . $image["name"];
+    $newImageDir = "../../image/Laptop Images/" . basename($image["name"]);
     if (move_uploaded_file($image["tmp_name"], $newImageDir)) {
         require "../headers/dbConn.php";
-
         $sql = isset($id) ?
             "UPDATE Laptop SET
-            Name = '$name',
-            Description = '$description',
-            ImageAddress = '" . basename($image["name"]) . "',
-            CPUName = '$cpu',
-            CPUManufacturer = '$cpuManufacturer',
-            CPUScore = '$cpuScore',
-            GPUName = '$gpu',
-            GPUManufacturer = '$gpuManufacturer',
-            GPUScore = '$gpuScore',
-            RAM = '$ram',
-            MAX_RAM = " . ($maxRam ? "'$maxRam'" : "NULL") . ",
-            Storage = '$storage',
-            StorageType = '$storageType',   
-            MAX_Storage = " . ($maxStorage ? "'$maxStorage'" : "NULL") . ",
-            MAX_StorageType = " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ",
-            ScreenResolution = '$resolution',
-            AddOn_ScreenResolution = " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ",
-            Refresh_Rate = " . ($RefreshRate ? "'$RefreshRate'" : "NULL") . ",
-            ColorAccuracy = " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ",
-            ForGaming = " . json_encode($forGaming) . ",
-            ForBusiness = " . json_encode($forBusiness) . ",
-            ForArt = " . json_encode($forArt) . "
-        WHERE ID = '$id';" :
+                Name = '$name',
+                Description = '$description',
+                ImageAddress = '" . basename($image["name"]) . "',
+                CPUName = '$cpu',
+                CPUManufacturer = '$cpuManufacturer',
+                CPUScore = '$cpuScore',
+                GPUName = '$gpu',
+                GPUManufacturer = '$gpuManufacturer',
+                GPUScore = '$gpuScore',
+                RAM = '$ram',
+                MAX_RAM = " . ($maxRam ? "'$maxRam'" : "NULL") . ",
+                Storage = '$storage',
+                StorageType = '$storageType',
+                MAX_Storage = " . ($maxStorage ? "'$maxStorage'" : "NULL") . ",
+                MAX_StorageType = " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ",
+                ScreenResolution = '$resolution',
+                AddOn_ScreenResolution = " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ",
+                Refresh_Rate = " . ($refreshRate ? "'$refreshRate'" : "NULL") . ",
+                ColorAccuracy = " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ",
+                ForGaming = " . json_encode($forGaming) . ",
+                ForBusiness = " . json_encode($forBusiness) . ",
+                ForArt = " . json_encode($forArt) . "
+            WHERE ID = '$id';" :
             "INSERT INTO Laptop (
-            Name, 
-            Description, 
-            ImageAddress, 
-            CPUName, 
-            CPUManufacturer, 
-            CPUScore,
-            GPUName, 
-            GPUManufacturer, 
-            GPUScore, 
-            RAM, 
-            MAX_RAM, 
-            Storage, 
-            StorageType,
-            MAX_Storage, 
-            MAX_StorageType,
-            ScreenResolution, 
-            AddOn_ScreenResolution, 
-            Refresh_Rate, 
-            ColorAccuracy, 
-            ForGaming, 
-            ForBusiness, 
-            ForArt
-        ) VALUES (
-            '$name', 
-            '$description', 
-            '" . basename($image["name"]) . "',
-            '$cpu', 
-            '$cpuManufacturer', 
-            $cpuScore, 
-            '$gpu', 
-            '$gpuManufacturer', 
-            $gpuScore, 
-            $ram, 
-            " . ($maxRam ? "'$maxRam'" : "NULL") . ", 
-            $storage, 
-            '$storageType', 
-            " . ($maxStorage ? "'$maxStorage'" : "NULL") . ", 
-            " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ",
-            '$resolution', 
-            " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ", 
-            " . ($RefreshRate ? "'$RefreshRate'" : "NULL") . ", 
-            " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ", 
-            " . json_encode($forGaming) . ", 
-            " . json_encode($forBusiness) . ", 
-            " . json_encode($forArt) . "
-        );";
+                Name, 
+                Description, 
+                ImageAddress, 
+                CPUName, 
+                CPUManufacturer, 
+                CPUScore,
+                GPUName, 
+                GPUManufacturer, 
+                GPUScore, 
+                RAM, 
+                MAX_RAM, 
+                Storage, 
+                StorageType,
+                MAX_Storage, 
+                MAX_StorageType, 
+                ScreenResolution, 
+                AddOn_ScreenResolution,
+                Refresh_Rate, 
+                ColorAccuracy, 
+                ForGaming, 
+                ForBusiness, 
+                ForArt
+            ) VALUES (
+                '$name', 
+                '$description', 
+                '" . basename($image["name"]) . "', 
+                '$cpu',
+                '$cpuManufacturer', 
+                $cpuScore, 
+                '$gpu', 
+                '$gpuManufacturer', 
+                $gpuScore,
+                $ram, 
+                " . ($maxRam ? "'$maxRam'" : "NULL") . ", 
+                $storage, 
+                '$storageType',
+                " . ($maxStorage ? "'$maxStorage'" : "NULL") . ", 
+                " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ",
+                '$resolution', 
+                " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ",
+                " . ($refreshRate ? "'$refreshRate'" : "NULL") . ", 
+                " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ",
+                " . json_encode($forGaming) . ", 
+                " . json_encode($forBusiness) . ", 
+                " . json_encode($forArt) . ");";
 
         echo $sql;
         if (!$dbConn->query($sql)) {
