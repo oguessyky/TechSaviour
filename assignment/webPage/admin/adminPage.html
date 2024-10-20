@@ -31,7 +31,13 @@
         <button name="data" onclick="this.value=document.querySelector('.adminButton button.active').value;" class="search-icon">
             <img src="../../image/admin/admin/search icon.png" alt="Search Icon" />
         </button>
-        <input type="search" name="search" id="search" placeholder="Search..." autofocus/>
+        <input type="search" list="searchList" name="search" id="search" placeholder="Search..." autofocus/>
+        <!-- remove this datalist in final product(for adding and search purpose only) -->
+        <datalist id="searchList">
+          <option value="ASUS">ASUS</option>
+          <option value="ILLEGEAR">ILLEGEAR</option>
+          <option value="MSI">MSI</option>
+        </datalist>
       </div>
       <a onclick="prepareEdit(null);" class="add" id="add">
           <svg fill="#000000" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
