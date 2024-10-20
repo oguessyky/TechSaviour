@@ -1993,6 +1993,12 @@ progress.ssd::-moz-progress-bar {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
   font-size: 2vw;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.explanation p::selection{
+  background-color: #5975e3;
+  color: #ffffff;
 }
 footer.detail_f {
   position: relative;
@@ -2126,16 +2132,17 @@ footer.detail_f .bottom .black img {
   box-sizing: border-box;
   top: 38%;
   margin: 0 0 0 5%;
-  font-size: 5vw;
 }
 .black h2 {
   grid-area: h2Black;
   color: #5fdfff;
+  font-size: 6vw;
 }
 .black .add-on-component {
   grid-area: pBlack;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 4.3vw;
 }
 .i svg {
   position: absolute;
