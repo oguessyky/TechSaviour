@@ -57,10 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $forBusiness = json_encode(isset($_POST['forBusiness']));
     $forArt = json_encode(isset($_POST['forArt']));
 
-    $newImageDir = "../../image/Laptop Images/" . $image["name"];
+    $newImageDir = "../../image/Laptop Images/" . basename($image["name"]);
     if (move_uploaded_file($image["tmp_name"], $newImageDir)) {
         require "../headers/dbConn.php";
-
         $sql = isset($id) ?
             "UPDATE Laptop SET
             Name = '$name',

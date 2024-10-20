@@ -25,39 +25,50 @@ function compressValue(&$value)
         switch ($data) {
             case 'laptop':
                 include "laptopEdit.html";
-                echo "<script>updateForm.id.value = $id;
+                echo "<script>
+                    updateForm.id.value = $id;
                     var cpuManufacturerList = document.getElementById('cpuManufacturerList');
                     var cpuList = document.getElementById('cpuList');
                     var gpuManufacturerList = document.getElementById('gpuManufacturerList');
-                    var gpuList = document.getElementById('gpuList');";
-                    if ($result = $dbConn -> query("SELECT CPUManufacturer from Laptop GROUP BY CPUManufacturer;")) {
-                        while ($row = $result -> fetch_row()) {
-                            echo "var option = document.createElement('option');
+                    var gpuList = document.getElementById('gpuList');
+                ";
+            
+                if ($result = $dbConn->query("SELECT CPUManufacturer from Laptop GROUP BY CPUManufacturer;")) {
+                    while ($row = $result->fetch_row()) {
+                        echo "var option = document.createElement('option');
                             option.value = '$row[0]';
-                            cpuManufacturerList.appendChild(option);";
-                        }
+                            cpuManufacturerList.appendChild(option);
+                        ";
                     }
-                    if ($result = $dbConn -> query("SELECT CPUName from Laptop GROUP BY CPUName;")) {
-                        while ($row = $result -> fetch_row()) {
-                            echo "var option = document.createElement('option');
+                }
+            
+                if ($result = $dbConn->query("SELECT CPUName from Laptop GROUP BY CPUName;")) {
+                    while ($row = $result->fetch_row()) {
+                        echo "var option = document.createElement('option');
                             option.value = '$row[0]';
-                            cpuList.appendChild(option);";
-                        }
+                            cpuList.appendChild(option);
+                        ";
                     }
-                    if ($result = $dbConn -> query("SELECT GPUManufacturer from Laptop GROUP BY GPUManufacturer;")) {
-                        while ($row = $result -> fetch_row()) {
-                            echo "var option = document.createElement('option');
+                }
+            
+                if ($result = $dbConn->query("SELECT GPUManufacturer from Laptop GROUP BY GPUManufacturer;")) {
+                    while ($row = $result->fetch_row()) {
+                        echo "var option = document.createElement('option');
                             option.value = '$row[0]';
-                            gpuManufacturerList.appendChild(option);";
-                        }
+                            gpuManufacturerList.appendChild(option);
+                        ";
                     }
-                    if ($result = $dbConn -> query("SELECT GPUName from Laptop GROUP BY GPUName;")) {
-                        while ($row = $result -> fetch_row()) {
-                            echo "var option = document.createElement('option');
+                }
+            
+                if ($result = $dbConn->query("SELECT GPUName from Laptop GROUP BY GPUName;")) {
+                    while ($row = $result->fetch_row()) {
+                        echo "var option = document.createElement('option');
                             option.value = '$row[0]';
-                            gpuList.appendChild(option);";
-                        }
+                            gpuList.appendChild(option);
+                        ";
                     }
+                }
+            
                 $idValue = json_decode($id);
                 if (isset($idValue)) {
                     if ($result = $dbConn -> query("SELECT Name,Description,ImageAddress,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,MaxRAM,Storage,StorageType,MaxStorage,MaxStorageType,ScreenResolutionWidth,ScreenResolutionHeight,ScreenResolutionUpgradeWidth,ScreenResolutionUpgradeHeight,FPS,ColorAccuracy,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
@@ -81,7 +92,7 @@ function compressValue(&$value)
                             updateForm.description.value = `".htmlspecialchars_decode($row[1])."`;
                             updateForm.cpu.value = '$row[3]';
                             updateForm.cpuManufacturer.value = '$row[4]';
-                            updateForm.cpuBenchmark.value = $row[5];
+                            updateForm.cpuBenchmark.value = '$row[5]';
                             updateForm.gpu.value = '$row[6]';
                             updateForm.gpuManufacturer.value = '$row[7]';
                             updateForm.gpuBenchmark.value = $row[8];
@@ -120,7 +131,7 @@ function compressValue(&$value)
                         updateForm.resolutionHeight.setCustomValidity('Screen resolution height cannot be empty.');";
                 }
                 echo "</script>";
-                break;
+                break;            
             case 'user':
                 if ($result = $dbConn -> query("SELECT Username,Name,Email,Phone,Role FROM User WHERE Username = '$id' LIMIT 1;")) {
                     include "userEdit.html";

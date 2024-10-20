@@ -187,7 +187,8 @@
                     <input type="number" list="fps" id="fps" name="fps"
                         placeholder="Screen FPS" class="deviceForm" min="0" max="2000"
                         oninput="return validateInput(this,
-                        'Screen Resolution must be a number between 0 - 2000.');">
+                        'RefreshRate must be a number between 0 - 2000.');">
+                    <label style="color: white;">Hz Refresh Rate</label>
                 </div>
             </div>
             <div class="form-group-deviceForm">
@@ -195,7 +196,7 @@
                 <div class="inline-group-deviceForm">
                     <label style="color: white;">E < </label>
                     <input type="number" list="colorAccuracy" id="colorAccuracy" name="colorAccuracy"
-                        placeholder="Screen Color Accuracy" class="deviceForm" min="0" max="2000"
+                        placeholder="Screen Color Accuracy" class="deviceForm" step="0.001" min="0" max="2000"
                         oninput="return validateInput(this,
                         'Screen Resolution must be a number between 0 - 2000.');">
                 </div>
