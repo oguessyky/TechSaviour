@@ -40,8 +40,8 @@ create table Laptop (
     ScreenResolutionHeight int not null,
     ScreenResolutionUpgradeWidth int DEFAULT NULL,
     ScreenResolutionUpgradeHeight int DEFAULT NULL,
-    RefreshRate float DEFAULT NULL,
-    ColorAccuracy int DEFAULT NULL,
+    RefreshRate int DEFAULT NULL,
+    ColorAccuracy float DEFAULT NULL,
     ForGaming boolean not null,
     ForBusiness boolean not null,
     ForArt boolean not null
