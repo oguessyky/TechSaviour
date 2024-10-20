@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = json_decode($_POST['id']);
     $image = $_FILES['image'];
     $name = $_POST['deviceName'];
-    $description = $_POST['description'];
+    $description = addslashes($_POST['description']);
     $cpu = $_POST['cpu'];
     $cpuManufacturer = $_POST['cpuManufacturer'];
     $cpuScore = $_POST['cpuBenchmark'];
