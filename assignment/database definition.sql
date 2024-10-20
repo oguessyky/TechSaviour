@@ -38,7 +38,7 @@ create table Laptop (
     MAX_StorageType enum('HDD','SSD','M2 SSD DDR4','M2 SSD DDR5') DEFAULT NULL,
     ScreenResolution varchar(20) not null,
     AddOn_ScreenResolution varchar(20) DEFAULT NULL,
-    FPS int DEFAULT NULL,
+    Refresh_Rate int DEFAULT NULL,
     ColorAccuracy int DEFAULT NULL,
     ForGaming boolean not null,
     ForBusiness boolean not null,

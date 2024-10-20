@@ -53,7 +53,7 @@
             
                 $idValue = json_decode($id);
                 if (isset($idValue)) {
-                    if ($result = $dbConn->query("SELECT Name, Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt, MAX_RAM, MAX_Storage, MAX_StorageType, ScreenResolution, AddOn_ScreenResolution, FPS, ColorAccuracy FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
+                    if ($result = $dbConn->query("SELECT Name, Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, Storage, StorageType, ForGaming, ForBusiness, ForArt, MAX_RAM, MAX_Storage, MAX_StorageType, ScreenResolution, AddOn_ScreenResolution, Refresh_Rate, ColorAccuracy FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
                         $row = $result->fetch_row();
                         $ram = $row[9];
                         $storage = $row[10];
@@ -128,9 +128,9 @@
                             echo "updateForm.resolution4.value = '$additionalResolutionHeight';";
                         }
             
-                        // FPS and Color Accuracy
+                        // Refresh Rate and Color Accuracy
                         if (!is_null($row[20])) {
-                            echo "updateForm.fps.value = '$row[20]';";
+                            echo "updateForm.RefreshRate.value = '$row[20]';";
                         }
                         if (!is_null($row[21])) {
                             echo "updateForm.color_accuracy.value = '$row[21]';";
