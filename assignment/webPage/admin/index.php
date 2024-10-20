@@ -46,7 +46,7 @@
                         if ($result = $dbConn -> query($sql)) {
                             while ($row = $result -> fetch_row()) {
                                 $tableContent .= '<tr onclick="'."prepareEdit('$row[0]');".'">';
-                                $tableContent .= "<td><img src='../../image/Laptop Images/$row[1]' alt='Laptop $row[0]' class='responsive-img'></td>";
+                                $tableContent .= "<td><img src=".json_encode("../../image/Laptop Images/$row[1]")." alt='Laptop $row[0]' class='responsive-img'></td>";
                                 foreach (array_slice($row,2,3) as $element) {
                                     $tableContent .= "<td>$element</td>";
                                 }

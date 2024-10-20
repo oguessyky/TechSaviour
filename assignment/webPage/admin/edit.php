@@ -1,4 +1,22 @@
 <?php
+
+function compressValue(&$value)
+{
+    if ($value) {
+        if ($value & 1023) {
+            return 'MB';
+        } else {
+            $value >>= 10;
+            if ($value & 1023) {
+                return 'GB';
+            } else {
+                $value >>= 10;
+                return 'TB';
+            }
+        }
+    }
+}
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         include "../headers/header.php";
         require "../headers/dbConn.php";
@@ -42,60 +60,53 @@
                     }
                 $idValue = json_decode($id);
                 if (isset($idValue)) {
-                    if ($result = $dbConn -> query("SELECT Name,Description,ImageAddress,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,Storage,StorageType,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
+                    if ($result = $dbConn -> query("SELECT Name,Description,ImageAddress,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,MaxRAM,Storage,StorageType,MaxStorage,MaxStorageType,ScreenResolutionWidth,ScreenResolutionHeight,ScreenResolutionUpgradeWidth,ScreenResolutionUpgradeHeight,FPS,ColorAccuracy,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
                         $row = $result -> fetch_row();
                         $ram = $row[9];
-                        $storage = $row[10];
-                        if ($ram & 1023) {
-                            echo "updateForm.ramUnit.value = 'MB';";
-                        } else {
-                            $ram >>= 10;
-                            if ($ram & 1023) {
-                                echo "updateForm.ramUnit.value = 'GB';";
-                            } else {
-                                $ram >>= 10;
-                                echo "updateForm.ramUnit.value = 'TB';";
-                            }
-                        }
-                        if ($storage & 1023) {
-                            echo "updateForm.storageUnit.value = 'MB';";
-                        } else {
-                            $storage >>= 10;
-                            if ($storage & 1023) {
-                                echo "updateForm.storageUnit.value = 'GB';";
-                            } else {
-                                $storage >>= 10;
-                                echo "updateForm.storageUnit.value = 'TB';";
-                            }
-                        }
+                        $maxRam = $row[10];
+                        $storage = $row[11];
+                        $maxStorage = $row[13];
                         echo "const imagePreview = document.getElementById('imagePreview_deviceForm');
-                            imagePreview.src = '../../image/Laptop Images/$row[2]';
+                            imagePreview.src = ".json_encode("../../image/Laptop Images/$row[2]").";
                             imagePreview.style.display = 'block';
-                            fetch('../../image/Laptop Images/$row[2]')
+                            fetch(".'"'."../../image/Laptop Images/$row[2]".'"'.")
                             .then(res => res.blob())
                             .then(blob => {
-                                const file = new File([blob], '$row[2]', blob);
+                                const file = new File([blob], ".'"'.$row[2].'"'.", blob);
                                 const dataTransfer = new DataTransfer();
                                 dataTransfer.items.add(file);
                                 document.getElementById('image').files = dataTransfer.files;
                             });
                             updateForm.deviceName.value = '$row[0]';
-                            updateForm.description.value = `$row[1]`;
+                            updateForm.description.value = `".htmlspecialchars_decode($row[1])."`;
                             updateForm.cpu.value = '$row[3]';
                             updateForm.cpuManufacturer.value = '$row[4]';
                             updateForm.cpuBenchmark.value = $row[5];
                             updateForm.gpu.value = '$row[6]';
                             updateForm.gpuManufacturer.value = '$row[7]';
                             updateForm.gpuBenchmark.value = $row[8];
+                            updateForm.ramUnit.value = '".compressValue($ram)."';
                             updateForm.ram.value = $ram;
+                            updateForm.maxRamUnit.value = '".compressValue($maxRam)."';
+                            updateForm.maxRam.value = ".json_encode($maxRam).";
+                            updateForm.storageUnit.value = '".compressValue($storage)."';
                             updateForm.storage.value = $storage;
-                            updateForm.forGaming.checked = $row[12];
-                            updateForm.forBusiness.checked = $row[13];
-                            updateForm.forArt.checked = $row[14];";
+                            updateForm.storageType.value = ".json_encode($row[12]).";
+                            updateForm.maxStorageUnit.value = '".compressValue($maxStorage)."';
+                            updateForm.maxStorage.value = ".json_encode($maxStorage).";
+                            updateForm.maxStorageType.value = ".json_encode($row[14]).";
+                            updateForm.resolutionWidth.value = $row[15];
+                            updateForm.resolutionHeight.value = $row[16];
+                            updateForm.resolutionUpgradeWidth.value = ".json_encode($row[17]).";
+                            updateForm.resolutionUpgradeHeight.value = ".json_encode($row[18]).";
+                            updateForm.fps.value = ".json_encode($row[19]).";
+                            updateForm.colorAccuracy.value = ".json_encode($row[20]).";
+                            updateForm.forGaming.checked = $row[21];
+                            updateForm.forBusiness.checked = $row[22];
+                            updateForm.forArt.checked = $row[23];";
                     }
                 } else {
-                    echo "
-                        updateForm.deviceName.setCustomValidity('Device name cannot be empty.');
+                    echo "updateForm.deviceName.setCustomValidity('Device name cannot be empty.');
                         updateForm.description.setCustomValidity('Description cannot be empty.');
                         updateForm.cpuManufacturer.setCustomValidity('Manufacturer name cannot be empty.');
                         updateForm.cpu.setCustomValidity('CPU name cannot be empty.');
@@ -103,8 +114,10 @@
                         updateForm.gpuManufacturer.setCustomValidity('Manufacturer name cannot be empty.');
                         updateForm.gpu.setCustomValidity('GPU name cannot be empty.');
                         updateForm.gpuBenchmark.setCustomValidity('GPU benchmark cannot be empty.');
-                        updateForm.ram.setCustomValidity('RAM Capacity cannot be empty.');
-                        updateForm.storage.setCustomValidity('Storage Capacity cannot be empty.');";
+                        updateForm.ram.setCustomValidity('RAM capacity cannot be empty.');
+                        updateForm.storage.setCustomValidity('Storage capacity cannot be empty.');
+                        updateForm.resolutionWidth.setCustomValidity('Screen resolution width cannot be empty.');
+                        updateForm.resolutionHeight.setCustomValidity('Screen resolution height cannot be empty.');";
                 }
                 echo "</script>";
                 break;

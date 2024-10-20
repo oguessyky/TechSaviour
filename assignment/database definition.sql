@@ -31,19 +31,18 @@ create table Laptop (
     GPUManufacturer varchar(255) not null,
     GPUScore int not null,
     RAM int not null,
-    MAX_RAM int DEFAULT NULL,
+    MaxRAM int DEFAULT NULL,
     Storage int not null,
     StorageType enum('HDD','SSD','M2 SSD DDR4','M2 SSD DDR5') not null,
-    MAX_Storage int DEFAULT NULL,
-    MAX_StorageType enum('HDD','SSD','M2 SSD DDR4','M2 SSD DDR5') DEFAULT NULL,
-    ScreenResolution varchar(20) not null,
-    AddOn_ScreenResolution varchar(20) DEFAULT NULL,
+    MaxStorage int DEFAULT NULL,
+    MaxStorageType enum('HDD','SSD','M2 SSD DDR4','M2 SSD DDR5') DEFAULT NULL,
+    ScreenResolutionWidth int not null,
+    ScreenResolutionHeight int not null,
+    ScreenResolutionUpgradeWidth int DEFAULT NULL,
+    ScreenResolutionUpgradeHeight int DEFAULT NULL,
     FPS int DEFAULT NULL,
     ColorAccuracy int DEFAULT NULL,
     ForGaming boolean not null,
     ForBusiness boolean not null,
     ForArt boolean not null
 );
-
-/* admin user */
-INSERT INTO User VALUES ('admin','Admin','admin','Admin','admin@techsaviour.com','+60123456789');
