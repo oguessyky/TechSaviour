@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $resolutionUpgradeWidth = json_encode(null);
         $resolutionUpgradeHeight = json_encode(null);
     }
-    $fps = json_encode(json_decode($_POST['fps']));
+    $refreshRate = json_encode(json_decode($_POST['refreshRate']));
     $colorAccuracy = json_encode(json_decode($_POST['colorAccuracy']));
 
     $forGaming = json_encode(isset($_POST['forGaming']));
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ScreenResolutionHeight = $resolutionHeight,
             ScreenResolutionUpgradeWidth = $resolutionUpgradeWidth,
             ScreenResolutionUpgradeHeight = $resolutionUpgradeHeight,
-            FPS = $fps,
+            RefreshRate = $refreshRate,
             ColorAccuracy = $colorAccuracy,
             ForGaming = $forGaming,
             ForBusiness = $forBusiness,
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ScreenResolutionHeight,
             ScreenResolutionUpgradeWidth,
             ScreenResolutionUpgradeHeight,
-            FPS, 
+            RefreshRate, 
             ColorAccuracy, 
             ForGaming, 
             ForBusiness, 
@@ -132,12 +132,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $resolutionHeight,
             $resolutionUpgradeWidth,
             $resolutionUpgradeHeight,
-            $fps, 
+            $refreshRate, 
             $colorAccuracy, 
             $forGaming, 
             $forBusiness, 
             $forArt
         );";
+        echo $sql;
         if (!$dbConn->query($sql)) {
             die("Failed to update Laptop table");
         }

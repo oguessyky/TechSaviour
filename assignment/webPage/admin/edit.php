@@ -71,7 +71,7 @@ function compressValue(&$value)
             
                 $idValue = json_decode($id);
                 if (isset($idValue)) {
-                    if ($result = $dbConn -> query("SELECT Name,Description,ImageAddress,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,MaxRAM,Storage,StorageType,MaxStorage,MaxStorageType,ScreenResolutionWidth,ScreenResolutionHeight,ScreenResolutionUpgradeWidth,ScreenResolutionUpgradeHeight,FPS,ColorAccuracy,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
+                    if ($result = $dbConn -> query("SELECT Name,Description,ImageAddress,CPUName,CPUManufacturer,CPUScore,GPUName,GPUManufacturer,GPUScore,RAM,MaxRAM,Storage,StorageType,MaxStorage,MaxStorageType,ScreenResolutionWidth,ScreenResolutionHeight,ScreenResolutionUpgradeWidth,ScreenResolutionUpgradeHeight,refreshRate,ColorAccuracy,ForGaming,ForBusiness,ForArt FROM Laptop WHERE ID = '$id' LIMIT 1;")) {
                         $row = $result -> fetch_row();
                         $ram = $row[9];
                         $maxRam = $row[10];
@@ -80,10 +80,10 @@ function compressValue(&$value)
                         echo "const imagePreview = document.getElementById('imagePreview_deviceForm');
                             imagePreview.src = ".json_encode("../../image/Laptop Images/$row[2]").";
                             imagePreview.style.display = 'block';
-                            fetch(".'"'."../../image/Laptop Images/$row[2]".'"'.")
+                            fetch(".json_encode("../../image/Laptop Images/$row[2]").")
                             .then(res => res.blob())
                             .then(blob => {
-                                const file = new File([blob], ".'"'.$row[2].'"'.", blob);
+                                const file = new File([blob], ".json_encode($row[2]).", blob);
                                 const dataTransfer = new DataTransfer();
                                 dataTransfer.items.add(file);
                                 document.getElementById('image').files = dataTransfer.files;
@@ -110,7 +110,7 @@ function compressValue(&$value)
                             updateForm.resolutionHeight.value = $row[16];
                             updateForm.resolutionUpgradeWidth.value = ".json_encode($row[17]).";
                             updateForm.resolutionUpgradeHeight.value = ".json_encode($row[18]).";
-                            updateForm.fps.value = ".json_encode($row[19]).";
+                            updateForm.refreshRate.value = ".json_encode($row[19]).";
                             updateForm.colorAccuracy.value = ".json_encode($row[20]).";
                             updateForm.forGaming.checked = $row[21];
                             updateForm.forBusiness.checked = $row[22];
@@ -131,7 +131,7 @@ function compressValue(&$value)
                         updateForm.resolutionHeight.setCustomValidity('Screen resolution height cannot be empty.');";
                 }
                 echo "</script>";
-                break;            
+                break;
             case 'user':
                 if ($result = $dbConn -> query("SELECT Username,Name,Email,Phone,Role FROM User WHERE Username = '$id' LIMIT 1;")) {
                     include "userEdit.html";
