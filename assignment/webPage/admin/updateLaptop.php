@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $resolutionWidthAdd = $_POST['resolution3'] ?: null;
     $resolutionHeightAdd = $_POST['resolution4'] ?: null;
     $additionalResolution = $resolutionWidthAdd && $resolutionHeightAdd ? $resolutionWidthAdd . " x " . $resolutionHeightAdd : null;
-    $fps = $_POST['fps'] ?: null;
+    $RefreshRate = $_POST['RefreshRate'] ?: null;
     $colorAccuracy = $_POST['color_accuracy'] ?: null;
     $forGaming = isset($_POST['forGaming']);
     $forBusiness = isset($_POST['forBusiness']);
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             MAX_StorageType = " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ",
             ScreenResolution = '$resolution',
             AddOn_ScreenResolution = " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ",
-            FPS = " . ($fps ? "'$fps'" : "NULL") . ",
+            Refresh_Rate = " . ($RefreshRate ? "'$RefreshRate'" : "NULL") . ",
             ColorAccuracy = " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ",
             ForGaming = " . json_encode($forGaming) . ",
             ForBusiness = " . json_encode($forBusiness) . ",
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             MAX_StorageType,
             ScreenResolution, 
             AddOn_ScreenResolution, 
-            FPS, 
+            Refresh_Rate, 
             ColorAccuracy, 
             ForGaming, 
             ForBusiness, 
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             " . ($maxStorageType ? "'$maxStorageType'" : "NULL") . ",
             '$resolution', 
             " . ($additionalResolution ? "'$additionalResolution'" : "NULL") . ", 
-            " . ($fps ? "'$fps'" : "NULL") . ", 
+            " . ($RefreshRate ? "'$RefreshRate'" : "NULL") . ", 
             " . ($colorAccuracy ? "'$colorAccuracy'" : "NULL") . ", 
             " . json_encode($forGaming) . ", 
             " . json_encode($forBusiness) . ", 
