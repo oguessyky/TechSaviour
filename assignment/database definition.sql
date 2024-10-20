@@ -39,7 +39,7 @@ create table Laptop (
     ScreenResolution varchar(20) not null,
     AddOn_ScreenResolution varchar(20) DEFAULT NULL,
     Refresh_Rate int DEFAULT NULL,
-    ColorAccuracy int DEFAULT NULL,
+    ColorAccuracy FLOAT DEFAULT NULL,
     ForGaming boolean not null,
     ForBusiness boolean not null,
     ForArt boolean not null
