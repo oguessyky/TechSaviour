@@ -2046,13 +2046,14 @@ footer.detail_f .bottom .black img {
     "Detail-component-RAM textSpilt3 Fever-detail-RAM"
     "Detail-component-SSD textSpilt4 Fever-detail-SSD"
     "Detail-component-Dr textSpilt5 Fever-detail-Dr"
-    "Detail-component-Rr textSpilt6 Fever-detail-Rr";
+    "Detail-component-Rr textSpilt6 Fever-detail-Rr"
+    "Detail-component-Ca textSpilt7 Fever-detail-Ca";
   grid-template-columns: 1fr auto 2fr;
   color: #fff;
   width: 90%;
   height: auto;
   box-sizing: border-box;
-  top: 27%;
+  top: 23%;
   font-size: 2.3vw;
   margin: 0 0 0 5%;
 }
@@ -2077,6 +2078,9 @@ footer.detail_f .bottom .black img {
 .Detail-component-Rr {
   grid-area: Detail-component-Rr;
 }
+.Detail-component-Ca{
+  grid-area: Detail-component-Ca;
+}
 .centerSplit {
   display: contents;
 }
@@ -2098,6 +2102,9 @@ footer.detail_f .bottom .black img {
 .textSpilt6 {
   grid-area: textSpilt6;
 }
+.textSpilt7 {
+  grid-area: textSpilt7;
+}
 .Fever-detail {
   display: contents;
 }
@@ -2118,6 +2125,9 @@ footer.detail_f .bottom .black img {
 }
 .Fever-detail-Rr {
   grid-area: Fever-detail-Rr;
+}
+.Fever-detail-Ca{
+  grid-area: Fever-detail-Ca;
 }
 .text-Add-On {
   position: absolute;
