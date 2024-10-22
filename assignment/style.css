@@ -1536,7 +1536,7 @@ h1.advancedSearch {
 }
 .button-container-explore {
   display: flex;
-  gap: 5vw;
+  gap: 1vw;
   width: 100%;
   padding: 1vw;
   box-sizing: border-box;
