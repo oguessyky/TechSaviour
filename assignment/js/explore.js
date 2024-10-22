@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
 function buttonClick(element) {
     let numberElement = element.querySelector('.number-explore');
-    let initialValue = parseInt(element.getAttribute('data-initial'));
     let maxValue = parseInt(element.getAttribute('data-max'));
     let currentValue = parseInt(numberElement.textContent);
     let input = element.querySelector('.noShow');
