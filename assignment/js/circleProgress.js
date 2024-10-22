@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const charts = document.querySelectorAll('.chart');
     charts.forEach(chart => {
         const percent = chart.getAttribute('data-percent');
-        let currentPercent = 0;
+        let currentPercent = -1;
         const interval = setInterval(() => {
             if (currentPercent < percent) {
                 currentPercent++;
