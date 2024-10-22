@@ -12,7 +12,7 @@
                 $description = "These type of computer have long battery life, that can let them standby the whole day";
                 break;
             case "art":
-                $description = "These type of computer ensure the accuracy of the display quality to syn the color in the real world";
+                $description = "These type of computer ensure the accuracy of the display quality to sync the color in the real world";
                 break;
         }
 
