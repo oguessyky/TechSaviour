@@ -13,7 +13,8 @@
             require "../headers/dbConn.php";
             $data = $_GET["data"];
             if (in_array($data,["laptop","user","feedback"])) {
-                echo "handleButtonClick(document.getElementById('$data'));";
+                echo "handleButtonClick(document.getElementById('$data'));
+                var searchList = document.getElementById('searchList');";
                 if (isset($_GET["search"])) {
                     $search = $_GET["search"];
                     echo "searchInput.value = '$search';";
@@ -36,6 +37,8 @@
                         </thead>
                         <tbody>";
 
+                        $searchListQuery = "SELECT Name FROM Laptop GROUP BY Name;";
+                        
                         $sql =
                         "SELECT ID,ImageAddress,Name,CPUName,GPUName,RAM,Storage FROM Laptop";
                         if (isset($search)) {
@@ -87,6 +90,8 @@
                         </thead>
                         <tbody>";
 
+                        $searchListQuery = "SELECT Name FROM User WHERE Username != '$username' GROUP BY Name;";
+
                         $sql = "SELECT Username,Name,Role,Email,Phone FROM User WHERE Username != '$username'";
                         if (isset($search)) {
                             $sql .= " AND Name LIKE '%$search%';";
@@ -124,6 +129,8 @@
                         </thead>
                         <tbody>";
 
+                        $searchListQuery = "SELECT User.Name FROM Feedback LEFT JOIN User ON Feedback.Username = User.Username GROUP BY User.Name;";
+
                         $sql =
                         "SELECT Feedback.ID,Feedback.Username,User.Name,User.Email,User.Phone,Feedback.Inquiry,Feedback.Status FROM Feedback
                         LEFT JOIN User ON Feedback.Username = User.Username";
@@ -145,6 +152,13 @@
                             }
                         }
                         break;
+                }
+                if ($result = $dbConn -> query($searchListQuery)) {
+                    while ($row = $result -> fetch_row()) {
+                        echo "var option = document.createElement('option');
+                        option.value = '$row[0]';
+                        searchList.appendChild(option);";
+                    }
                 }
                 $tableContent .= "</tbody>";
                 echo "document.getElementById('adminTable').innerHTML = `$tableContent`;";

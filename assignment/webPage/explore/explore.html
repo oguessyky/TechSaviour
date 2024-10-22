@@ -79,7 +79,7 @@
     <div class="main-explore">
         <div class="button-body-explore">
             <div class="button-inner-explore">
-                <div class="button-container-explore">
+                <form class="button-container-explore">
                     <div class="circle-button-explore cpu" data-initial="0" data-max="10" data-color="#FF6A6A"
                         onclick="buttonClick(this)">
                         <div class="content-explore">
@@ -98,6 +98,7 @@
                                         d="M85,70.25H81A2.252,2.252,0,0,1,78.75,68V56a1.75,1.75,0,0,0-3.5,0V68A5.757,5.757,0,0,0,81,73.75h4A5.757,5.757,0,0,0,90.75,68V56a1.75,1.75,0,0,0-3.5,0V68A2.252,2.252,0,0,1,85,70.25Z" />
                                 </g>
                             </svg>
+                            <input type="number" name="cpuRating" class="noShow" min="0" max="10" value="0">
                             <span class="number-explore">0</span>
                         </div>
                     </div>
@@ -117,6 +118,7 @@
                                         d="m33 28a3 3 0 0 0 3-3v-4a1 1 0 0 0 -2 0v4a1 1 0 0 1 -2 0v-4a1 1 0 0 0 -2 0v4a3 3 0 0 0 3 3z" />
                                 </g>
                             </svg>
+                            <input type="number" name="gpuRating" class="noShow" min="0" max="10" value="0">
                             <span class="number-explore">0</span>
                         </div>
                     </div>
@@ -136,6 +138,7 @@
                                         d="M15,27a1,1,0,0,0,1-1V24.41l2.29,2.3a1,1,0,0,0,1.42-1.42l-1.42-1.42A2.5,2.5,0,0,0,17.5,19H15a1,1,0,0,0-1,1v6A1,1,0,0,0,15,27Zm1-6h1.5a.5.5,0,0,1,0,1H16Z" />
                                 </g>
                             </svg>
+                            <input type="number" name="ramRating" class="noShow" min="0" max="10" value="0">
                             <span class="number-explore">0</span>
                         </div>
                     </div>
@@ -149,15 +152,16 @@
                                         d="m3 41h36.331c1.45 0 2.691-1.036 2.952-2.464l3.701-20.357c.12-.593-.377-1.194-.984-1.179h-5v-1c0-1.654-1.346-3-3-3h-19.382l-2.724-5.447c-.169-.339-.515-.553-.894-.553h-9c-1.654 0-3 1.346-3 3v30c0 .553.448 1 1 1zm40.802-22-3.487 19.178c-.087.476-.501.822-.984.822h-34.078l4.545-20zm-39.802-9c0-.552.449-1 1-1h8.382l2.724 5.447c.169.339.515.553.894.553h20c.551 0 1 .448 1 1v1h-29c-.467 0-.872.323-.975.778l-4.025 17.71z" />
                                 </g>
                             </svg>
+                            <input type="number" name="storageRating" class="noShow" min="0" max="10" value="0">
                             <span class="number-explore">0</span>
                         </div>
                     </div>
-                    <button class="circle-button-explore">
+                    <button type="submit" class="circle-button-explore">
                         <div class="content-explore">
                             <img class="icon-explore" src="../../image/admin/admin/search icon.png" alt="Search Icon" />
                         </div>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
         <div class="placement">

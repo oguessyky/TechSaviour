@@ -53,8 +53,8 @@
         echo "<script>
             document.title = '".ucfirst($category)." Laptops';
             document.body.classList.add('$category');
-            document.getElementById('categoryTitle').innerHTML = '$category';
-            document.getElementById('categoryDescription').innerHTML = '$description';
+            document.getElementById('categoryTitle').textContent = '$category';
+            document.getElementById('categoryDescription').textContent = '$description';
             content = document.getElementById('laptops');
             content.innerHTML = `$content`;
         </script>";

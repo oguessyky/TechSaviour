@@ -15,7 +15,9 @@ function buttonClick(element) {
     let initialValue = parseInt(element.getAttribute('data-initial'));
     let maxValue = parseInt(element.getAttribute('data-max'));
     let currentValue = parseInt(numberElement.textContent);
+    let input = element.querySelector('.noShow');
     currentValue = (currentValue + 1) % (maxValue + 1);
+    input.value = currentValue;
     numberElement.textContent = currentValue;
     element.style.setProperty('--percent', (currentValue / maxValue) * 100);
 }
