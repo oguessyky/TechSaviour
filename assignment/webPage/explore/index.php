@@ -51,6 +51,7 @@
         }
 
         echo "<script>
+            document.title = '".ucfirst($category)." Laptops';
             document.body.classList.add('$category');
             document.getElementById('categoryTitle').innerHTML = '$category';
             document.getElementById('categoryDescription').innerHTML = '$description';
