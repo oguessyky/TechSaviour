@@ -923,15 +923,19 @@ footer.homepage_f img.web_robot:hover {
 }
 
 /* Below are admin page */
+.update{
+  position: absolute;
+  padding: 4vw 3vw;
+}
 .updateProfile {
   display: block;
   text-align: right;
   padding: 4vw 3vw;
 }
-.updateProfile a {
+.updateProfile a, .update a{
   text-decoration: none;
 }
-.updateProfile p span {
+.updateProfile p span, .update p span {
   position: relative;
   padding: 10px;
   color: white;
@@ -942,7 +946,7 @@ footer.homepage_f img.web_robot:hover {
   -ms-border-radius: 13px;
   -o-border-radius: 13px;
 }
-.updateProfile p span::before {
+.updateProfile p span::before, .update p span::before {
   content: "";
   position: absolute;
   inset: 0;
