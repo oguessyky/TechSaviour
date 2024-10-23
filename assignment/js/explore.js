@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.style.setProperty('--color', color);
         button.style.setProperty('--percent', (initialValue / maxValue) * 100);
         button.querySelector('.number-explore').textContent = initialValue;
+        button.querySelector('.noShow').value = initialValue;
     });
 });
 
