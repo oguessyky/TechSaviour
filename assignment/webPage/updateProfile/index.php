@@ -10,14 +10,13 @@
         include "updateProfile.html";
         $userQuery = $dbConn -> query("SELECT Username,Password FROM User;");
         $userList = $userQuery -> fetch_all();
-        echo "<script> 
+        echo "<script>
             var userList = ".json_encode($userList).";
             updateForm.newUsername.value = '$username';
             updateForm.name.value = '".$row['Name']."';
             updateForm.email.value = '".$row['Email']."';
             updateForm.phone.value = '".$row['Phone']."';
+            const currentUsername = '$username';
         </script>";
     }
     $dbConn -> close();
-?>
-<script>const currentUsername = '<?php echo $username ?>';</script>
