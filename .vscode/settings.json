@@ -12,6 +12,7 @@
         "DLSS",
         "Dynaudio",
         "Eyesafe",
+        "gameplay",
         "GDDR",
         "Geekbench",
         "Geforce",
@@ -31,7 +32,9 @@
         "OLED",
         "Opti",
         "optimised",
+        "Optimus",
         "Palmrest",
+        "pathing",
         "Personalise",
         "Realtek",
         "Ryzen",
@@ -47,9 +50,11 @@
         "webp",
         "Whrs",
         "windowheight",
+        "wireframe",
         "WQHD",
         "WQXGA",
         "WUXGA",
-        "WXDXH"
+        "WXDXH",
+        "Zenbook"
     ]
 }

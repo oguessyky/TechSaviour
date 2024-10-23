@@ -7,15 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
         button.style.setProperty('--color', color);
         button.style.setProperty('--percent', (initialValue / maxValue) * 100);
         button.querySelector('.number-explore').textContent = initialValue;
+        button.querySelector('.noShow').value = initialValue;
     });
 });
 
+
+
 function buttonClick(element) {
     let numberElement = element.querySelector('.number-explore');
-    let initialValue = parseInt(element.getAttribute('data-initial'));
     let maxValue = parseInt(element.getAttribute('data-max'));
     let currentValue = parseInt(numberElement.textContent);
+    let input = element.querySelector('.noShow');
     currentValue = (currentValue + 1) % (maxValue + 1);
+    input.value = currentValue;
     numberElement.textContent = currentValue;
     element.style.setProperty('--percent', (currentValue / maxValue) * 100);
 }

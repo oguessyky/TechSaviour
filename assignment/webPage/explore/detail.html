@@ -10,17 +10,16 @@
 <body class="detail">
     <div class="top">
         <div class="detail-img">
-            <img src="https://th.bing.com/th/id/OIP.9wgCPEUUzVR71OnFhNPeywHaHa?rs=1&pid=ImgDetMain" alt="">
+            <img id = "laptopImage" src="https://th.bing.com/th/id/OIP.9wgCPEUUzVR71OnFhNPeywHaHa?rs=1&pid=ImgDetMain" alt="">
         </div>
         <div class="detail-container">
-            <h2>Asus 16" ProArt StudioBook 16 OLED</h2>
+            <h2 id = "laptopName">Asus 16" ProArt StudioBook 16 OLED</h2>
             <div class="detail-chart">
-                <div class="cpu chart" data-percent="60"><span>CPU</span></div>
-                <div class="gpu chart" data-percent="80"><span>GPU</span></div>
-                <div class="ram chart" data-percent="70"><span>RAM</span></div>
-                <div class="ssd chart" data-percent="70"><span>Storage</span></div>
+                <div class="cpu chart" data-percent="60" id="cpuRating"><span>CPU</span></div>
+                <div class="gpu chart" data-percent="80" id="gpuRating"><span>GPU</span></div>
+                <div class="ram chart" data-percent="70" id="ramRating"><span>RAM</span></div>
+                <div class="ssd chart" data-percent="70" id="storageRating"><span>Storage</span></div>
             </div>
-
         </div>
     </div>
 
@@ -44,7 +43,7 @@
 </style>
 
     <div class="explanation">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, assumenda repellat! Provident numquam quasi ut quae nisi explicabo sed id! Numquam, nulla consectetur! Voluptates eius hic dolorum obcaecati nesciunt iste?</p>
+        <p id="description" style="white-space: pre-line;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, assumenda repellat! Provident numquam quasi ut quae nisi explicabo sed id! Numquam, nulla consectetur! Voluptates eius hic dolorum obcaecati nesciunt iste?</p>
     </div>
     <footer class="detail_f">
         <div>
@@ -71,13 +70,13 @@
                             <h4 class="textSpilt7">:&nbsp;</h4>
                         </div>
                         <div class="Fever-detail">
-                            <h4 class="Fever-detail-CPU">Intel Core i9-14900HX</h4>
-                            <h4 class="Fever-detail-GPU">NVIDIA GeForce RTX4090, GDDR6 16GB</h4>
-                            <h4 class="Fever-detail-RAM">128GB (32GB x 4) DDR5 Ram</h4>
-                            <h4 class="Fever-detail-SSD">4TB (2TB x 2) NVMe PCIe Gen 4 x 4 SSD</h4>
-                            <h4 class="Fever-detail-Dr">3840 x 2400</h4>
-                            <h4 class="Fever-detail-Rr">120Hz</h4>
-                            <h4 class="Fever-detail-Ca">E < 2</h4>
+                            <h4 class="Fever-detail-CPU" id="cpu">Intel Core i9-14900HX</h4>
+                            <h4 class="Fever-detail-GPU" id="gpu">NVIDIA GeForce RTX4090, GDDR6 16GB</h4>
+                            <h4 class="Fever-detail-RAM" id="ram">128GB (32GB x 4) DDR5 Ram</h4>
+                            <h4 class="Fever-detail-SSD" id="storage">4TB (2TB x 2) NVMe PCIe Gen 4 x 4 SSD</h4>
+                            <h4 class="Fever-detail-Dr" id="resolution">3840 x 2400</h4>
+                            <h4 class="Fever-detail-Rr" id="refreshRate">120Hz</h4>
+                            <h4 class="Fever-detail-Ca" id="colorAccuracy">E < 2</h4>
                         </div>
                     </div>
                 </div>
@@ -91,7 +90,7 @@
                     <img src="../../image/Laptop details/darkBlue.png" alt="">
                     <div class="text-Add-On">
                         <h2>Possible upgrade:</h2>
-                        <div class="add-on-component">
+                        <div class="add-on-component" id="addOns">
                             <p class="item"><span>-> </span>64GB RAM</p>
                             <p class="item"><span>-> </span>2TB Storage</p>
                         </div>
@@ -99,7 +98,6 @@
                 </div>
             </div>
         </div>
-    </footer>    
-
+    </footer>
 </body>
 </html>
