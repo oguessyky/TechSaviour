@@ -14,7 +14,10 @@
             $data = $_GET["data"];
             if (in_array($data,["laptop","user","feedback"])) {
                 echo "handleButtonClick(document.getElementById('$data'));
-                var searchList = document.getElementById('searchList');";
+                var searchList = document.getElementById('searchList');
+                document.getElementById('data').value = '$data';
+                document.getElementById('getData').value = '$data';
+                document.getElementById('getSearchData').value = '$data';";
                 if (isset($_GET["search"])) {
                     $search = $_GET["search"];
                     echo "searchInput.value = '$search';";
