@@ -21,7 +21,7 @@ INSERT INTO Feedback (Username,Inquiry,Status) VALUES
 ('CatFinder2395','very skibidi +1000 aura','Pending'),
 ('CyberCat88','This website caused me internal bleeding thanks','Resolved'),
 ('Ialwayslosemy5050','Why the filter works 50/50 of the time','Pending'),
-('ISTHATTHERED','Why isnt this website all red 0/10','Resolved'),
+('ISTHATTHERED','Why isn''t this website all red 0/10','Resolved'),
 ('LeFoodisCalling','Are the laptops edible?',"Pending"),
 ('TEAMGAP111','Cool website but I cannot find the laptop I want, please add more','Pending'),
 ('Todefeatyourenemy','This website is sick -Sun Tzu, The Art of War','Resolved');
