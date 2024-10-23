@@ -100,6 +100,8 @@ function checkEditType() {
 }
 
 function checkSearchInput() {
+    document.getElementById("getData").value = document.querySelector('.adminButton button.active').value;
+    document.getElementById("getSearchData").value = document.querySelector('.adminButton button.active').value;
     let search = document.getElementById("search");
     if (isEmpty(search.value)) {
         search.removeAttribute("name");
