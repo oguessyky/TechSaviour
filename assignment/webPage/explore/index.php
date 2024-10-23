@@ -37,23 +37,23 @@
 
             echo "<script>";
             $condition = "1";
-            if (isset($_GET['cpuRating'])) {
-                $cpuRating = $_GET['cpuRating'];
+            if (isset($_GET['cpuRating']) && is_int($cpuRating = json_decode($_GET['cpuRating']))) {
+                $cpuRating = $cpuRating <= 10 ? $cpuRating : 10;
                 echo "document.getElementById('cpuRatingButton').setAttribute('data-initial',$cpuRating);";
                 $condition .= " AND CPUScore >= ".($cpuRating*$maxCPUScore/10);
             }
-            if (isset($_GET['gpuRating'])) {
-                $gpuRating = $_GET['gpuRating'];
+            if (isset($_GET['gpuRating']) && is_int($gpuRating = json_decode($_GET['gpuRating']))) {
+                $gpuRating = $gpuRating <= 10 ? $gpuRating : 10;
                 echo "document.getElementById('gpuRatingButton').setAttribute('data-initial',$gpuRating);";
                 $condition .= " AND GPUScore >= ".($gpuRating*$maxGPUScore/10);
             }
-            if (isset($_GET['ramRating'])) {
-                $ramRating = $_GET['ramRating'];
+            if (isset($_GET['ramRating']) && is_int($ramRating = json_decode($_GET['ramRating']))) {
+                $ramRating = $ramRating <= 8 ? $ramRating : 8;
                 echo "document.getElementById('ramRatingButton').setAttribute('data-initial',$ramRating);";
                 $condition .= " AND RAM >= ".($ramRating*$maxRAMScore/8);
             }
-            if (isset($_GET['storageRating'])) {
-                $storageRating = $_GET['storageRating'];
+            if (isset($_GET['storageRating']) && is_int($storageRating = json_decode($_GET['storageRating']))) {
+                $storageRating = $storageRating <= 8 ? $storageRating : 8;
                 echo "document.getElementById('storageRatingButton').setAttribute('data-initial',$storageRating);";
                 $condition .= " AND Storage >= ".($storageRating*$maxStorageScore/8);
             }
