@@ -16,7 +16,7 @@ create table Feedback (
     Username varchar(20) not null,
     Inquiry varchar(255) not null,
     Status enum('Pending','Resolved') not null default 'Pending',
-    foreign key (Username) references User(Username)
+    foreign key (Username) references User(Username) ON UPDATE CASCADE
 );
 
 create table Laptop (

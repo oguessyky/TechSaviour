@@ -6,7 +6,7 @@
 </head>
 <body class="deviceForm">
     <div class="container-deviceForm">
-        <form class="deviceForm" name="update" method="post" action="updateProfile.php">
+        <form class="deviceForm" name="update" method="post" action="./">
             <div class="form-group-deviceForm">
                 <label for="username" class="deviceForm">Username:</label>
                 <input type="text" id="username" name="newUsername" 
@@ -14,8 +14,7 @@
                 pattern="^[\w_]*$" maxlength="20"
                 oninput="return validateInput(this,
                 'Username must only contain letters(A-Z,a-z), numbers(0-9), and underscores(_).',
-                [isEmpty,'Username cannot be empty.'],
-                [inputUsername => inputUsername != currentUsername && userExists(inputUsername), 'Username already exist.']);">
+                [isEmpty,'Username cannot be empty.']);">
             </div>
             <div class="form-group-deviceForm">
                 <label for="name" class="deviceForm">Name:</label>
@@ -50,12 +49,11 @@
             <div class="form-group-deviceForm">
                 <label for="password" class="deviceForm">Password:</label>
                 <input type="password" id="password" name="password" 
-                placeholder="New Password" class="deviceForm"
+                placeholder="Password" class="deviceForm"
                 maxlength="255"
                 oninput="fieldNotEmpty = checkPasswordFields();
                 return validateInput(this,
-                'Please enter your password.',
-                [password => fieldNotEmpty && !checkPassword(currentUsername,password), 'Incorrect password.']);">
+                'Please enter your password.');">
             </div>
             <div class="form-group-deviceForm">
                 <label for="newPassword" class="deviceForm">New password:</label>
@@ -77,7 +75,7 @@
                 [password => fieldNotEmpty && password != updateForm.newPassword.value, 'Passwords do not match.']);">
             </div>
 
-            <button type="submit" class="deviceForm">Update Profile</button>
+            <button type="submit" name="submit" class="deviceForm">Update Profile</button>
         </form>
         <script>
             updateForm = document.forms.update;
