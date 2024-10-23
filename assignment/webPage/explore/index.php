@@ -7,7 +7,7 @@
         $maxGPUScore = $maxScore['GPU'];
         $maxRAMScore = $maxScore['RAM'];
         $maxStorageScore = $maxScore['Storage'];
-
+        
         if (isset($_GET['category']) && in_array($category = $_GET['category'],["gaming","business","art"])) {
             include "category.html";
 

@@ -19,10 +19,11 @@
     if (isset($_GET["laptop"]) && is_int(json_decode($id = $_GET["laptop"]))) {
         require "../headers/dbConn.php";
         if (($result = $dbConn -> query("SELECT Name, Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, MaxRAM, Storage, StorageType, MaxStorage, MaxStorageType, ScreenResolutionWidth, ScreenResolutionHeight, ScreenResolutionUpgradeWidth, ScreenResolutionUpgradeHeight, RefreshRate, ColorAccuracy FROM Laptop WHERE ID = $id LIMIT 1;")) && $dbConn -> affected_rows) {
+            $row = $result -> fetch_assoc();
             include "../headers/navBar.php";
+            require "../headers/dbConn.php";
             include "detail.html";
 
-            $row = $result -> fetch_assoc();
             $maxScore = $dbConn -> query("SELECT MAX(CPUScore) AS CPU, MAX(GPUScore) AS GPU, MAX(RAM) AS RAM, MAX(Storage) AS Storage FROM Laptop;") -> fetch_assoc();
 
             $addOns = "";
