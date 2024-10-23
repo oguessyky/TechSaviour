@@ -75,7 +75,8 @@
                 <span class="inputSpan"></span>
                 <input type="password" name="password" placeholder="PASSWORD"
                 required maxlength="255"
-                oninput="return validateInput(this,
+                oninput="registerForm.password_confirm.oninput(event);
+                return validateInput(this,
                 'Password cannot be empty.');">
             </div>
             <div class="input">

@@ -6,17 +6,16 @@
 </head>
 <body class="deviceForm">
     <div class="container-deviceForm">
-        <form class="deviceForm" name="update" method="post">
-            <input type="text" id="oldUsername" name="oldUsername" class="noShow" required>
+        <form class="deviceForm" name="update" method="post" action="updateProfile.php">
             <div class="form-group-deviceForm">
-                <label for="newUsername" class="deviceForm">Username:</label>
-                <input type="text" id="newUsername" name="newUsername" 
+                <label for="username" class="deviceForm">Username:</label>
+                <input type="text" id="username" name="newUsername" 
                 placeholder="Username" class="deviceForm" required autofocus
                 pattern="^[\w_]*$" maxlength="20"
                 oninput="return validateInput(this,
                 'Username must only contain letters(A-Z,a-z), numbers(0-9), and underscores(_).',
                 [isEmpty,'Username cannot be empty.'],
-                [userExists, 'Username already exist.']);">
+                [inputUsername => inputUsername != currentUsername && userExists(inputUsername), 'Username already exist.']);">
             </div>
             <div class="form-group-deviceForm">
                 <label for="name" class="deviceForm">Name:</label>
@@ -46,35 +45,67 @@
                 </div>
             </div>
             <div class="form-group-deviceForm">
+                <label class="deviceForm"><br>Change password<br>(Leave blank if unnecessary):</label>
+            </div>
+            <div class="form-group-deviceForm">
                 <label for="password" class="deviceForm">Password:</label>
                 <input type="password" id="password" name="password" 
                 placeholder="New Password" class="deviceForm"
-                required maxlength="255"
-                oninput="return validateInput(this,
+                maxlength="255"
+                oninput="fieldNotEmpty = checkPasswordFields();
+                return validateInput(this,
                 'Please enter your password.',
-                [password => !checkPassword(username,password), 'Incorrect password.']);">
+                [password => fieldNotEmpty && !checkPassword(currentUsername,password), 'Incorrect password.']);">
             </div>
             <div class="form-group-deviceForm">
                 <label for="newPassword" class="deviceForm">New password:</label>
                 <input type="password" id="newPassword" name="newPassword" 
                 placeholder="New Password" class="deviceForm"
                 maxlength="255"
-                oninput="return validateInput(this,
-                'Password cannot be empty.');">
+                oninput="fieldNotEmpty = checkPasswordFields();
+                updateForm.passwordConfirm.oninput(event);
+                return validateInput(this,
+                'New password cannot be empty.');">
             </div>
             <div class="form-group-deviceForm">
                 <label for="passwordConfirm" class="deviceForm">Confirm new password:</label>
                 <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm New Password" class="deviceForm"
                 maxlength="255"
-                oninput="return validateInput(this,
-                'Please confirm your password.',
-                [password => password != updateForm.newPassword.value, 'Passwords do not match.']);">
+                oninput="fieldNotEmpty = checkPasswordFields();
+                return validateInput(this,
+                'Please confirm your new password.',
+                [password => fieldNotEmpty && password != updateForm.newPassword.value, 'Passwords do not match.']);">
             </div>
 
-            <button type="submit" class="deviceForm">Update User</button>
+            <button type="submit" class="deviceForm">Update Profile</button>
         </form>
         <script>
             updateForm = document.forms.update;
+            function checkPasswordFields() {
+                passwordField = updateForm.password;
+                newPasswordField = updateForm.newPassword;
+                passwordConfirmField = updateForm.passwordConfirm;
+                if (isEmpty(passwordField.value) && isEmpty(newPasswordField.value) && isEmpty(passwordConfirmField.value)) {
+                    passwordField.removeAttribute("required");
+                    newPasswordField.removeAttribute("required");
+                    passwordConfirmField.removeAttribute("required");
+                    return false;
+                } else {
+                    passwordField.setAttribute("required","required");
+                    if (isEmpty(passwordField.value)) {
+                        passwordField.setCustomValidity('Please enter your password.');
+                    }
+                    newPasswordField.setAttribute("required","required");
+                    if (isEmpty(newPasswordField.value)) {
+                        newPasswordField.setCustomValidity('New password cannot be empty.');
+                    }
+                    passwordConfirmField.setAttribute("required","required");
+                    if (isEmpty(passwordConfirmField.value)) {
+                        passwordConfirmField.setCustomValidity('Please confirm your new password.');
+                    }
+                    return true;
+                }
+            }
         </script>
     </div>
 </body>
