@@ -75,3 +75,5 @@
         header("location: ./");
         die();
     }
+?>
+<script>document.getElementById('explore').classList.add('active');</script>
