@@ -64,7 +64,7 @@ function compressValue(&$value){
                                 document.getElementById('image').files = dataTransfer.files;
                             });
                             updateForm.deviceName.value = '$row[0]';
-                            updateForm.description.value = ".json_encode(htmlspecialchars_decode($row[1])).";
+                            updateForm.description.value = ".json_encode($row[1]).";
                             updateForm.cpu.value = '$row[3]';
                             updateForm.cpuManufacturer.value = '$row[4]';
                             updateForm.cpuBenchmark.value = '$row[5]';

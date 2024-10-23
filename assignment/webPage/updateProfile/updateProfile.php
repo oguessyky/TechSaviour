@@ -9,7 +9,7 @@
 
         $updateValues = "UPDATE User SET Username = '$newUsername', Name = '$name', Email = '$email', Phone = '$phone'";
         if ($password = $_POST['newPassword']) {
-            $updateValues .= ", Password = '$password'";
+            $updateValues .= ", Password = ".json_encode($password);
         }
 
         if ($dbConn -> query("$updateValues WHERE Username = '$username';")) {

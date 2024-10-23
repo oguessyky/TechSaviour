@@ -53,7 +53,7 @@
                 document.getElementById('ramRating').setAttribute('data-percent',".($row['RAM']/$maxScore['RAM']*100).");
                 document.getElementById('storageRating').setAttribute('data-percent',".($row['Storage']/$maxScore['Storage']*100).");
 
-                document.getElementById('description').textContent = ".json_encode(htmlspecialchars_decode($row['Description'])).";
+                document.getElementById('description').textContent = ".json_encode($row['Description']).";
 
                 document.getElementById('cpu').textContent = '".$row['CPUManufacturer']." ".$row['CPUName']."';
                 document.getElementById('gpu').textContent = '".$row['GPUManufacturer']." ".$row['GPUName']."';

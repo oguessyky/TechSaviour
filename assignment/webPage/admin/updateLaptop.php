@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = json_decode($_POST['id']);
     $image = $_FILES['image'];
     $name = $_POST['deviceName'];
-    $description = htmlspecialchars($_POST['description']);
+    $description = json_encode($_POST['description']);
     $cpu = $_POST['cpu'];
     $cpuManufacturer = $_POST['cpuManufacturer'];
     $cpuScore = $_POST['cpuBenchmark'];
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = isset($id) ?
             "UPDATE Laptop SET
             Name = '$name',
-            Description = '$description',
+            Description = $description,
             ImageAddress = ".json_encode(basename($image["name"])).",
             CPUName = '$cpu',
             CPUManufacturer = '$cpuManufacturer',
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ForArt
         ) VALUES (
             '$name', 
-            '$description', 
+            $description, 
             ".json_encode(basename($image["name"])).",
             '$cpu', 
             '$cpuManufacturer', 
