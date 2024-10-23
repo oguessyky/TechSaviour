@@ -43,7 +43,7 @@
                         $searchListQuery = "SELECT Name FROM Laptop GROUP BY Name;";
                         
                         $sql =
-                        "SELECT ID,ImageAddress,Name,CPUName,GPUName,RAM,Storage FROM Laptop";
+                        "SELECT ID,ImageAddress,Name,CPUManufacturer,CPUName,GPUManufacturer,GPUName,RAM,Storage FROM Laptop";
                         if (isset($search)) {
                             $sql .= " WHERE Name LIKE '%$search%';";
                         } else {
@@ -53,10 +53,11 @@
                             while ($row = $result -> fetch_row()) {
                                 $tableContent .= '<tr onclick="'."prepareEdit('$row[0]');".'">';
                                 $tableContent .= "<td><img src=".json_encode("../../image/Laptop Images/$row[1]")." alt='Laptop $row[0]' class='responsive-img'></td>";
-                                foreach (array_slice($row,2,3) as $element) {
-                                    $tableContent .= "<td>$element</td>";
-                                }
-                                foreach (array_slice($row,5) as $element) {
+                                $tableContent .= "<td>$row[2]</td>";
+                                $tableContent .= "<td>$row[3] $row[4]</td>";
+                                $tableContent .= "<td>$row[5] $row[6]</td>";
+
+                                foreach (array_slice($row,7) as $element) {
                                     if ($element & 1023) {
                                         $unit = 'MB';
                                     } else {
