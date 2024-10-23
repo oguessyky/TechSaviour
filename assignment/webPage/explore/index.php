@@ -102,7 +102,7 @@
             </a>";
         }
         
-        $content = empty($content)? "<h2>No Results Found.</h2>":$content;
+        $content = empty($content)? "<img src='../../image/category/category/no laptop found.svg' alt='No Device Found'>":$content;
 
         echo "<script>
             content = document.getElementById('laptops');
