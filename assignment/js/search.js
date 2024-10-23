@@ -89,10 +89,19 @@ function prepareEdit(id) {
     }
 }
 
+let isEmpty = inputValue => inputValue.trim() == "";
+
 function checkEditType() {
     document.getElementById('data').value = document.querySelector('.adminButton button.active').value;
+    checkSearchInput();
     if (deleteButtonClicked) {
         document.forms.edit.action = 'delete.php';
     }
 }
 
+function checkSearchInput() {
+    let search = document.getElementById("search");
+    if (isEmpty(search.value)) {
+        search.removeAttribute("name");
+    }
+}
