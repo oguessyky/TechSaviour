@@ -1911,6 +1911,7 @@ progress.ssd::-moz-progress-bar {
   gap: var(--container-gap);
   width: fit-content;
   position: relative;
+  min-height: 50vh;
 }
 .detail-container h2 {
   position: absolute;
