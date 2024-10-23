@@ -20,7 +20,7 @@
             </div>
             <div class="form-group-deviceForm">
                 <label for="name" class="deviceForm">Name:</label>
-                <input type="text" id="name" name="name" 
+                <input type="text" id="name" name="name"
                 placeholder="Name" class="deviceForm" required
                 pattern="[\w\s]*$" maxlength="255"
                 oninput="return validateInput(this,
@@ -46,15 +46,36 @@
                 </div>
             </div>
             <div class="form-group-deviceForm">
-                <label for="role" class="deviceForm">User role:</label>
-                <select id="role" name="role" class="deviceForm" required>
-                    <option value="User">USER</option>
-                    <option value="Admin">ADMIN</option>
-                </select>
+                <label for="password" class="deviceForm">Password:</label>
+                <input type="password" id="password" name="password" 
+                placeholder="New Password" class="deviceForm"
+                required maxlength="255"
+                oninput="return validateInput(this,
+                'Please enter your password.',
+                [password => !checkPassword(username,password), 'Incorrect password.']);">
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="newPassword" class="deviceForm">New password:</label>
+                <input type="password" id="newPassword" name="newPassword" 
+                placeholder="New Password" class="deviceForm"
+                maxlength="255"
+                oninput="return validateInput(this,
+                'Password cannot be empty.');">
+            </div>
+            <div class="form-group-deviceForm">
+                <label for="passwordConfirm" class="deviceForm">Confirm new password:</label>
+                <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm New Password" class="deviceForm"
+                maxlength="255"
+                oninput="return validateInput(this,
+                'Please confirm your password.',
+                [password => password != updateForm.newPassword.value, 'Passwords do not match.']);">
             </div>
 
             <button type="submit" class="deviceForm">Update User</button>
         </form>
+        <script>
+            updateForm = document.forms.update;
+        </script>
     </div>
 </body>
 

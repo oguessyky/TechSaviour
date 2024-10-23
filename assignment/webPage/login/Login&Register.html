@@ -57,7 +57,7 @@
             <div class="input">
                 <span class="inputSpan"></span>
                 <input type="email" name="email" placeholder="EMAIL"
-                required pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$" maxlength="255"
+                required pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" maxlength="255"
                 oninput="return validateInput(this,
                 'Please enter a valid email address. (Eg. ali@gmail.com)',
                 [isEmpty,'Email cannot be empty.']);">
@@ -107,14 +107,6 @@
     </div>
 
     <script>
-        function checkPassword(username,password) {
-            for (user of userList) {
-                if (user[0] == username) {
-                    return user[1] == password;
-                }
-            }
-            return false;
-        }
 
         document.getElementById('registerLink').addEventListener('click', function(event) {
             event.preventDefault();
