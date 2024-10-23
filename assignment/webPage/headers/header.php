@@ -1,13 +1,18 @@
 <?php
     session_start();
     $isSet = isset($_SESSION['username']);
-    $isSet &= isset($_SESSION['role']);
 
-    // require "dbConn.php";
-    
     if ($isSet) {
+        require "dbConn.php";
         $username = $_SESSION['username'];
-        $role = $_SESSION['role'];
+        if (($result = $dbConn -> query("SELECT Role FROM User WHERE Username = '$username'")) -> num_rows > 0) {
+            $role = $result -> fetch_row() [0];
+            session_abort();
+        } else {
+            $isSet = false;
+            session_destroy();
+            session_write_close();
+        }
+        $dbConn -> close();
     }
-    session_abort();
     include "header.html";
