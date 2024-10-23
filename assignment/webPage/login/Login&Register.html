@@ -11,9 +11,11 @@
             <div class="input">
                 <span class="inputSpan"></span>
                 <input type="text" id="login_username" name="username"
-                placeholder="USERNAME" required autofocus maxlength="20"
+                placeholder="USERNAME" required autofocus 
+                pattern="^[\w_]*$" maxlength="20"
                 oninput="return validateInput(this,
-                'Please enter your username.');">
+                'Username must only contain letters(A-Z,a-z), numbers(0-9), and underscores(_).',
+                [isEmpty,'Please enter your username.']);">
             </div>
             <div class="input">
                 <span class="inputSpan"></span>
