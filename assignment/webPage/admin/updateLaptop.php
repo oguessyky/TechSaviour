@@ -138,7 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $forBusiness, 
             $forArt
         );";
-        echo $sql;
         if (!$dbConn->query($sql)) {
             die("Failed to update Laptop table");
         }

@@ -6,9 +6,9 @@ create table User (
     Username varchar(20) primary key not null,
     Role enum('User','Admin') not null,
     Password varchar(255) not null,
-    Name varchar(255),
-    Email varchar(255),
-    Phone varchar(20)
+    Name varchar(255) not null,
+    Email varchar(255) not null,
+    Phone varchar(20) not null
 );
 
 create table Feedback (
@@ -22,8 +22,8 @@ create table Feedback (
 create table Laptop (
     ID int auto_increment primary key not null,
     Name varchar(255) not null,
-    Description varchar(65535),
-    ImageAddress varchar(255),
+    Description varchar(65535) not null,
+    ImageAddress varchar(255) not null,
     CPUName varchar(255) not null,
     CPUManufacturer varchar(255) not null,
     CPUScore int not null,
