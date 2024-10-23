@@ -1,5 +1,6 @@
 <?php
-session_start();
-session_destroy();
-header("location: ../home/");
-die();
+    session_start();
+    session_destroy();
+    session_write_close();
+    header("location: ../home/");
+    die();
