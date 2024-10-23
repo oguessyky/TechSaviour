@@ -16,8 +16,7 @@
             return "$value $unit";
         }
     }
-    if (isset($_GET["laptop"])) {
-        $id = $_GET["laptop"];
+    if (isset($_GET["laptop"]) && is_int(json_decode($id = $_GET["laptop"]))) {
         require "../headers/dbConn.php";
         if (($result = $dbConn -> query("SELECT Name, Description, ImageAddress, CPUName, CPUManufacturer, CPUScore, GPUName, GPUManufacturer, GPUScore, RAM, MaxRAM, Storage, StorageType, MaxStorage, MaxStorageType, ScreenResolutionWidth, ScreenResolutionHeight, ScreenResolutionUpgradeWidth, ScreenResolutionUpgradeHeight, RefreshRate, ColorAccuracy FROM Laptop WHERE ID = $id LIMIT 1;")) && $dbConn -> affected_rows) {
             include "../headers/navBar.php";
