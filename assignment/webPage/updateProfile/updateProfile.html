@@ -87,6 +87,9 @@
                     passwordField.removeAttribute("required");
                     newPasswordField.removeAttribute("required");
                     passwordConfirmField.removeAttribute("required");
+                    passwordField.setCustomValidity('');
+                    newPasswordField.setCustomValidity('');
+                    passwordConfirmField.setCustomValidity('');
                     return false;
                 } else {
                     passwordField.setAttribute("required","required");
